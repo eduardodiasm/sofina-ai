@@ -145,9 +145,6 @@ const HeroForm = () => {
           )}
         </Button>
         
-        <p className="text-gray-500 text-xs text-center">
-          30 dias grátis • Sem compromisso • Cancele quando quiser
-        </p>
       </form>
     </div>
   );
