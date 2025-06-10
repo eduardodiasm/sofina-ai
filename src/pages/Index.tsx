@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, MessageCircle, Target, Star, Users, ArrowRight, Shield, TrendingUp, Zap } from 'lucide-react';
+import { CheckCircle, MessageCircle, Target, Star, Users, Shield, TrendingUp, Clock, DollarSign, BarChart3, AlertCircle, Phone } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
 import SimpleTrackedButton from "@/components/SimpleTrackedButton";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
@@ -44,37 +44,45 @@ const Index = () => {
       <section className="px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Seu Private Banker com <br />
-            <span className="text-blue-900">Inteligência Artificial</span>
+            Você ganha bem. <br />
+            Mas seu dinheiro <span className="text-blue-900">não acompanha</span>.
           </h1>
           
-          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Estratégia financeira personalizada em 3 minutos. 
-            Orientação contínua via WhatsApp. Sem conflito de interesse.
+          <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Entenda por que seus investimentos não <strong className="text-blue-900">evoluem</strong> — e <strong className="text-blue-900">corrija</strong> em 30 dias com a ajuda de um <strong className="text-blue-900">copiloto</strong> financeiro imparcial no WhatsApp.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <SimpleTrackedButton 
               ctaName="HERO_CTA"
               size="lg" 
-              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-4 text-lg rounded-lg"
+              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-4 text-lg rounded-lg flex items-center gap-2"
               onClick={scrollToForm}
             >
-              Começar Agora
+              <Phone className="w-5 h-5" />
+              Quero meu plano no WhatsApp
             </SimpleTrackedButton>
-            <p className="text-sm text-slate-500">30 dias grátis • Sem compromisso</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
+            <div className="flex items-center space-x-2">
+              <BarChart3 className="w-4 h-4 text-blue-900" />
+              <span>Estratégia personalizada via IA</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-4 h-4 text-blue-900" />
+              <span>Em menos de 3 minutos</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Shield className="w-4 h-4 text-blue-900" />
+              <span>Sem conflito de interesse</span>
+            </div>
           </div>
 
           {/* Social Proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-500 text-sm">
-            <div className="flex items-center space-x-2">
-              <Users className="w-4 h-4" />
-              <span>347+ profissionais cadastrados</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Star className="w-4 h-4" />
-              <span>Criado por especialistas em IA e finanças</span>
-            </div>
+          <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
+            <Users className="w-4 h-4" />
+            <span>+500 profissionais já na lista de espera</span>
           </div>
         </div>
       </section>
@@ -98,7 +106,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Diagnóstico Rápido</h3>
               <p className="text-slate-600 leading-relaxed">
-                5 perguntas via WhatsApp sobre sua situação financeira atual e objetivos.
+                Responda 5 perguntas no WhatsApp e descubra onde está o erro nos seus investimentos.
               </p>
             </div>
             
@@ -108,7 +116,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Estratégia Personalizada</h3>
               <p className="text-slate-600 leading-relaxed">
-                Plano sob medida com valores exatos e produtos específicos para seu perfil.
+                Receba um plano claro com quanto investir, onde e por quê — baseado no seu perfil.
               </p>
             </div>
             
@@ -116,9 +124,9 @@ const Index = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-blue-900 font-bold text-xl">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Acompanhamento Contínuo</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">Acompanhamento Inteligente</h3>
               <p className="text-slate-600 leading-relaxed">
-                Lembretes inteligentes e educação financeira para evoluir constantemente.
+                Mantenha a consistência com lembretes, explicações e evolução mês a mês.
               </p>
             </div>
           </div>
@@ -132,9 +140,6 @@ const Index = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Por que escolher a Finwise
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Orientação financeira sem conflito de interesse
-            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -143,7 +148,7 @@ const Index = () => {
                 <Shield className="w-12 h-12 text-blue-900 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">100% Imparcial</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Não vendemos produtos financeiros. Nossa receita vem apenas da sua mensalidade.
+                  Nossa receita vem só da sua mensalidade. Não vendemos produtos.
                 </p>
               </CardContent>
             </Card>
@@ -153,7 +158,7 @@ const Index = () => {
                 <MessageCircle className="w-12 h-12 text-blue-900 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">Via WhatsApp</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Sem apps complicados. Toda comunicação acontece no WhatsApp que você já usa.
+                  Sem app, sem burocracia. Tudo direto no canal que você já usa.
                 </p>
               </CardContent>
             </Card>
@@ -163,7 +168,7 @@ const Index = () => {
                 <TrendingUp className="w-12 h-12 text-blue-900 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">Baseado em Dados</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  IA treinada com estratégias testadas e dados do mercado em tempo real.
+                  IA treinada com estratégias de sucesso e dados reais do mercado.
                 </p>
               </CardContent>
             </Card>
@@ -186,28 +191,20 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-slate-600 mb-6 text-center">Assessoria Tradicional</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
-                    <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
-                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    </span>
-                    <span className="text-slate-600">Conflito de interesse com comissões</span>
+                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600">Te vendem o que dá mais comissão</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
-                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    </span>
-                    <span className="text-slate-600">Patrimônio mínimo alto (R$500k+)</span>
+                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600">Só atende quem tem R$500k+</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
-                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    </span>
-                    <span className="text-slate-600">Atendimento formal e distante</span>
+                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600">Formal, engessado, cheio de jargões</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
-                      <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    </span>
-                    <span className="text-slate-600">Custo elevado (R$2.000+/mês)</span>
+                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-600">Horário comercial, demorado</span>
                   </li>
                 </ul>
               </CardContent>
@@ -218,20 +215,20 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">Finwise</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5" />
-                    <span className="text-slate-700 font-medium">Zero conflito de interesse</span>
+                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 font-medium">Recomendação com base em dados</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5" />
-                    <span className="text-slate-700 font-medium">Acessível para todos (R$39/mês)</span>
+                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 font-medium">A partir de R$39/mês, sem exigência</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5" />
-                    <span className="text-slate-700 font-medium">Comunicação simples via WhatsApp</span>
+                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 font-medium">Simples, direto, via WhatsApp</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5" />
-                    <span className="text-slate-700 font-medium">Disponível 24/7 com IA</span>
+                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 font-medium">24h com IA e suporte de verdade</span>
                   </li>
                 </ul>
               </CardContent>
@@ -240,23 +237,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Target Audience Section */}
       <section className="px-6 py-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-12">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Finwise?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700">
+              <div className="flex flex-col items-center">
+                <Target className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Profissionais de 28-40 anos</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <DollarSign className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Já investe R$10k-R$500k ou quer começar direito</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <BarChart3 className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Resultado: plano claro + evolução real todo mês</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Comece sua jornada financeira hoje
+            Receba seu plano financeiro no WhatsApp
           </h2>
           <p className="text-lg text-slate-600 mb-12">
-            Garante sua vaga para ser um dos primeiros a usar a Finwise. 
-            <strong className="text-slate-900"> 30 dias totalmente grátis.</strong>
+            Preencha em 1 minuto e comece a investir com clareza e confiança.
           </p>
           
           <WaitlistForm />
           
-          <div className="mt-8 text-slate-500 space-y-2 text-sm">
-            <p>🎯 <strong className="text-slate-700">Para quem:</strong> Profissionais de 28-40 anos, renda R$6k-R$30k</p>
-            <p>💰 <strong className="text-slate-700">Patrimônio atual:</strong> R$10k - R$500k investidos</p>
-            <p>⚡ <strong className="text-slate-700">Resultado:</strong> Estratégia clara + evolução constante</p>
+          <div className="mt-8 flex items-center justify-center text-slate-500 text-sm">
+            <Shield className="w-4 h-4 mr-2" />
+            <span>Seus dados estão protegidos. Sem spam. Você pode sair quando quiser.</span>
           </div>
         </div>
       </section>
@@ -275,7 +293,7 @@ const Index = () => {
             </div>
             <div className="text-center md:text-right">
               <p className="text-slate-600 text-sm mb-2">
-                Seu Private Banker com Inteligência Artificial
+                Seu copiloto financeiro via WhatsApp
               </p>
               <p className="text-slate-500 text-xs">
                 © 2024 Finwise. Todos os direitos reservados.

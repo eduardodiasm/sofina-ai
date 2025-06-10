@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Users, Loader2 } from 'lucide-react';
+import { Phone, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
@@ -121,7 +121,7 @@ const WaitlistForm = () => {
   };
 
   const handleCTAClick = () => {
-    trackCTAClick("Garantir Acesso Gratuito");
+    trackCTAClick("Quero meu plano no WhatsApp");
   };
 
   return (
@@ -129,11 +129,11 @@ const WaitlistForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-gray-700">Como gostaria de ser chamado? *</Label>
+            <Label htmlFor="name" className="text-gray-700">Seu nome ou apelido *</Label>
             <Input
               id="name"
               type="text"
-              placeholder="Seu nome ou apelido"
+              placeholder="Como gostaria de ser chamado?"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
               className="border-gray-300"
@@ -142,7 +142,7 @@ const WaitlistForm = () => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-gray-700">WhatsApp *</Label>
+            <Label htmlFor="phone" className="text-gray-700">Seu WhatsApp com DDD *</Label>
             <Input
               id="phone"
               type="tel"
@@ -156,7 +156,7 @@ const WaitlistForm = () => {
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-gray-700">Email (opcional)</Label>
+          <Label htmlFor="email" className="text-gray-700">E-mail (opcional)</Label>
           <Input
             id="email"
             type="email"
@@ -168,52 +168,51 @@ const WaitlistForm = () => {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
+          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (ajudam a personalizar sua experiência):</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Faixa de renda mensal</Label>
+              <Label className="text-gray-600 text-sm">Qual sua renda mensal média hoje?</Label>
               <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="6k-10k">R$ 6.000 - R$ 10.000</SelectItem>
-                  <SelectItem value="10k-20k">R$ 10.000 - R$ 20.000</SelectItem>
-                  <SelectItem value="20k-30k">R$ 20.000 - R$ 30.000</SelectItem>
-                  <SelectItem value="30k+">Acima de R$ 30.000</SelectItem>
+                  <SelectItem value="6k-8k">R$ 6k - R$ 8k</SelectItem>
+                  <SelectItem value="8k-12k">R$ 8k - R$ 12k</SelectItem>
+                  <SelectItem value="12k-20k">R$ 12k - R$ 20k</SelectItem>
+                  <SelectItem value="20k+">+ R$ 20k</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Patrimônio investido atual</Label>
+              <Label className="text-gray-600 text-sm">Você já investiu quanto até agora?</Label>
               <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="0-10k">R$ 0 - R$ 10.000</SelectItem>
-                  <SelectItem value="10k-50k">R$ 10.000 - R$ 50.000</SelectItem>
-                  <SelectItem value="50k-100k">R$ 50.000 - R$ 100.000</SelectItem>
-                  <SelectItem value="100k-500k">R$ 100.000 - R$ 500.000</SelectItem>
-                  <SelectItem value="500k+">Acima de R$ 500.000</SelectItem>
+                  <SelectItem value="nao-invisto">Não invisto</SelectItem>
+                  <SelectItem value="0-10k">< R$ 10k</SelectItem>
+                  <SelectItem value="10k-50k">R$ 10k - R$ 50k</SelectItem>
+                  <SelectItem value="50k-500k">R$ 50k - R$ 500k</SelectItem>
+                  <SelectItem value="500k+">+ R$ 500k</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Maior desafio atual</Label>
+              <Label className="text-gray-600 text-sm">O que mais trava sua evolução financeira hoje?</Label>
               <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="nao-sei-investir">Não sei como investir</SelectItem>
                   <SelectItem value="falta-tempo">Falta de tempo</SelectItem>
-                  <SelectItem value="desconfianca-assessores">Desconfiança dos assessores</SelectItem>
-                  <SelectItem value="falta-constancia">Falta de constância</SelectItem>
-                  <SelectItem value="outros">Outros</SelectItem>
+                  <SelectItem value="falta-clareza">Falta de clareza</SelectItem>
+                  <SelectItem value="medo-perder">Medo de perder dinheiro</SelectItem>
+                  <SelectItem value="dificuldade-constancia">Dificuldade em investir todo mês</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -234,8 +233,8 @@ const WaitlistForm = () => {
             </>
           ) : (
             <>
-              <Users className="w-5 h-5 mr-2" />
-              Garantir Meu Acesso Gratuito
+              <Phone className="w-5 h-5 mr-2" />
+              Quero meu plano no WhatsApp
             </>
           )}
         </Button>
