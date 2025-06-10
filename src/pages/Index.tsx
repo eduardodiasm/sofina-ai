@@ -3,15 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, MessageCircle, Zap, Shield, TrendingUp, Users, Clock, X, ArrowRight, Target, Star } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
-import TrackedButton from "@/components/TrackedButton";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import SimpleTrackedButton from "@/components/SimpleTrackedButton";
+import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
 const Index = () => {
-  const { trackPageView } = useAnalytics();
+  const { trackPageVisit } = useSimpleAnalytics();
 
   useEffect(() => {
-    trackPageView('landing_page');
+    trackPageVisit();
   }, []);
 
   const scrollToForm = () => {
@@ -80,16 +80,15 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <TrackedButton 
+            <SimpleTrackedButton 
               ctaName="QUERO_MINHA_ESTRATEGIA"
-              location="hero_section"
               size="lg" 
               className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg"
               onClick={scrollToForm}
             >
               <Target className="w-5 h-5 mr-2" />
               QUERO MINHA ESTRATÉGIA GRÁTIS
-            </TrackedButton>
+            </SimpleTrackedButton>
           </div>
           
           <p className="text-slate-400 text-sm mb-8">
@@ -218,16 +217,15 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <TrackedButton 
+            <SimpleTrackedButton 
               ctaName="COMECAR_AGORA"
-              location="how_it_works"
               size="lg" 
               className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg"
               onClick={scrollToForm}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               COMEÇAR AGORA (GRÁTIS)
-            </TrackedButton>
+            </SimpleTrackedButton>
           </div>
         </div>
       </section>

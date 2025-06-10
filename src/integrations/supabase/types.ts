@@ -9,115 +9,36 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      cta_clicks: {
+      page_visits: {
         Row: {
-          converted: boolean | null
           created_at: string
-          cta_location: string
-          cta_name: string
           id: string
-          page_path: string
-          session_id: string | null
-          timestamp: string
         }
         Insert: {
-          converted?: boolean | null
           created_at?: string
-          cta_location: string
-          cta_name: string
           id?: string
-          page_path: string
-          session_id?: string | null
-          timestamp?: string
         }
         Update: {
-          converted?: boolean | null
           created_at?: string
-          cta_location?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      simple_cta_clicks: {
+        Row: {
+          created_at: string
+          cta_name: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          cta_name: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
           cta_name?: string
           id?: string
-          page_path?: string
-          session_id?: string | null
-          timestamp?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "cta_clicks_session_id_fkey"
-            columns: ["session_id"]
-            isOneToOne: false
-            referencedRelation: "user_sessions"
-            referencedColumns: ["session_id"]
-          },
-        ]
-      }
-      page_views: {
-        Row: {
-          created_at: string
-          id: string
-          page_path: string
-          referrer: string | null
-          session_id: string | null
-          timestamp: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          page_path: string
-          referrer?: string | null
-          session_id?: string | null
-          timestamp?: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          page_path?: string
-          referrer?: string | null
-          session_id?: string | null
-          timestamp?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "page_views_session_id_fkey"
-            columns: ["session_id"]
-            isOneToOne: false
-            referencedRelation: "user_sessions"
-            referencedColumns: ["session_id"]
-          },
-        ]
-      }
-      user_sessions: {
-        Row: {
-          city: string | null
-          country: string | null
-          created_at: string
-          first_visit: string
-          ip_address: unknown | null
-          last_activity: string
-          region: string | null
-          session_id: string
-          user_agent: string | null
-        }
-        Insert: {
-          city?: string | null
-          country?: string | null
-          created_at?: string
-          first_visit?: string
-          ip_address?: unknown | null
-          last_activity?: string
-          region?: string | null
-          session_id?: string
-          user_agent?: string | null
-        }
-        Update: {
-          city?: string | null
-          country?: string | null
-          created_at?: string
-          first_visit?: string
-          ip_address?: unknown | null
-          last_activity?: string
-          region?: string | null
-          session_id?: string
-          user_agent?: string | null
         }
         Relationships: []
       }
