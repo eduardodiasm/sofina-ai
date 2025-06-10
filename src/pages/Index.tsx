@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, MessageCircle, Zap, Shield, TrendingUp, Users } from 'lucide-react';
+import { CheckCircle, MessageCircle, Zap, Shield, TrendingUp, Users, Clock, X, ArrowRight, Target, Star } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
 
 const Index = () => {
@@ -18,62 +19,72 @@ const Index = () => {
             />
             <span className="text-2xl font-bold text-white">Finwise</span>
           </div>
-          <Badge variant="secondary" className="bg-blue-500/20 text-blue-300 border-blue-400/30">
-            Em breve
-          </Badge>
+          <div className="flex items-center space-x-4">
+            <Badge variant="secondary" className="bg-green-500/20 text-green-300 border-green-400/30 animate-pulse">
+              <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+              VAGAS LIMITADAS
+            </Badge>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative px-4 py-20 text-center">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-2 mb-8">
-            <Zap className="w-4 h-4 text-blue-400" />
-            <span className="text-blue-300 text-sm font-medium">Seu Private Banker com IA</span>
+          {/* Urgência */}
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-400/20 rounded-full px-4 py-2 mb-8">
+            <Clock className="w-4 h-4 text-red-400" />
+            <span className="text-red-300 text-sm font-medium">Últimas 127 vagas para acesso antecipado</span>
           </div>
           
+          {/* Headline Brutal */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Acesso inteligente à gestão do seu
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent"> patrimônio</span>
+            Pare de <span className="bg-gradient-to-r from-red-400 to-orange-300 bg-clip-text text-transparent">perder dinheiro</span> por não saber investir
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Finalmente, um conselheiro financeiro 100% imparcial, acessível e confiável. 
-            <strong className="text-white"> Via WhatsApp.</strong>
+          {/* Subheadline de Benefício */}
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Em 3 minutos, você entende o que está fazendo de errado com seu dinheiro. 
+            Em 30 dias, <strong className="text-white">começa a corrigir via WhatsApp.</strong>
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold px-8 py-4 text-lg">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Entrar na Lista de Espera
-            </Button>
-            <p className="text-slate-400 text-sm">Acesso gratuito por 30 dias</p>
+          {/* 3 Bullets de Dor */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="flex items-center space-x-3 bg-red-500/5 border border-red-400/10 rounded-lg p-4">
+              <X className="w-6 h-6 text-red-400 flex-shrink-0" />
+              <p className="text-slate-300 text-left">Você ganha R$10k+ mas sente que está <strong className="text-white">patinando financeiramente</strong></p>
+            </div>
+            <div className="flex items-center space-x-3 bg-red-500/5 border border-red-400/10 rounded-lg p-4">
+              <X className="w-6 h-6 text-red-400 flex-shrink-0" />
+              <p className="text-slate-300 text-left">Investe "quando sobra", sem <strong className="text-white">estratégia ou constância</strong></p>
+            </div>
+            <div className="flex items-center space-x-3 bg-red-500/5 border border-red-400/10 rounded-lg p-4">
+              <X className="w-6 h-6 text-red-400 flex-shrink-0" />
+              <p className="text-slate-300 text-left">Desconfia dos assessores mas não tem <strong className="text-white">tempo pra estudar</strong></p>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardContent className="p-6 text-center">
-                <Shield className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-white font-semibold mb-2">100% Imparcial</h3>
-                <p className="text-slate-300 text-sm">Sem conflitos de interesse ou comissões. Só o melhor para você.</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardContent className="p-6 text-center">
-                <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-white font-semibold mb-2">Via WhatsApp</h3>
-                <p className="text-slate-300 text-sm">Interface simples e familiar. Sem apps complicados.</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-              <CardContent className="p-6 text-center">
-                <TrendingUp className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <h3 className="text-white font-semibold mb-2">IA Avançada</h3>
-                <p className="text-slate-300 text-sm">Decisões baseadas em dados e algoritmos de última geração.</p>
-              </CardContent>
-            </Card>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg">
+              <Target className="w-5 h-5 mr-2" />
+              QUERO MINHA ESTRATÉGIA GRÁTIS
+            </Button>
+          </div>
+          
+          <p className="text-slate-400 text-sm mb-8">
+            ✅ <strong className="text-green-400">30 dias 100% grátis</strong> • ✅ <strong className="text-blue-400">Sem compromisso</strong> • ✅ <strong className="text-purple-400">Cancela quando quiser</strong>
+          </p>
+
+          {/* Prova Social */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-400 text-sm">
+            <div className="flex items-center space-x-2">
+              <Users className="w-4 h-4 text-blue-400" />
+              <span><strong className="text-white">847 pessoas</strong> já garantiram acesso</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Star className="w-4 h-4 text-yellow-400" />
+              <span>Criado por <strong className="text-white">ex-BTG e especialistas em IA</strong></span>
+            </div>
           </div>
         </div>
       </section>
@@ -82,34 +93,58 @@ const Index = () => {
       <section className="px-4 py-20 bg-gradient-to-r from-red-950/20 to-orange-950/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-8">
-            O sistema financeiro não foi feito para te ajudar
+            Por que você ainda não é rico?
           </h2>
           <p className="text-xl text-slate-300 mb-12 leading-relaxed">
-            Assessores presos a conflitos de interesse, metas de comissionamento e produtos que nem sempre são os melhores. 
-            O resultado? Mesmo profissionais qualificados ficam sem clareza sobre como investir e construir patrimônio real.
+            <strong className="text-red-300">A verdade brutal:</strong> O sistema financeiro não foi feito para te enriquecer. 
+            Foi feito para <strong className="text-white">vender produtos com comissão alta.</strong>
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="bg-red-500/10 border-red-400/20">
-              <CardContent className="p-6">
-                <h3 className="text-red-300 font-semibold mb-4">Você provavelmente...</h3>
-                <ul className="text-slate-300 space-y-2 text-left">
-                  <li>• Ganha bem, mas sente que não evolui financeiramente</li>
-                  <li>• Investe "de vez em quando", sem constância</li>
-                  <li>• Não tem clareza sobre estratégia de longo prazo</li>
-                  <li>• Desconfia dos "conselhos" do seu gerente</li>
+              <CardContent className="p-8">
+                <h3 className="text-red-300 font-bold text-xl mb-6">😤 Você provavelmente...</h3>
+                <ul className="text-slate-300 space-y-4 text-left">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Ganha bem, mas <strong className="text-white">não evolui financeiramente</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Investe "de vez em quando", <strong className="text-white">sem estratégia</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Não tem <strong className="text-white">clareza sobre longo prazo</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span><strong className="text-white">Desconfia</strong> dos "conselhos" do gerente</span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
             
             <Card className="bg-green-500/10 border-green-400/20">
-              <CardContent className="p-6">
-                <h3 className="text-green-300 font-semibold mb-4">Com a Finwise você...</h3>
-                <ul className="text-slate-300 space-y-2 text-left">
-                  <li>• Tem um plano claro em 3 minutos</li>
-                  <li>• Investe com constância e propósito</li>
-                  <li>• Recebe orientação 100% imparcial</li>
-                  <li>• Evolui rumo à independência financeira</li>
+              <CardContent className="p-8">
+                <h3 className="text-green-300 font-bold text-xl mb-6">🚀 Com a Finwise você...</h3>
+                <ul className="text-slate-300 space-y-4 text-left">
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Tem um <strong className="text-white">plano claro em 3 minutos</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Investe com <strong className="text-white">constância e propósito</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Recebe orientação <strong className="text-white">100% imparcial</strong></span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span>Evolui rumo à <strong className="text-white">independência financeira</strong></span>
+                  </li>
                 </ul>
               </CardContent>
             </Card>
@@ -122,113 +157,151 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Como funciona
+              Como transformar sua vida financeira em 30 dias
             </h2>
             <p className="text-xl text-slate-300">
-              Simples, direto e eficiente. Exatamente como deveria ser.
+              <strong className="text-blue-300">É ridiculamente simples.</strong> Sem apps complicados, sem cursos chatos.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">1</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center relative">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">1</span>
               </div>
-              <h3 className="text-white font-semibold mb-2">Diagnóstico</h3>
-              <p className="text-slate-300 text-sm">5 perguntas rápidas via WhatsApp sobre sua situação atual</p>
+              <h3 className="text-white font-bold text-xl mb-4">Diagnóstico Brutal (3 min)</h3>
+              <p className="text-slate-300">5 perguntas diretas via WhatsApp sobre sua situação atual. Sem enrolação.</p>
+              <div className="hidden md:block absolute top-10 right-0 transform translate-x-1/2">
+                <ArrowRight className="w-6 h-6 text-slate-600" />
+              </div>
+            </div>
+            
+            <div className="text-center relative">
+              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">2</span>
+              </div>
+              <h3 className="text-white font-bold text-xl mb-4">Plano Personalizado</h3>
+              <p className="text-slate-300">Estratégia sob medida com valores exatos e ativos específicos. Tudo explicado.</p>
+              <div className="hidden md:block absolute top-10 right-0 transform translate-x-1/2">
+                <ArrowRight className="w-6 h-6 text-slate-600" />
+              </div>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">2</span>
+              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">3</span>
               </div>
-              <h3 className="text-white font-semibold mb-2">Plano Personalizado</h3>
-              <p className="text-slate-300 text-sm">Estratégia sob medida com ativos e valores mensais específicos</p>
+              <h3 className="text-white font-bold text-xl mb-4">Evolução Automática</h3>
+              <p className="text-slate-300">Lembretes inteligentes + educação financeira. Você evolui sem perceber.</p>
             </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-white font-semibold mb-2">Acompanhamento</h3>
-              <p className="text-slate-300 text-sm">Lembretes inteligentes e educação financeira constante</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">4</span>
-              </div>
-              <h3 className="text-white font-semibold mb-2">Evolução</h3>
-              <p className="text-slate-300 text-sm">Progresso visível rumo à sua independência financeira</p>
-            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg">
+              <MessageCircle className="w-5 h-5 mr-2" />
+              COMEÇAR AGORA (GRÁTIS)
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits vs Alternatives */}
       <section className="px-4 py-20 bg-gradient-to-r from-blue-950/30 to-purple-950/30">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Por que a Finwise é diferente
+              Finwise vs. O resto do mercado
             </h2>
             <p className="text-xl text-slate-300">
-              Não vendemos produtos. Vendemos clareza e resultados.
+              <strong className="text-red-300">Não vendemos produtos.</strong> Vendemos clareza e resultados.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Zero Conflito de Interesse</h3>
-                  <p className="text-slate-300">Não ganhamos comissão por produto vendido. Só evoluímos se você evoluir.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Interface Simples</h3>
-                  <p className="text-slate-300">WhatsApp. Só isso. Sem apps complicados ou interfaces confusas.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Educação Real</h3>
-                  <p className="text-slate-300">Explicamos o "porquê" de cada decisão. Você evolui, não só executa.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Dados em Tempo Real</h3>
-                  <p className="text-slate-300">IA alimentada com informações atualizadas do mercado financeiro.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Planos Acessíveis</h3>
-                  <p className="text-slate-300">A partir de R$39/mês. Menos que um almoço executivo.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-white font-semibold mb-2">Teste Gratuito</h3>
-                  <p className="text-slate-300">30 dias para conhecer e sentir a diferença na prática.</p>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Bancos/Corretoras */}
+            <Card className="bg-red-500/10 border-red-400/20">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-red-300 font-bold text-xl mb-6">🏦 Bancos/Corretoras</h3>
+                <ul className="text-slate-300 space-y-3 text-left">
+                  <li>❌ Conflito de interesse</li>
+                  <li>❌ Empurram produtos caros</li>
+                  <li>❌ Atendimento robótico</li>
+                  <li>❌ Você é só um número</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Assessoria Tradicional */}
+            <Card className="bg-yellow-500/10 border-yellow-400/20">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-yellow-300 font-bold text-xl mb-6">👨‍💼 Assessoria Tradicional</h3>
+                <ul className="text-slate-300 space-y-3 text-left">
+                  <li>⚠️ Caro (R$500-2000/mês)</li>
+                  <li>⚠️ Só para "ricos"</li>
+                  <li>⚠️ Complexo e formal</li>
+                  <li>⚠️ Difícil acesso</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Finwise */}
+            <Card className="bg-green-500/20 border-green-400/40 ring-2 ring-green-400/50">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-green-300 font-bold text-xl mb-6">🚀 Finwise</h3>
+                <ul className="text-slate-300 space-y-3 text-left">
+                  <li>✅ <strong className="text-white">100% imparcial</strong></li>
+                  <li>✅ <strong className="text-white">Via WhatsApp</strong></li>
+                  <li>✅ <strong className="text-white">R$39/mês</strong></li>
+                  <li>✅ <strong className="text-white">Educação real</strong></li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Objections */}
+      <section className="px-4 py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              "Mas eu ainda tenho dúvidas..."
+            </h2>
+            <p className="text-xl text-slate-300">
+              Normal. Respondemos as 3 principais:
+            </p>
+          </div>
+          
+          <div className="space-y-8">
+            <Card className="bg-white/5 border-white/10">
+              <CardContent className="p-8">
+                <h3 className="text-blue-300 font-bold text-xl mb-4">💭 "Como sei que não é mais uma enganação?"</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  <strong className="text-white">30 dias grátis.</strong> Se não gostar, cancela. Sem pegadinha, sem taxa, sem enrolação. 
+                  Além disso, não vendemos produtos financeiros - nosso sucesso depende do seu.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 border-white/10">
+              <CardContent className="p-8">
+                <h3 className="text-blue-300 font-bold text-xl mb-4">💭 "E se eu não entender nada de investimentos?"</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  <strong className="text-white">Perfeito.</strong> A Finwise foi criada exatamente para quem não tem tempo de virar especialista. 
+                  Explicamos tudo em linguagem simples, via WhatsApp.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 border-white/10">
+              <CardContent className="p-8">
+                <h3 className="text-blue-300 font-bold text-xl mb-4">💭 "Posso confiar numa IA com meu dinheiro?"</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Nossa IA é <strong className="text-white">treinada com estratégias testadas</strong> e dados do mercado em tempo real. 
+                  Não "chutamos" - seguimos princípios sólidos de investimento. E você sempre tem controle total.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -236,19 +309,29 @@ const Index = () => {
       {/* Waitlist Section */}
       <section className="px-4 py-20 bg-gradient-to-r from-slate-900 to-blue-900">
         <div className="max-w-2xl mx-auto text-center">
+          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-400/20 rounded-full px-4 py-2 mb-8">
+            <Clock className="w-4 h-4 text-red-400" />
+            <span className="text-red-300 text-sm font-medium">Últimas horas - oferta encerra em breve</span>
+          </div>
+          
           <h2 className="text-4xl font-bold text-white mb-4">
-            Pare de adiar sua evolução financeira
+            Chega de adiar sua liberdade financeira
           </h2>
           <p className="text-xl text-slate-300 mb-8">
-            Entre na lista de espera e seja um dos primeiros a ter acesso à Finwise. 
-            <strong className="text-blue-300"> Totalmente gratuito por 30 dias.</strong>
+            Garante sua vaga para ser um dos primeiros a usar a Finwise. 
+            <strong className="text-green-300"> 30 dias totalmente grátis.</strong>
           </p>
           
           <WaitlistForm />
           
-          <div className="mt-8 text-slate-400">
-            <p className="mb-2">🎯 <strong className="text-white">Público-alvo:</strong> Profissionais de 28-40 anos, renda R$6k-R$30k</p>
-            <p>💰 <strong className="text-white">Patrimônio atual:</strong> R$10k - R$500k em investimentos</p>
+          <div className="mt-8 text-slate-400 space-y-2">
+            <p>🎯 <strong className="text-white">Para quem:</strong> Profissionais de 28-40 anos, renda R$6k-R$30k</p>
+            <p>💰 <strong className="text-white">Patrimônio atual:</strong> R$10k - R$500k investidos</p>
+            <p>⚡ <strong className="text-white">Resultado:</strong> Estratégia clara + evolução constante</p>
+          </div>
+
+          <div className="mt-8 p-4 bg-green-500/10 border border-green-400/20 rounded-lg">
+            <p className="text-green-300 font-bold">🔒 GARANTIA TOTAL: 30 dias grátis + cancela quando quiser</p>
           </div>
         </div>
       </section>
