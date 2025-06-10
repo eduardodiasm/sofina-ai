@@ -1,82 +1,199 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { TrendingUp, Shield, DollarSign, Target } from 'lucide-react';
+import { TrendingUp, Target, DollarSign, PieChart, Brain, Calculator, BarChart3 } from 'lucide-react';
 
 const PersonalizedPlanExample = () => {
   return (
-    <Card className="border border-blue-200 bg-blue-50">
-      <CardContent className="p-6">
-        <div className="text-center mb-6">
-          <h4 className="text-lg font-semibold text-slate-900 mb-2">
-            Exemplo: João, 32 anos, Designer
-          </h4>
-          <p className="text-slate-600 text-sm">
-            Renda: R$ 12k • Objetivo: Liberdade financeira • Perfil: Conservador
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h5 className="font-medium text-slate-900 mb-3">📊 Diagnóstico</h5>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-slate-600">Reserva ideal:</span>
-                <span className="font-medium">R$ 72.000</span>
+    <div className="space-y-8">
+      {/* Perfil do usuário */}
+      <Card className="border-l-4 border-l-blue-600 bg-gradient-to-r from-blue-50 to-white">
+        <CardContent className="p-6">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+              <span className="text-blue-900 font-bold text-lg">L</span>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-slate-900">Lucas, 28 anos, Advogado</h3>
+              <p className="text-slate-600">Renda líquida: R$ 21.000/mês • Perfil: Moderado-agressivo</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div>
+              <span className="text-slate-600">Patrimônio atual:</span>
+              <div className="font-semibold text-slate-900">R$ 85.000</div>
+            </div>
+            <div>
+              <span className="text-slate-600">Aporte possível:</span>
+              <div className="font-semibold text-slate-900">R$ 3.500/mês</div>
+            </div>
+            <div>
+              <span className="text-slate-600">Objetivo:</span>
+              <div className="font-semibold text-slate-900">Independência aos 50</div>
+            </div>
+            <div>
+              <span className="text-slate-600">Meta de renda:</span>
+              <div className="font-semibold text-green-600">R$ 10.000/mês</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Diagnóstico */}
+        <Card className="border border-slate-200">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <Calculator className="w-6 h-6 text-blue-600" />
+              <h4 className="text-lg font-semibold text-slate-900">📊 Diagnóstico financeiro</h4>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="bg-blue-50 rounded-lg p-4">
+                <div className="text-sm text-slate-600 mb-2">Meta de aposentadoria:</div>
+                <div className="font-bold text-slate-900">R$ 120.000/ano de renda passiva</div>
+                <div className="text-xs text-slate-500 mt-1">Aplicando regra dos 4%</div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-slate-600">Tem hoje:</span>
-                <span className="font-medium">R$ 15.000</span>
+              
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">Patrimônio necessário:</span>
+                  <span className="font-bold text-blue-900">R$ 3 milhões</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">Horizonte de tempo:</span>
+                  <span className="font-semibold">22 anos</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600">Rentabilidade esperada:</span>
+                  <span className="font-semibold">5,7% a.a. real</span>
+                </div>
               </div>
-              <div className="flex justify-between">
-                <span className="text-slate-600">Gap:</span>
-                <span className="font-medium text-orange-600">R$ 57.000</span>
-              </div>
-              <div className="flex justify-between pt-2 border-t">
-                <span className="text-slate-600">Investir/mês:</span>
-                <span className="font-bold text-blue-900">R$ 1.350</span>
+              
+              <div className="bg-green-50 rounded-lg p-3 border border-green-200">
+                <div className="flex items-center gap-2">
+                  <Target className="w-4 h-4 text-green-600" />
+                  <span className="font-semibold text-green-800">Resultado projetado: R$ 3,05 milhões ✅</span>
+                </div>
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Alocação */}
+        <Card className="border border-slate-200">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <PieChart className="w-6 h-6 text-purple-600" />
+              <h4 className="text-lg font-semibold text-slate-900">🧠 Alocação técnica</h4>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="font-medium text-slate-900">35% ETFs BR + EUA</div>
+                    <div className="text-xs text-slate-600">BOVA11 + IVVB11</div>
+                  </div>
+                  <div className="text-sm font-semibold text-blue-900">R$ 1.225</div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                  <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="font-medium text-slate-900">30% Tesouro IPCA+</div>
+                    <div className="text-xs text-slate-600">2045 e 2055</div>
+                  </div>
+                  <div className="text-sm font-semibold text-green-900">R$ 1.050</div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="font-medium text-slate-900">20% Fundos multimercado</div>
+                    <div className="text-xs text-slate-600">Volatilidade moderada</div>
+                  </div>
+                  <div className="text-sm font-semibold text-purple-900">R$ 700</div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                  <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="font-medium text-slate-900">10% Ações dividendos</div>
+                    <div className="text-xs text-slate-600">ITSA4, TAEE11, BBAS3</div>
+                  </div>
+                  <div className="text-sm font-semibold text-orange-900">R$ 350</div>
+                </div>
+                
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="w-3 h-3 bg-gray-600 rounded-full"></div>
+                  <div className="flex-1">
+                    <div className="font-medium text-slate-900">5% Caixa estratégico</div>
+                    <div className="text-xs text-slate-600">CDBs + liquidez</div>
+                  </div>
+                  <div className="text-sm font-semibold text-gray-900">R$ 175</div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Timeline de evolução */}
+      <Card className="border border-slate-200">
+        <CardContent className="p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <BarChart3 className="w-6 h-6 text-green-600" />
+            <h4 className="text-lg font-semibold text-slate-900">📊 Evolução patrimonial projetada</h4>
           </div>
           
-          <div>
-            <h5 className="font-medium text-slate-900 mb-3">🎯 Alocação</h5>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <div className="flex-1">
-                  <div className="text-sm font-medium">40% Tesouro IPCA</div>
-                  <div className="text-xs text-slate-600">R$ 540/mês</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <TrendingUp className="w-4 h-4 text-green-600" />
-                <div className="flex-1">
-                  <div className="text-sm font-medium">40% ETFs</div>
-                  <div className="text-xs text-slate-600">R$ 540/mês</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <DollarSign className="w-4 h-4 text-purple-600" />
-                <div className="flex-1">
-                  <div className="text-sm font-medium">20% Fundo</div>
-                  <div className="text-xs text-slate-600">R$ 270/mês</div>
-                </div>
-              </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="text-center p-4 bg-slate-50 rounded-lg">
+              <div className="text-2xl font-bold text-slate-900">5 anos</div>
+              <div className="text-sm text-slate-600 mt-1">R$ 300.000</div>
+            </div>
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <div className="text-2xl font-bold text-blue-900">10 anos</div>
+              <div className="text-sm text-slate-600 mt-1">R$ 830.000</div>
+            </div>
+            <div className="text-center p-4 bg-purple-50 rounded-lg">
+              <div className="text-2xl font-bold text-purple-900">15 anos</div>
+              <div className="text-sm text-slate-600 mt-1">R$ 1,55 milhão</div>
+            </div>
+            <div className="text-center p-4 bg-orange-50 rounded-lg">
+              <div className="text-2xl font-bold text-orange-900">20 anos</div>
+              <div className="text-sm text-slate-600 mt-1">R$ 2,45 milhões</div>
+            </div>
+            <div className="text-center p-4 bg-green-50 rounded-lg border-2 border-green-200">
+              <div className="text-2xl font-bold text-green-900">22 anos ✅</div>
+              <div className="text-sm text-green-700 font-medium mt-1">R$ 3,05 milhões</div>
             </div>
           </div>
-        </div>
-        
-        <div className="mt-4 p-3 bg-white rounded-lg border border-blue-200">
-          <div className="flex items-center gap-2 mb-1">
-            <Target className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-slate-900">Meta em 15 anos:</span>
+        </CardContent>
+      </Card>
+
+      {/* Como a Finwise gera o plano */}
+      <Card className="border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-purple-50">
+        <CardContent className="p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <Brain className="w-6 h-6 text-blue-600" />
+            <h4 className="text-lg font-semibold text-slate-900">🧩 Como a Finwise gera esse plano?</h4>
           </div>
-          <p className="text-sm text-slate-600">
-            Renda passiva de <strong>R$ 10.000/mês</strong> com patrimônio de ~R$ 500.000
+          
+          <p className="text-slate-700 leading-relaxed mb-4">
+            A AI da Finwise usa <strong>dados de 40+ anos de mercado</strong>, simulações de Monte Carlo, 
+            lógica de otimização de Sharpe Ratio e cenários macroeconômicos para construir o plano 
+            mais eficiente dentro do seu perfil e dos seus objetivos.
           </p>
-        </div>
-      </CardContent>
-    </Card>
+          
+          <div className="bg-white rounded-lg p-4 border border-blue-200">
+            <p className="text-slate-800 font-medium">
+              <span className="text-blue-900">Não é uma recomendação genérica.</span> É uma engenharia financeira personalizada.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

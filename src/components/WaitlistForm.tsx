@@ -10,14 +10,12 @@ import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 
 interface WaitlistFormData {
   name: string;
-  email: string;
   phone: string;
 }
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState<WaitlistFormData>({
     name: '',
-    email: '',
     phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -63,7 +61,7 @@ const WaitlistForm = () => {
         .from('waitlist_leads')
         .insert({
           name: formData.name,
-          email: formData.email || null,
+          email: null,
           phone: formData.phone,
           income_range: null,
           current_investments: null,
@@ -93,7 +91,6 @@ const WaitlistForm = () => {
       // Reset form
       setFormData({
         name: '',
-        email: '',
         phone: ''
       });
 
@@ -142,18 +139,6 @@ const WaitlistForm = () => {
               required
             />
           </div>
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-gray-700">E-mail (opcional)</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="seu@email.com"
-            value={formData.email}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            className="border-gray-300"
-          />
         </div>
         
         <Button 
