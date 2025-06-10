@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Users, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface WaitlistFormData {
   name: string;
@@ -29,6 +30,7 @@ const WaitlistForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { trackFormSubmission } = useAnalytics();
 
   const handleInputChange = (field: keyof WaitlistFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -48,10 +50,10 @@ const WaitlistForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email) {
+    if (!formData.name || !formData.phone) {
       toast({
-        title: "Preencha todos os campos obrigatórios",
-        description: "Nome e email são obrigatórios para entrar na lista.",
+        title: "Preencha os campos obrigatórios",
+        description: "Nome e WhatsApp são obrigatórios para entrar na lista.",
         variant: "destructive",
       });
       return;
@@ -62,12 +64,15 @@ const WaitlistForm = () => {
     try {
       const utmParams = getUTMParams();
       
+      // Track form submission
+      trackFormSubmission(formData);
+      
       const { error } = await supabase
         .from('waitlist_leads')
         .insert({
           name: formData.name,
-          email: formData.email,
-          phone: formData.phone || null,
+          email: formData.email || null,
+          phone: formData.phone,
           income_range: formData.income_range || null,
           current_investments: formData.current_investments || null,
           main_challenge: formData.main_challenge || null,
@@ -78,8 +83,8 @@ const WaitlistForm = () => {
       if (error) {
         if (error.code === '23505') { // Unique constraint violation
           toast({
-            title: "Email já cadastrado",
-            description: "Este email já está na nossa lista de espera!",
+            title: "WhatsApp já cadastrado",
+            description: "Este WhatsApp já está na nossa lista de espera!",
             variant: "destructive",
           });
         } else {
@@ -90,7 +95,7 @@ const WaitlistForm = () => {
 
       toast({
         title: "Bem-vindo à Finwise! 🎉",
-        description: "Você está na nossa waitlist. Em breve entraremos em contato!",
+        description: "Você está na nossa waitlist. Em breve entraremos em contato via WhatsApp!",
       });
 
       // Reset form
@@ -116,15 +121,15 @@ const WaitlistForm = () => {
   };
 
   return (
-    <Card className="bg-white/10 border-white/20 backdrop-blur-sm p-8">
+    <Card className="bg-white/10 border-white/20 backdrop-blur-sm p-8" id="waitlist-form">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-white">Nome completo *</Label>
+            <Label htmlFor="name" className="text-white">Como gostaria de ser chamado? *</Label>
             <Input
               id="name"
               type="text"
-              placeholder="Seu nome completo"
+              placeholder="Seu nome ou apelido"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
               className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
@@ -133,7 +138,7 @@ const WaitlistForm = () => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white">WhatsApp (opcional)</Label>
+            <Label htmlFor="phone" className="text-white">WhatsApp *</Label>
             <Input
               id="phone"
               type="tel"
@@ -141,12 +146,13 @@ const WaitlistForm = () => {
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
+              required
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-white">Email *</Label>
+          <Label htmlFor="email" className="text-white">Email (opcional)</Label>
           <Input
             id="email"
             type="email"
@@ -154,56 +160,59 @@ const WaitlistForm = () => {
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
             className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-            required
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="space-y-2">
-            <Label className="text-white">Faixa de renda mensal</Label>
-            <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
-              <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                <SelectValue placeholder="Selecione" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="6k-10k">R$ 6.000 - R$ 10.000</SelectItem>
-                <SelectItem value="10k-20k">R$ 10.000 - R$ 20.000</SelectItem>
-                <SelectItem value="20k-30k">R$ 20.000 - R$ 30.000</SelectItem>
-                <SelectItem value="30k+">Acima de R$ 30.000</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+        <div className="space-y-4">
+          <h3 className="text-white text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <Label className="text-white text-sm">Faixa de renda mensal</Label>
+              <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue placeholder="Selecione" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="6k-10k">R$ 6.000 - R$ 10.000</SelectItem>
+                  <SelectItem value="10k-20k">R$ 10.000 - R$ 20.000</SelectItem>
+                  <SelectItem value="20k-30k">R$ 20.000 - R$ 30.000</SelectItem>
+                  <SelectItem value="30k+">Acima de R$ 30.000</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-          <div className="space-y-2">
-            <Label className="text-white">Patrimônio investido atual</Label>
-            <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
-              <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                <SelectValue placeholder="Selecione" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="0-10k">R$ 0 - R$ 10.000</SelectItem>
-                <SelectItem value="10k-50k">R$ 10.000 - R$ 50.000</SelectItem>
-                <SelectItem value="50k-100k">R$ 50.000 - R$ 100.000</SelectItem>
-                <SelectItem value="100k-500k">R$ 100.000 - R$ 500.000</SelectItem>
-                <SelectItem value="500k+">Acima de R$ 500.000</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+            <div className="space-y-2">
+              <Label className="text-white text-sm">Patrimônio investido atual</Label>
+              <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue placeholder="Selecione" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="0-10k">R$ 0 - R$ 10.000</SelectItem>
+                  <SelectItem value="10k-50k">R$ 10.000 - R$ 50.000</SelectItem>
+                  <SelectItem value="50k-100k">R$ 50.000 - R$ 100.000</SelectItem>
+                  <SelectItem value="100k-500k">R$ 100.000 - R$ 500.000</SelectItem>
+                  <SelectItem value="500k+">Acima de R$ 500.000</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-          <div className="space-y-2">
-            <Label className="text-white">Maior desafio atual</Label>
-            <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
-              <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                <SelectValue placeholder="Selecione" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="nao-sei-investir">Não sei como investir</SelectItem>
-                <SelectItem value="falta-tempo">Falta de tempo</SelectItem>
-                <SelectItem value="desconfianca-assessores">Desconfiança dos assessores</SelectItem>
-                <SelectItem value="falta-constancia">Falta de constância</SelectItem>
-                <SelectItem value="outros">Outros</SelectItem>
-              </SelectContent>
-            </Select>
+            <div className="space-y-2">
+              <Label className="text-white text-sm">Maior desafio atual</Label>
+              <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue placeholder="Selecione" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="nao-sei-investir">Não sei como investir</SelectItem>
+                  <SelectItem value="falta-tempo">Falta de tempo</SelectItem>
+                  <SelectItem value="desconfianca-assessores">Desconfiança dos assessores</SelectItem>
+                  <SelectItem value="falta-constancia">Falta de constância</SelectItem>
+                  <SelectItem value="outros">Outros</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
         
@@ -227,7 +236,7 @@ const WaitlistForm = () => {
         </Button>
         
         <p className="text-slate-400 text-sm text-center">
-          * Ao se cadastrar, você concorda em receber comunicações da Finwise. 
+          * Ao se cadastrar, você concorda em receber comunicações da Finwise via WhatsApp. 
           Seus dados estão seguros e você pode cancelar a qualquer momento.
         </p>
       </form>

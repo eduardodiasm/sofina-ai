@@ -4,8 +4,28 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, MessageCircle, Zap, Shield, TrendingUp, Users, Clock, X, ArrowRight, Target, Star } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { useEffect } from "react";
 
 const Index = () => {
+  const { trackPageView, trackCTAClick } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView('landing_page');
+  }, []);
+
+  const scrollToForm = () => {
+    const formElement = document.getElementById('waitlist-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  const handleCTAClick = (ctaName: string, location: string) => {
+    trackCTAClick(ctaName, location);
+    scrollToForm();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       {/* Header */}
@@ -22,7 +42,7 @@ const Index = () => {
           <div className="flex items-center space-x-4">
             <Badge variant="secondary" className="bg-green-500/20 text-green-300 border-green-400/30 animate-pulse">
               <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-              VAGAS LIMITADAS
+              ACESSO ANTECIPADO
             </Badge>
           </div>
         </div>
@@ -32,9 +52,9 @@ const Index = () => {
       <section className="relative px-4 py-20 text-center">
         <div className="max-w-5xl mx-auto">
           {/* Urgência */}
-          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-400/20 rounded-full px-4 py-2 mb-8">
-            <Clock className="w-4 h-4 text-red-400" />
-            <span className="text-red-300 text-sm font-medium">Últimas 127 vagas para acesso antecipado</span>
+          <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-2 mb-8">
+            <Clock className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-300 text-sm font-medium">Últimos dias de inscrição gratuita</span>
           </div>
           
           {/* Headline Brutal */}
@@ -65,7 +85,11 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg"
+              onClick={() => handleCTAClick('QUERO_MINHA_ESTRATEGIA', 'hero_section')}
+            >
               <Target className="w-5 h-5 mr-2" />
               QUERO MINHA ESTRATÉGIA GRÁTIS
             </Button>
@@ -79,11 +103,11 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-400 text-sm">
             <div className="flex items-center space-x-2">
               <Users className="w-4 h-4 text-blue-400" />
-              <span><strong className="text-white">847 pessoas</strong> já garantiram acesso</span>
+              <span><strong className="text-white">347 pessoas</strong> já garantiram acesso</span>
             </div>
             <div className="flex items-center space-x-2">
               <Star className="w-4 h-4 text-yellow-400" />
-              <span>Criado por <strong className="text-white">ex-BTG e especialistas em IA</strong></span>
+              <span>Criado por <strong className="text-white">especialistas em AI e mercado financeiro</strong></span>
             </div>
           </div>
         </div>
@@ -197,7 +221,11 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold px-8 py-4 text-lg"
+              onClick={() => handleCTAClick('COMECAR_AGORA', 'how_it_works')}
+            >
               <MessageCircle className="w-5 h-5 mr-2" />
               COMEÇAR AGORA (GRÁTIS)
             </Button>
@@ -309,16 +337,16 @@ const Index = () => {
       {/* Waitlist Section */}
       <section className="px-4 py-20 bg-gradient-to-r from-slate-900 to-blue-900">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center space-x-2 bg-red-500/10 border border-red-400/20 rounded-full px-4 py-2 mb-8">
-            <Clock className="w-4 h-4 text-red-400" />
-            <span className="text-red-300 text-sm font-medium">Últimas horas - oferta encerra em breve</span>
+          <div className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-2 mb-8">
+            <Clock className="w-4 h-4 text-blue-400" />
+            <span className="text-blue-300 text-sm font-medium">Últimos dias de inscrição gratuita</span>
           </div>
           
           <h2 className="text-4xl font-bold text-white mb-4">
             Chega de adiar sua liberdade financeira
           </h2>
           <p className="text-xl text-slate-300 mb-8">
-            Garante sua vaga para ser um dos primeiros a usar a Finwise. 
+            Garanta sua vaga para ser um dos primeiros a usar a Finwise. 
             <strong className="text-green-300"> 30 dias totalmente grátis.</strong>
           </p>
           
