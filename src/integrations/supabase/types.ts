@@ -46,7 +46,7 @@ export type Database = {
         Row: {
           created_at: string
           current_investments: string | null
-          email: string | null
+          email: string
           id: string
           income_range: string | null
           ip_address: unknown | null
@@ -64,7 +64,7 @@ export type Database = {
         Insert: {
           created_at?: string
           current_investments?: string | null
-          email?: string | null
+          email: string
           id?: string
           income_range?: string | null
           ip_address?: unknown | null
@@ -82,7 +82,7 @@ export type Database = {
         Update: {
           created_at?: string
           current_investments?: string | null
-          email?: string | null
+          email?: string
           id?: string
           income_range?: string | null
           ip_address?: unknown | null
