@@ -30,7 +30,7 @@ const WaitlistForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { trackFormSubmission } = useAnalytics();
+  const { trackFormSubmission, trackCTAClick } = useAnalytics();
 
   const handleInputChange = (field: keyof WaitlistFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -65,7 +65,7 @@ const WaitlistForm = () => {
       const utmParams = getUTMParams();
       
       // Track form submission
-      trackFormSubmission(formData);
+      await trackFormSubmission(formData);
       
       const { error } = await supabase
         .from('waitlist_leads')
@@ -118,6 +118,10 @@ const WaitlistForm = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleCTAClick = () => {
+    trackCTAClick("Garantir Acesso Gratuito", "waitlist-form");
   };
 
   return (
@@ -220,6 +224,7 @@ const WaitlistForm = () => {
           type="submit" 
           size="lg" 
           disabled={isSubmitting}
+          onClick={handleCTAClick}
           className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 text-lg disabled:opacity-50"
         >
           {isSubmitting ? (
