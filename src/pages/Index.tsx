@@ -1,9 +1,12 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, MessageCircle, Target, Star, Users, Shield, TrendingUp, Clock, DollarSign, BarChart3, AlertCircle, Phone } from 'lucide-react';
+import { CheckCircle, MessageCircle, Target, Star, Users, Shield, TrendingUp, Clock, DollarSign, BarChart3, AlertCircle, Phone, Zap, BookOpen } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
 import SimpleTrackedButton from "@/components/SimpleTrackedButton";
+import ChatPreview from "@/components/ChatPreview";
+import PersonalizedPlanExample from "@/components/PersonalizedPlanExample";
+import ThirtyDayFlow from "@/components/ThirtyDayFlow";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
@@ -35,7 +38,7 @@ const Index = () => {
             <span className="text-2xl font-bold text-slate-900">Finwise</span>
           </div>
           <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
-            Acesso Antecipado
+            30 dias grátis
           </Badge>
         </div>
       </header>
@@ -49,7 +52,7 @@ const Index = () => {
           </h1>
           
           <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Entenda por que seus investimentos não <strong className="text-blue-900">evoluem</strong> — e <strong className="text-blue-900">corrija</strong> em 30 dias com a ajuda de um <strong className="text-blue-900">copiloto</strong> financeiro imparcial no WhatsApp.
+            Receba um <strong className="text-blue-900">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-blue-900">resultados reais</strong>.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -66,16 +69,16 @@ const Index = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
             <div className="flex items-center space-x-2">
-              <BarChart3 className="w-4 h-4 text-blue-900" />
-              <span>Estratégia personalizada via IA</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4 text-blue-900" />
-              <span>Em menos de 3 minutos</span>
+              <Zap className="w-4 h-4 text-blue-900" />
+              <span>Plano pronto em 3 minutos</span>
             </div>
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-blue-900" />
-              <span>Sem conflito de interesse</span>
+              <span>30 dias grátis, sem compromisso</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <BarChart3 className="w-4 h-4 text-blue-900" />
+              <span>Valores e ativos específicos</span>
             </div>
           </div>
 
@@ -87,49 +90,106 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How it Works */}
+      {/* Como funciona na prática */}
       <section className="px-6 py-20 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Como funciona
+              Veja como funciona na prática
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Um processo simples para transformar sua relação com o dinheiro
+              Não é teoria. É um plano específico com valores exatos para sua situação.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-blue-900 font-bold text-xl">1</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Diagnóstico Rápido</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Responda 5 perguntas no WhatsApp e descubra onde está o erro nos seus investimentos.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                Conversa real no WhatsApp
+              </h3>
+              <p className="text-slate-600 mb-6">
+                Você responde 5 perguntas rápidas sobre renda, objetivos e perfil. 
+                Em seguida, recebe um plano específico com quanto investir e onde.
               </p>
+              
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span>"Qual sua renda líquida mensal?"</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span>"Você tem reserva guardada hoje?"</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span>"Qual seu maior objetivo financeiro?"</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span>"Quanto você se sente confiante para investir?"</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span>"Você investe todo mês ou só quando sobra?"</span>
+                </div>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-blue-900 font-bold text-xl">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Estratégia Personalizada</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Receba um plano claro com quanto investir, onde e por quê — baseado no seu perfil.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-blue-900 font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">Acompanhamento Inteligente</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Mantenha a consistência com lembretes, explicações e evolução mês a mês.
-              </p>
+            <div>
+              <ChatPreview />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Exemplo de Plano Personalizado */}
+      <section className="px-6 py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Exemplo de plano personalizado
+            </h2>
+            <p className="text-lg text-slate-600">
+              Veja como seria um plano real baseado no seu perfil
+            </p>
+          </div>
+          
+          <PersonalizedPlanExample />
+          
+          <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+            <h4 className="font-semibold text-slate-900 mb-3">💡 Por que essa alocação?</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <span className="font-medium text-blue-900">Tesouro IPCA:</span>
+                <span className="text-slate-600 ml-1">Proteção contra inflação e previsibilidade</span>
+              </div>
+              <div>
+                <span className="font-medium text-blue-900">ETFs:</span>
+                <span className="text-slate-600 ml-1">Crescimento no Brasil (BOVA11) e EUA (IVVB11)</span>
+              </div>
+              <div>
+                <span className="font-medium text-blue-900">Fundo:</span>
+                <span className="text-slate-600 ml-1">Equilíbrio e liquidez para emergências</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fluxo de 30 dias */}
+      <section className="px-6 py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Seus primeiros 30 dias grátis
+            </h2>
+            <p className="text-lg text-slate-600">
+              Veja exatamente o que acontece no período de teste
+            </p>
+          </div>
+          
+          <ThirtyDayFlow />
         </div>
       </section>
 
@@ -237,8 +297,87 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* Depoimentos simulados */}
       <section className="px-6 py-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Resultados reais em 30 dias
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border border-slate-200">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-blue-900 font-semibold text-sm">MC</span>
+                  </div>
+                  <div>
+                    <div className="font-medium text-slate-900">Marina C.</div>
+                    <div className="text-xs text-slate-600">Advogada, 29 anos</div>
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">
+                  "Finalmente entendi onde investir meus R$ 8k/mês. O plano foi super claro e agora invisto com confiança."
+                </p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-slate-200">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span className="text-green-900 font-semibold text-sm">RS</span>
+                  </div>
+                  <div>
+                    <div className="font-medium text-slate-900">Roberto S.</div>
+                    <div className="text-xs text-slate-600">Engenheiro, 35 anos</div>
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">
+                  "Estava perdido com tantas opções. A Finwise me mostrou exatamente os 3 ativos certos para meu perfil."
+                </p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border border-slate-200">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span className="text-purple-900 font-semibold text-sm">AL</span>
+                  </div>
+                  <div>
+                    <div className="font-medium text-slate-900">Ana L.</div>
+                    <div className="text-xs text-slate-600">Consultora, 31 anos</div>
+                  </div>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">
+                  "Os lembretes no WhatsApp me ajudaram a criar o hábito. Já investi 3 meses seguidos pela primeira vez!"
+                </p>
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Audience Section */}
+      <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-12">
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Finwise?</h3>
@@ -249,11 +388,11 @@ const Index = () => {
               </div>
               <div className="flex flex-col items-center">
                 <DollarSign className="w-8 h-8 text-blue-900 mb-2" />
-                <span className="font-medium">Já investe R$10k-R$500k ou quer começar direito</span>
+                <span className="font-medium">Renda R$6k+ e quer investir direito</span>
               </div>
               <div className="flex flex-col items-center">
                 <BarChart3 className="w-8 h-8 text-blue-900 mb-2" />
-                <span className="font-medium">Resultado: plano claro + evolução real todo mês</span>
+                <span className="font-medium">Resultado: clareza + crescimento consistente</span>
               </div>
             </div>
           </div>
@@ -261,20 +400,20 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 bg-slate-50">
+      <section className="px-6 py-20">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Receba seu plano financeiro no WhatsApp
+            Comece seus 30 dias grátis agora
           </h2>
           <p className="text-lg text-slate-600 mb-12">
-            Preencha em 1 minuto e comece a investir com clareza e confiança.
+            Preencha em 1 minuto e receba seu plano financeiro personalizado no WhatsApp.
           </p>
           
           <WaitlistForm />
           
           <div className="mt-8 flex items-center justify-center text-slate-500 text-sm">
             <Shield className="w-4 h-4 mr-2" />
-            <span>Seus dados estão protegidos. Sem spam. Você pode sair quando quiser.</span>
+            <span>30 dias grátis • Cancele quando quiser • Sem compromisso</span>
           </div>
         </div>
       </section>
