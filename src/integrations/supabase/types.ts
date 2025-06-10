@@ -9,7 +9,63 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      waitlist_leads: {
+        Row: {
+          created_at: string
+          current_investments: string | null
+          email: string
+          id: string
+          income_range: string | null
+          ip_address: unknown | null
+          main_challenge: string | null
+          name: string
+          phone: string | null
+          updated_at: string
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          created_at?: string
+          current_investments?: string | null
+          email: string
+          id?: string
+          income_range?: string | null
+          ip_address?: unknown | null
+          main_challenge?: string | null
+          name: string
+          phone?: string | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          created_at?: string
+          current_investments?: string | null
+          email?: string
+          id?: string
+          income_range?: string | null
+          ip_address?: unknown | null
+          main_challenge?: string | null
+          name?: string
+          phone?: string | null
+          updated_at?: string
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

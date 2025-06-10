@@ -1,42 +1,10 @@
-
-import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, MessageCircle, Zap, Shield, TrendingUp, Users } from 'lucide-react';
-import { useToast } from "@/hooks/use-toast";
+import WaitlistForm from "@/components/WaitlistForm";
 
 const Index = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const { toast } = useToast();
-
-  const handleWaitlistSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !name) {
-      toast({
-        title: "Preencha todos os campos obrigatórios",
-        description: "Nome e email são obrigatórios para entrar na lista.",
-        variant: "destructive",
-      });
-      return;
-    }
-    
-    // Aqui você integraria com sua solução de backend/formulário
-    console.log('Dados do lead:', { name, email, phone });
-    
-    toast({
-      title: "Bem-vindo à Finwise! 🎉",
-      description: "Você está na nossa waitlist. Em breve entraremos em contato!",
-    });
-    
-    setEmail('');
-    setName('');
-    setPhone('');
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       {/* Header */}
@@ -276,50 +244,7 @@ const Index = () => {
             <strong className="text-blue-300"> Totalmente gratuito por 30 dias.</strong>
           </p>
           
-          <Card className="bg-white/10 border-white/20 backdrop-blur-sm p-8">
-            <form onSubmit={handleWaitlistSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input
-                  type="text"
-                  placeholder="Seu nome completo *"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                  required
-                />
-                <Input
-                  type="tel"
-                  placeholder="WhatsApp (opcional)"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                />
-              </div>
-              
-              <Input
-                type="email"
-                placeholder="Seu melhor email *"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
-                required
-              />
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 text-lg"
-              >
-                <Users className="w-5 h-5 mr-2" />
-                Garantir Meu Acesso Gratuito
-              </Button>
-              
-              <p className="text-slate-400 text-sm">
-                * Ao se cadastrar, você concorda em receber comunicações da Finwise. 
-                Seus dados estão seguros e você pode cancelar a qualquer momento.
-              </p>
-            </form>
-          </Card>
+          <WaitlistForm />
           
           <div className="mt-8 text-slate-400">
             <p className="mb-2">🎯 <strong className="text-white">Público-alvo:</strong> Profissionais de 28-40 anos, renda R$6k-R$30k</p>
