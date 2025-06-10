@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Users, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 
 interface WaitlistFormData {
   name: string;
@@ -30,7 +30,7 @@ const WaitlistForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { trackFormSubmission, trackCTAClick } = useAnalytics();
+  const { trackCTAClick } = useSimpleAnalytics();
 
   const handleInputChange = (field: keyof WaitlistFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -65,7 +65,7 @@ const WaitlistForm = () => {
       const utmParams = getUTMParams();
       
       // Track form submission
-      await trackFormSubmission(formData);
+      trackCTAClick("Form Submission - Waitlist");
       
       const { error } = await supabase
         .from('waitlist_leads')
@@ -121,60 +121,60 @@ const WaitlistForm = () => {
   };
 
   const handleCTAClick = () => {
-    trackCTAClick("Garantir Acesso Gratuito", "waitlist-form");
+    trackCTAClick("Garantir Acesso Gratuito");
   };
 
   return (
-    <Card className="bg-white/10 border-white/20 backdrop-blur-sm p-8" id="waitlist-form">
+    <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm" id="waitlist-form">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-white">Como gostaria de ser chamado? *</Label>
+            <Label htmlFor="name" className="text-gray-700">Como gostaria de ser chamado? *</Label>
             <Input
               id="name"
               type="text"
               placeholder="Seu nome ou apelido"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
+              className="border-gray-300"
               required
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white">WhatsApp *</Label>
+            <Label htmlFor="phone" className="text-gray-700">WhatsApp *</Label>
             <Input
               id="phone"
               type="tel"
               placeholder="(11) 99999-9999"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
+              className="border-gray-300"
               required
             />
           </div>
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-white">Email (opcional)</Label>
+          <Label htmlFor="email" className="text-gray-700">Email (opcional)</Label>
           <Input
             id="email"
             type="email"
             placeholder="seu@email.com"
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
-            className="bg-white/10 border-white/20 text-white placeholder:text-slate-400"
+            className="border-gray-300"
           />
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-white text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
+          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label className="text-white text-sm">Faixa de renda mensal</Label>
+              <Label className="text-gray-600 text-sm">Faixa de renda mensal</Label>
               <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
-                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
@@ -187,9 +187,9 @@ const WaitlistForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label className="text-white text-sm">Patrimônio investido atual</Label>
+              <Label className="text-gray-600 text-sm">Patrimônio investido atual</Label>
               <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
-                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
@@ -203,9 +203,9 @@ const WaitlistForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label className="text-white text-sm">Maior desafio atual</Label>
+              <Label className="text-gray-600 text-sm">Maior desafio atual</Label>
               <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
-                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
                 <SelectContent>
@@ -225,7 +225,7 @@ const WaitlistForm = () => {
           size="lg" 
           disabled={isSubmitting}
           onClick={handleCTAClick}
-          className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 text-lg disabled:opacity-50"
+          className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 text-lg disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
@@ -240,12 +240,12 @@ const WaitlistForm = () => {
           )}
         </Button>
         
-        <p className="text-slate-400 text-sm text-center">
+        <p className="text-gray-500 text-sm text-center">
           * Ao se cadastrar, você concorda em receber comunicações da Finwise via WhatsApp. 
           Seus dados estão seguros e você pode cancelar a qualquer momento.
         </p>
       </form>
-    </Card>
+    </div>
   );
 };
 

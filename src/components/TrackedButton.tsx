@@ -1,17 +1,16 @@
 
 import { Button, ButtonProps } from "@/components/ui/button";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 
 interface TrackedButtonProps extends ButtonProps {
   ctaName: string;
-  location: string;
 }
 
-const TrackedButton = ({ ctaName, location, onClick, children, ...props }: TrackedButtonProps) => {
-  const { trackCTAClick } = useAnalytics();
+const TrackedButton = ({ ctaName, onClick, children, ...props }: TrackedButtonProps) => {
+  const { trackCTAClick } = useSimpleAnalytics();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    trackCTAClick(ctaName, location);
+    trackCTAClick(ctaName);
     if (onClick) {
       onClick(e);
     }
