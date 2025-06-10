@@ -5,7 +5,6 @@ import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarCh
 import WaitlistForm from "@/components/WaitlistForm";
 import HeroForm from "@/components/HeroForm";
 import PersonalizedPlanExample from "@/components/PersonalizedPlanExample";
-import ThirtyDayFlow from "@/components/ThirtyDayFlow";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
@@ -107,65 +106,6 @@ const Index = () => {
                 <span className="text-slate-600 ml-1">Equilíbrio e liquidez para emergências</span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fluxo de 30 dias */}
-      <section className="px-6 py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Seus primeiros 30 dias grátis
-            </h2>
-            <p className="text-lg text-slate-600">
-              Veja exatamente o que acontece no período de teste
-            </p>
-          </div>
-          
-          <ThirtyDayFlow />
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="px-6 py-20">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Por que escolher a Finwise
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border border-slate-200 hover:border-blue-200 transition-colors">
-              <CardContent className="p-8 text-center">
-                <Shield className="w-12 h-12 text-blue-900 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">100% Imparcial</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Nossa receita vem só da sua mensalidade. Não vendemos produtos.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border border-slate-200 hover:border-blue-200 transition-colors">
-              <CardContent className="p-8 text-center">
-                <MessageCircle className="w-12 h-12 text-blue-900 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Via WhatsApp</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Sem app, sem burocracia. Tudo direto no canal que você já usa.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border border-slate-200 hover:border-blue-200 transition-colors">
-              <CardContent className="p-8 text-center">
-                <TrendingUp className="w-12 h-12 text-blue-900 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Baseado em Dados</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  IA treinada com estratégias de sucesso e dados reais do mercado.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
