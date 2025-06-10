@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -13,19 +12,13 @@ interface WaitlistFormData {
   name: string;
   email: string;
   phone: string;
-  income_range: string;
-  current_investments: string;
-  main_challenge: string;
 }
 
 const WaitlistForm = () => {
   const [formData, setFormData] = useState<WaitlistFormData>({
     name: '',
     email: '',
-    phone: '',
-    income_range: '',
-    current_investments: '',
-    main_challenge: ''
+    phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -72,9 +65,9 @@ const WaitlistForm = () => {
           name: formData.name,
           email: formData.email || null,
           phone: formData.phone,
-          income_range: formData.income_range || null,
-          current_investments: formData.current_investments || null,
-          main_challenge: formData.main_challenge || null,
+          income_range: null,
+          current_investments: null,
+          main_challenge: null,
           ...utmParams,
           user_agent: navigator.userAgent
         });
@@ -101,10 +94,7 @@ const WaitlistForm = () => {
       setFormData({
         name: '',
         email: '',
-        phone: '',
-        income_range: '',
-        current_investments: '',
-        main_challenge: ''
+        phone: ''
       });
 
     } catch (error) {
@@ -164,58 +154,6 @@ const WaitlistForm = () => {
             onChange={(e) => handleInputChange('email', e.target.value)}
             className="border-gray-300"
           />
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Renda mensal (opcional)</Label>
-              <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
-                <SelectTrigger className="border-gray-300">
-                  <SelectValue placeholder="Selecione" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="6k-8k">R$ 6k - R$ 8k</SelectItem>
-                  <SelectItem value="8k-12k">R$ 8k - R$ 12k</SelectItem>
-                  <SelectItem value="12k-20k">R$ 12k - R$ 20k</SelectItem>
-                  <SelectItem value="20k+">+ R$ 20k</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Investimentos atuais (opcional)</Label>
-              <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
-                <SelectTrigger className="border-gray-300">
-                  <SelectValue placeholder="Selecione" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="nao-invisto">Não invisto</SelectItem>
-                  <SelectItem value="0-10k">Menos de R$ 10k</SelectItem>
-                  <SelectItem value="10k-50k">R$ 10k - R$ 50k</SelectItem>
-                  <SelectItem value="50k-500k">R$ 50k - R$ 500k</SelectItem>
-                  <SelectItem value="500k+">+ R$ 500k</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Principal desafio (opcional)</Label>
-              <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
-                <SelectTrigger className="border-gray-300">
-                  <SelectValue placeholder="Selecione" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="falta-tempo">Falta de tempo</SelectItem>
-                  <SelectItem value="falta-clareza">Falta de clareza</SelectItem>
-                  <SelectItem value="medo-perder">Medo de perder dinheiro</SelectItem>
-                  <SelectItem value="dificuldade-constancia">Dificuldade em investir todo mês</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
         </div>
         
         <Button 
