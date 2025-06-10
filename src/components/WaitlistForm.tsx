@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
@@ -129,7 +128,7 @@ const WaitlistForm = () => {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-gray-700">Seu nome ou apelido *</Label>
+            <Label htmlFor="name" className="text-gray-700">Seu nome *</Label>
             <Input
               id="name"
               type="text"
@@ -142,7 +141,7 @@ const WaitlistForm = () => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-gray-700">Seu WhatsApp com DDD *</Label>
+            <Label htmlFor="phone" className="text-gray-700">Seu WhatsApp *</Label>
             <Input
               id="phone"
               type="tel"
@@ -168,11 +167,11 @@ const WaitlistForm = () => {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (ajudam a personalizar sua experiência):</h3>
+          <h3 className="text-gray-700 text-sm font-medium">Informações opcionais (nos ajudam a personalizar sua experiência):</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Qual sua renda mensal média hoje?</Label>
+              <Label className="text-gray-600 text-sm">Renda mensal (opcional)</Label>
               <Select value={formData.income_range} onValueChange={(value) => handleInputChange('income_range', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
@@ -187,7 +186,7 @@ const WaitlistForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">Você já investiu quanto até agora?</Label>
+              <Label className="text-gray-600 text-sm">Investimentos atuais (opcional)</Label>
               <Select value={formData.current_investments} onValueChange={(value) => handleInputChange('current_investments', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />
@@ -203,7 +202,7 @@ const WaitlistForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label className="text-gray-600 text-sm">O que mais trava sua evolução financeira hoje?</Label>
+              <Label className="text-gray-600 text-sm">Principal desafio (opcional)</Label>
               <Select value={formData.main_challenge} onValueChange={(value) => handleInputChange('main_challenge', value)}>
                 <SelectTrigger className="border-gray-300">
                   <SelectValue placeholder="Selecione" />

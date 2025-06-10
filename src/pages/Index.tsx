@@ -1,10 +1,8 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, MessageCircle, Target, Star, Users, Shield, TrendingUp, Clock, DollarSign, BarChart3, AlertCircle, Phone, Zap, BookOpen } from 'lucide-react';
+import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
-import SimpleTrackedButton from "@/components/SimpleTrackedButton";
-import ChatPreview from "@/components/ChatPreview";
+import HeroForm from "@/components/HeroForm";
 import PersonalizedPlanExample from "@/components/PersonalizedPlanExample";
 import ThirtyDayFlow from "@/components/ThirtyDayFlow";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
@@ -16,13 +14,6 @@ const Index = () => {
   useEffect(() => {
     trackPageVisit();
   }, []);
-
-  const scrollToForm = () => {
-    const formElement = document.getElementById('waitlist-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -44,27 +35,22 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="px-6 py-20 text-center">
+      <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Você ganha bem. <br />
-            Mas seu dinheiro <span className="text-blue-900">não acompanha</span>.
-          </h1>
-          
-          <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Receba um <strong className="text-blue-900">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-blue-900">resultados reais</strong>.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <SimpleTrackedButton 
-              ctaName="HERO_CTA"
-              size="lg" 
-              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-8 py-4 text-lg rounded-lg flex items-center gap-2"
-              onClick={scrollToForm}
-            >
-              <Phone className="w-5 h-5" />
-              Quero meu plano no WhatsApp
-            </SimpleTrackedButton>
+          <div className="text-center mb-12">
+            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              Você ganha bem. <br />
+              Mas seu dinheiro <span className="text-blue-900">não acompanha</span>.
+            </h1>
+            
+            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Receba um <strong className="text-blue-900">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-blue-900">resultados reais</strong>.
+            </p>
+          </div>
+
+          {/* Hero Form */}
+          <div className="mb-12">
+            <HeroForm />
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
@@ -86,59 +72,6 @@ const Index = () => {
           <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
             <Users className="w-4 h-4" />
             <span>+500 profissionais já na lista de espera</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Como funciona na prática */}
-      <section className="px-6 py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Veja como funciona na prática
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Não é teoria. É um plano específico com valores exatos para sua situação.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                Conversa real no WhatsApp
-              </h3>
-              <p className="text-slate-600 mb-6">
-                Você responde 5 perguntas rápidas sobre renda, objetivos e perfil. 
-                Em seguida, recebe um plano específico com quanto investir e onde.
-              </p>
-              
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
-                  <span>"Qual sua renda líquida mensal?"</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
-                  <span>"Você tem reserva guardada hoje?"</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
-                  <span>"Qual seu maior objetivo financeiro?"</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
-                  <span>"Quanto você se sente confiante para investir?"</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
-                  <span>"Você investe todo mês ou só quando sobra?"</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <ChatPreview />
-            </div>
           </div>
         </div>
       </section>
@@ -376,23 +309,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* Target Audience Section - Updated */}
       <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-12">
             <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Finwise?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700">
               <div className="flex flex-col items-center">
-                <Target className="w-8 h-8 text-blue-900 mb-2" />
-                <span className="font-medium">Profissionais de 28-40 anos</span>
+                <Clock className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Para quem não tem tempo para estudar investimentos</span>
               </div>
               <div className="flex flex-col items-center">
-                <DollarSign className="w-8 h-8 text-blue-900 mb-2" />
-                <span className="font-medium">Renda R$6k+ e quer investir direito</span>
+                <Heart className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Para quem não confia em assessores tradicionais</span>
               </div>
               <div className="flex flex-col items-center">
-                <BarChart3 className="w-8 h-8 text-blue-900 mb-2" />
-                <span className="font-medium">Resultado: clareza + crescimento consistente</span>
+                <Brain className="w-8 h-8 text-blue-900 mb-2" />
+                <span className="font-medium">Para quem não quer ser um expert em finanças</span>
               </div>
             </div>
           </div>
