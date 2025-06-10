@@ -194,7 +194,7 @@ const WaitlistForm = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="nao-invisto">Não invisto</SelectItem>
-                  <SelectItem value="0-10k">< R$ 10k</SelectItem>
+                  <SelectItem value="0-10k">Menos de R$ 10k</SelectItem>
                   <SelectItem value="10k-50k">R$ 10k - R$ 50k</SelectItem>
                   <SelectItem value="50k-500k">R$ 50k - R$ 500k</SelectItem>
                   <SelectItem value="500k+">+ R$ 500k</SelectItem>
