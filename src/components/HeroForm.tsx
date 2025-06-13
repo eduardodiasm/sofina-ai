@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,7 +74,7 @@ const HeroForm = () => {
       }
 
       toast({
-        title: "Bem-vindo à Finwise! 🎉",
+        title: "Bem-vindo à Sofina! 🎉",
         description: "Você está na nossa waitlist. Em breve entraremos em contato via WhatsApp!",
       });
 
@@ -130,7 +129,7 @@ const HeroForm = () => {
           type="submit" 
           size="lg" 
           disabled={isSubmitting}
-          className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 text-base disabled:opacity-50"
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 text-base disabled:opacity-50"
         >
           {isSubmitting ? (
             <>

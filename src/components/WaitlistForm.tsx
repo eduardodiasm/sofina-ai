@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -84,7 +83,7 @@ const WaitlistForm = () => {
       }
 
       toast({
-        title: "Bem-vindo à Finwise! 🎉",
+        title: "Bem-vindo à Sofina! 🎉",
         description: "Você está na nossa waitlist. Em breve entraremos em contato via WhatsApp!",
       });
 
@@ -146,7 +145,7 @@ const WaitlistForm = () => {
           size="lg" 
           disabled={isSubmitting}
           onClick={handleCTAClick}
-          className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-4 text-lg disabled:opacity-50"
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 text-lg disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
@@ -162,7 +161,7 @@ const WaitlistForm = () => {
         </Button>
         
         <p className="text-gray-500 text-sm text-center">
-          * Ao se cadastrar, você concorda em receber comunicações da Finwise via WhatsApp. 
+          * Ao se cadastrar, você concorda em receber comunicações da Sofina via WhatsApp. 
           Seus dados estão seguros e você pode cancelar a qualquer momento.
         </p>
       </form>

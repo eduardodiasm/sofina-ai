@@ -22,13 +22,13 @@ const Index = () => {
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/ce78f769-77f0-443a-ab6a-2c7ceb6b2ec1.png" 
-              alt="Finwise Logo" 
+              src="/lovable-uploads/70787473-fe65-438d-a1dc-46e4702c32d2.png" 
+              alt="Sofina Logo" 
               className="w-10 h-10"
             />
-            <span className="text-2xl font-bold text-slate-900">Finwise</span>
+            <span className="text-2xl font-bold text-slate-900">Sofina</span>
           </div>
-          <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
+          <Badge variant="outline" className="border-green-200 text-green-700 bg-green-50">
             30 dias grátis
           </Badge>
         </div>
@@ -40,11 +40,11 @@ const Index = () => {
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
               Você ganha bem. <br />
-              Mas seu dinheiro <span className="text-blue-900">não acompanha</span>.
+              Mas seu dinheiro <span className="text-green-700">não acompanha</span>.
             </h1>
             
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Receba um <strong className="text-blue-900">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-blue-900">resultados reais</strong>.
+              Receba um <strong className="text-green-700">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-green-700">resultados reais</strong>.
             </p>
           </div>
 
@@ -55,15 +55,15 @@ const Index = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
             <div className="flex items-center space-x-2">
-              <Zap className="w-4 h-4 text-blue-900" />
+              <Zap className="w-4 h-4 text-green-700" />
               <span>Plano pronto em 3 minutos</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Shield className="w-4 h-4 text-blue-900" />
+              <Shield className="w-4 h-4 text-green-700" />
               <span>30 dias grátis, sem compromisso</span>
             </div>
             <div className="flex items-center space-x-2">
-              <BarChart3 className="w-4 h-4 text-blue-900" />
+              <BarChart3 className="w-4 h-4 text-green-700" />
               <span>Valores e ativos específicos</span>
             </div>
           </div>
@@ -90,19 +90,19 @@ const Index = () => {
           
           <PersonalizedPlanExample />
           
-          <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+          <div className="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
             <h4 className="font-semibold text-slate-900 mb-3">💡 Por que essa alocação?</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div>
-                <span className="font-medium text-blue-900">Tesouro IPCA:</span>
+                <span className="font-medium text-green-700">Tesouro IPCA:</span>
                 <span className="text-slate-600 ml-1">Proteção contra inflação e previsibilidade</span>
               </div>
               <div>
-                <span className="font-medium text-blue-900">ETFs:</span>
+                <span className="font-medium text-green-700">ETFs:</span>
                 <span className="text-slate-600 ml-1">Crescimento no Brasil (BOVA11) e EUA (IVVB11)</span>
               </div>
               <div>
-                <span className="font-medium text-blue-900">Fundo:</span>
+                <span className="font-medium text-green-700">Fundo:</span>
                 <span className="text-slate-600 ml-1">Equilíbrio e liquidez para emergências</span>
               </div>
             </div>
@@ -115,7 +115,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Finwise vs Assessoria Tradicional
+              Sofina vs Assessoria Tradicional
             </h2>
           </div>
           
@@ -144,24 +144,24 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-blue-200 bg-blue-50">
+            <Card className="border-2 border-green-200 bg-green-50">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">Finwise</h3>
+                <h3 className="text-xl font-semibold text-green-700 mb-6 text-center">Sofina</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
                     <span className="text-slate-700 font-medium">Recomendação com base em dados</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
                     <span className="text-slate-700 font-medium">A partir de R$39/mês, sem exigência</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
                     <span className="text-slate-700 font-medium">Simples, direto, via WhatsApp</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-blue-900 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
                     <span className="text-slate-700 font-medium">24h com IA e suporte de verdade</span>
                   </li>
                 </ul>
@@ -184,8 +184,8 @@ const Index = () => {
             <Card className="border border-slate-200">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-900 font-semibold text-sm">MC</span>
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span className="text-green-700 font-semibold text-sm">MC</span>
                   </div>
                   <div>
                     <div className="font-medium text-slate-900">Marina C.</div>
@@ -207,7 +207,7 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-900 font-semibold text-sm">RS</span>
+                    <span className="text-green-700 font-semibold text-sm">RS</span>
                   </div>
                   <div>
                     <div className="font-medium text-slate-900">Roberto S.</div>
@@ -215,7 +215,7 @@ const Index = () => {
                   </div>
                 </div>
                 <p className="text-sm text-slate-600 mb-3">
-                  "Estava perdido com tantas opções. A Finwise me mostrou exatamente os 3 ativos certos para meu perfil."
+                  "Estava perdido com tantas opções. A Sofina me mostrou exatamente os 3 ativos certos para meu perfil."
                 </p>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -229,7 +229,7 @@ const Index = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-900 font-semibold text-sm">AL</span>
+                    <span className="text-purple-700 font-semibold text-sm">AL</span>
                   </div>
                   <div>
                     <div className="font-medium text-slate-900">Ana L.</div>
@@ -250,22 +250,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Target Audience Section - Updated */}
+      {/* Target Audience Section */}
       <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 mb-12">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Finwise?</h3>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-8 mb-12">
+            <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Sofina?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700">
               <div className="flex flex-col items-center">
-                <Clock className="w-8 h-8 text-blue-900 mb-2" />
+                <Clock className="w-8 h-8 text-green-700 mb-2" />
                 <span className="font-medium">Para quem não tem tempo para estudar investimentos</span>
               </div>
               <div className="flex flex-col items-center">
-                <Heart className="w-8 h-8 text-blue-900 mb-2" />
+                <Heart className="w-8 h-8 text-green-700 mb-2" />
                 <span className="font-medium">Para quem não confia em assessores tradicionais</span>
               </div>
               <div className="flex flex-col items-center">
-                <Brain className="w-8 h-8 text-blue-900 mb-2" />
+                <Brain className="w-8 h-8 text-green-700 mb-2" />
                 <span className="font-medium">Para quem não quer ser um expert em finanças</span>
               </div>
             </div>
@@ -298,25 +298,25 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img 
-                src="/lovable-uploads/ce78f769-77f0-443a-ab6a-2c7ceb6b2ec1.png" 
-                alt="Finwise Logo" 
+                src="/lovable-uploads/70787473-fe65-438d-a1dc-46e4702c32d2.png" 
+                alt="Sofina Logo" 
                 className="w-8 h-8"
               />
-              <span className="text-xl font-bold text-slate-900">Finwise</span>
+              <span className="text-xl font-bold text-slate-900">Sofina</span>
             </div>
             <div className="text-center md:text-right">
               <p className="text-slate-600 text-sm mb-2">
                 Seu copiloto financeiro via WhatsApp
               </p>
               <p className="text-slate-500 text-xs">
-                © 2024 Finwise. Todos os direitos reservados.
+                © 2024 Sofina. Todos os direitos reservados.
               </p>
             </div>
           </div>
           
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-slate-500 text-sm">
-              <strong className="text-slate-600">Importante:</strong> Finwise oferece orientação educacional e não substitui aconselhamento financeiro profissional personalizado. 
+              <strong className="text-slate-600">Importante:</strong> Sofina oferece orientação educacional e não substitui aconselhamento financeiro profissional personalizado. 
               Investimentos envolvem riscos e rentabilidade passada não garante resultados futuros.
             </p>
           </div>
