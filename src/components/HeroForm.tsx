@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Phone, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 
 const HeroForm = () => {
   const [formData, setFormData] = useState({
@@ -14,18 +14,6 @@ const HeroForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { trackCTAClick } = useSimpleAnalytics();
-
-  const getUTMParams = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return {
-      utm_source: urlParams.get('utm_source'),
-      utm_medium: urlParams.get('utm_medium'),
-      utm_campaign: urlParams.get('utm_campaign'),
-      utm_term: urlParams.get('utm_term'),
-      utm_content: urlParams.get('utm_content')
-    };
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,22 +30,11 @@ const HeroForm = () => {
     setIsSubmitting(true);
 
     try {
-      const utmParams = getUTMParams();
-      
-      // Track form submission
-      trackCTAClick("Form Submission - Hero");
-      
       const { error } = await supabase
         .from('waitlist_leads')
         .insert({
           name: formData.name,
-          email: null,
-          phone: formData.phone,
-          income_range: null,
-          current_investments: null,
-          main_challenge: null,
-          ...utmParams,
-          user_agent: navigator.userAgent
+          phone: formData.phone
         });
 
       if (error) {

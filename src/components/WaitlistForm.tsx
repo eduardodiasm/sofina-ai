@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,36 +6,14 @@ import { Label } from "@/components/ui/label";
 import { Phone, Loader2 } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
-
-interface WaitlistFormData {
-  name: string;
-  phone: string;
-}
 
 const WaitlistForm = () => {
-  const [formData, setFormData] = useState<WaitlistFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { trackCTAClick } = useSimpleAnalytics();
-
-  const handleInputChange = (field: keyof WaitlistFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const getUTMParams = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return {
-      utm_source: urlParams.get('utm_source'),
-      utm_medium: urlParams.get('utm_medium'),
-      utm_campaign: urlParams.get('utm_campaign'),
-      utm_term: urlParams.get('utm_term'),
-      utm_content: urlParams.get('utm_content')
-    };
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,22 +30,11 @@ const WaitlistForm = () => {
     setIsSubmitting(true);
 
     try {
-      const utmParams = getUTMParams();
-      
-      // Track form submission
-      trackCTAClick("Form Submission - Waitlist");
-      
       const { error } = await supabase
         .from('waitlist_leads')
         .insert({
           name: formData.name,
-          email: null,
-          phone: formData.phone,
-          income_range: null,
-          current_investments: null,
-          main_challenge: null,
-          ...utmParams,
-          user_agent: navigator.userAgent
+          phone: formData.phone
         });
 
       if (error) {
@@ -105,10 +73,6 @@ const WaitlistForm = () => {
     }
   };
 
-  const handleCTAClick = () => {
-    trackCTAClick("Quero meu plano no WhatsApp");
-  };
-
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm" id="waitlist-form">
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -120,7 +84,7 @@ const WaitlistForm = () => {
               type="text"
               placeholder="Como gostaria de ser chamado?"
               value={formData.name}
-              onChange={(e) => handleInputChange('name', e.target.value)}
+              onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
               className="border-gray-300"
               required
             />
@@ -133,7 +97,7 @@ const WaitlistForm = () => {
               type="tel"
               placeholder="(11) 99999-9999"
               value={formData.phone}
-              onChange={(e) => handleInputChange('phone', e.target.value)}
+              onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
               className="border-gray-300"
               required
             />
@@ -144,7 +108,6 @@ const WaitlistForm = () => {
           type="submit" 
           size="lg" 
           disabled={isSubmitting}
-          onClick={handleCTAClick}
           className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 text-lg disabled:opacity-50"
         >
           {isSubmitting ? (
