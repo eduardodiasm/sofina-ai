@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle } from 'lucide-react';
 import WaitlistForm from "@/components/WaitlistForm";
 import HeroForm from "@/components/HeroForm";
-import PersonalizedPlanExample from "@/components/PersonalizedPlanExample";
+import WhatsAppChat from "@/components/WhatsAppChat";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
@@ -75,39 +75,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Exemplo de Plano Personalizado */}
-      <section className="px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Exemplo de plano personalizado
-            </h2>
-            <p className="text-lg text-slate-600">
-              Veja como seria um plano real baseado no seu perfil
-            </p>
-          </div>
-          
-          <PersonalizedPlanExample />
-          
-          <div className="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
-            <h4 className="font-semibold text-slate-900 mb-3">💡 Por que essa alocação?</h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div>
-                <span className="font-medium text-green-700">Tesouro IPCA:</span>
-                <span className="text-slate-600 ml-1">Proteção contra inflação e previsibilidade</span>
-              </div>
-              <div>
-                <span className="font-medium text-green-700">ETFs:</span>
-                <span className="text-slate-600 ml-1">Crescimento no Brasil (BOVA11) e EUA (IVVB11)</span>
-              </div>
-              <div>
-                <span className="font-medium text-green-700">Fundo:</span>
-                <span className="text-slate-600 ml-1">Equilíbrio e liquidez para emergências</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* WhatsApp Chat Section */}
+      <WhatsAppChat />
 
       {/* Comparison */}
       <section className="px-6 py-20 bg-slate-50">
