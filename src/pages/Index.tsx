@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle } from 'lucide-react';
@@ -22,7 +21,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/2bde72de-edb6-4322-9798-5845661bc178.png" 
+              src="/lovable-uploads/fd78fa33-45f4-446a-b755-5a2c417a9d4e.png" 
               alt="Sofina Logo" 
               className="w-10 h-10"
             />
@@ -298,7 +297,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <img 
-                src="/lovable-uploads/2bde72de-edb6-4322-9798-5845661bc178.png" 
+                src="/lovable-uploads/fd78fa33-45f4-446a-b755-5a2c417a9d4e.png" 
                 alt="Sofina Logo" 
                 className="w-8 h-8"
               />
