@@ -13,34 +13,41 @@ import {
 const WhatsAppChat = () => {
   const slides = [
     {
-      title: "Diagnóstico em 3 perguntas",
+      title: "Você não está só",
       messages: [
-        { sender: 'user', text: 'Oi! Quero entender onde estou errando com meu dinheiro.' },
-        { sender: 'sofina', text: 'Oi! Sou a Sofina, seu copiloto financeiro imparcial. Em 3 min faço seu diagnóstico. Bora? 🚀' },
-        { sender: 'sofina', text: 'Qual sua **renda líquida mensal**?' },
+        { sender: 'user', text: 'Oi, sinto que meu dinheiro não cresce como deveria.' },
+        { sender: 'sofina', text: 'Eu te entendo — é frustrante trabalhar, ganhar bem e ver o dinheiro parado. Em 2 min vamos descobrir onde está o desvio e traçar o primeiro passo. Bora?' },
+        { sender: 'sofina', text: '1️⃣ Quanto entra líquido por mês?' },
         { sender: 'user', text: 'R$ 12.000' },
-        { sender: 'sofina', text: 'Você já tem alguma **reserva** hoje?' },
-        { sender: 'user', text: 'R$ 20.000' },
-        { sender: 'sofina', text: 'Qual **parcela mensal** de investimento seria confortável?' },
-        { sender: 'user', text: 'R$ 2.400' },
-        { sender: 'sofina', text: '…', isTyping: true }
+        { sender: 'sofina', text: '2️⃣ E quanto você consegue investir sem apertar o orçamento?' },
+        { sender: 'user', text: 'R$ 2.000' }
       ]
     },
     {
-      title: "Seu plano em segundos",
+      title: "Radiografia financeira",
       messages: [
-        { sender: 'sofina', text: 'Plano pronto! 🎯 Para chegar a **R$ 10 mil/mês de renda passiva** aos 50 você precisará de ~R$ 3 mi.' },
-        { sender: 'sofina', text: 'Com aportes de **R$ 2.400/mês** e rentabilidade líquida média 4,8% a.a. *(Monte Carlo p50 = 5,3%, p95 = 7,1%)*, alcançamos em **22 anos**.' },
-        { sender: 'sofina', text: '💸 **Alocação sugerida**\n• 40% Tesouro IPCA 2045 (taxa 0%)\n• 30% ETFs **BOVA11 + IVVB11** (custo 0,20%)\n• 20% Fundo multimercado (vol. baixa, D+1)\n• 10% Caixa estratégico (CDB 110% CDI)' },
-        { sender: 'sofina', text: '**Custos totais**: ~0,34% a.a. — **zero comissão para a Sofina**.' }
+        { sender: 'sofina', text: 'Foto rápida da sua situação 👇' },
+        { 
+          sender: 'sofina', 
+          text: '📊 **DASH RESUMO**\n• Reserva atual: R$ 20.000 (equiv. 2 meses de salário)\n• Reserva ideal: 6 meses → falta R$ 52.000\n• Objetivo declarado: independência aos 50 (em 22 anos)\n• Patrimônio alvo p/ renda de R$ 10.000/mês: R$ 3 mi',
+          isStats: true
+        },
+        { sender: 'sofina', text: 'Se você continuar investindo R$ 2.000/mês em poupança (3% a.a.), chegará lá em **37 anos** 😕' },
+        { sender: 'sofina', text: 'Boa notícia: redirecionando p/ ativos corretos (média 5% reais) o prazo cai para **22 anos** — **15 anos a menos**. Isso é o que chamamos de **Desvio de Liberdade**. Sentiu a diferença?' },
+        { sender: 'user', text: 'Uau, faz sentido! E quais ativos?' }
       ]
     },
     {
-      title: "Acompanhamento contínuo",
+      title: "Plano ação + Quick Win",
       messages: [
-        { sender: 'sofina', text: '📆 Salário na conta? Hora do aporte! Sugestão de hoje:\n• R$ 960 Tesouro IPCA\n• R$ 960 ETFs\n• R$ 480 Fundo' },
-        { sender: 'sofina', text: 'Quer **ajustar metas ou valores**? Me avise que recalculo na hora 😉' },
-        { sender: 'sofina', text: 'Ativar **reajuste automático anual** pela inflação do salário? *(Sim / Não)*' }
+        { sender: 'sofina', text: 'Aqui está o primeiro passo de hoje (5 min) 🍀' },
+        { 
+          sender: 'sofina', 
+          text: '✅ **PLANO QUICK WIN**\n• Transferir R$ 500 para Tesouro IPCA 2045 (link → passo a passo)\n• Ajustar aplicativo do banco para aportes automáticos de R$ 2.000 todo dia 5\n• Revisão mensal comigo: aviso quando for preciso rebalancear',
+          isQuickWin: true
+        },
+        { sender: 'sofina', text: 'Fazendo só isso agora você:\n• Constrói reserva de emergência em 26 meses\n• Mantém patrimônio protegido da inflação\n• Garante probabilidade **> 70%** de independência em 22 anos' },
+        { sender: 'sofina', text: 'Te ajudo a executar? É só clicar no botão "Começar agora" e continuamos por aqui.' }
       ]
     }
   ];
@@ -54,6 +61,8 @@ const WhatsAppChat = () => {
 
   const renderMessage = (message: any, index: number) => {
     const isTyping = message.isTyping;
+    const isStats = message.isStats;
+    const isQuickWin = message.isQuickWin;
     
     return (
       <div
@@ -74,10 +83,21 @@ const WhatsAppChat = () => {
             className={`p-3 rounded-lg ${
               message.sender === 'user'
                 ? 'bg-[#F1F1F1] text-slate-900 rounded-br-sm'
+                : isStats 
+                ? 'bg-blue-50 border border-blue-200 text-slate-900 rounded-bl-sm'
+                : isQuickWin
+                ? 'bg-green-50 border border-green-200 text-slate-900 rounded-bl-sm'
                 : 'bg-[#25D366] text-white rounded-bl-sm'
             } ${isTyping ? 'animate-pulse' : ''}`}
           >
-            <p className="text-sm leading-relaxed whitespace-pre-line">
+            {(isStats || isQuickWin) && (
+              <div className="mb-2">
+                <span className={`text-xs font-semibold ${isStats ? 'text-blue-700' : 'text-green-700'}`}>
+                  {isStats ? '📊 DASHBOARD' : '✅ AÇÃO IMEDIATA'}
+                </span>
+              </div>
+            )}
+            <p className={`text-sm leading-relaxed whitespace-pre-line ${isStats || isQuickWin ? 'text-slate-700' : ''}`}>
               {message.text.split('**').map((part: string, i: number) => 
                 i % 2 === 0 ? part : <strong key={i}>{part}</strong>
               )}
@@ -162,7 +182,7 @@ const WhatsAppChat = () => {
             onClick={scrollToForm}
             className="bg-[#25D366] hover:bg-[#1fb855] text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg"
           >
-            Receber meu plano grátis
+            Começar agora
           </Button>
         </div>
       </div>
