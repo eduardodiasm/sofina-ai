@@ -10,12 +10,12 @@ const SofinaCarousel = () => {
       description: "Clareza total sobre onde você está e onde quer chegar."
     },
     {
-      image: "/lovable-uploads/31d5bc3d-4a0b-4afc-8c63-6ced993f1457.png",
+      image: "/lovable-uploads/8122a502-d622-4ffb-ad19-6aefca60c39b.png",
       title: "Seu plano personalizado",
       description: "Estratégia simples, construída para seu objetivo."
     },
     {
-      image: "/lovable-uploads/8122a502-d622-4ffb-ad19-6aefca60c39b.png",
+      image: "/lovable-uploads/31d5bc3d-4a0b-4afc-8c63-6ced993f1457.png",
       title: "Nunca perca o dia de investir",
       description: "Lembretes pontuais + orientação prática."
     },
