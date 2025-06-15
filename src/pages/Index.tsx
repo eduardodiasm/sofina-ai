@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle } from 'lucide-react';
+import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
 import HeroForm from "@/components/HeroForm";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -84,63 +84,63 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* Comparison */}
+      {/* COMPARATIVO */}
       <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Sofina vs Assessoria Tradicional
+              Sofina vs. Assessoria Tradicional
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border border-slate-200">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-slate-600 mb-6 text-center">Assessoria Tradicional</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-600">Te vendem o que dá mais comissão</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-600">Só atende quem tem R$500k+</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-600">Formal, engessado, cheio de jargões</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-600">Horário comercial, demorado</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-green-200 bg-green-50">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-green-700 mb-6 text-center">Sofina</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700 font-medium">Recomendação com base em dados</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700 font-medium">A partir de R$39/mês, sem exigência</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700 font-medium">Simples, direto, via WhatsApp</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
-                    <span className="text-slate-700 font-medium">24h com IA e suporte de verdade</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm md:text-base border-separate border-spacing-y-4">
+              <thead className="text-slate-500">
+                <tr>
+                  <th className="text-left py-2"></th>
+                  <th className="text-center py-2">Assessoria<br />Tradicional</th>
+                  <th className="text-center py-2">Sofina</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* Linha 1 */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Recomendação sem comissão</td>
+                  <td className="text-center py-4">
+                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                  </td>
+                  <td className="text-center py-4 rounded-r-2xl">
+                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  </td>
+                </tr>
+                {/* Linha 2 */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Atende quem investe &lt; R$ 500 mil</td>
+                  <td className="text-center py-4">
+                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                  </td>
+                  <td className="text-center py-4 rounded-r-2xl">
+                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  </td>
+                </tr>
+                {/* Linha 3 */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Suporte 24h via WhatsApp</td>
+                  <td className="text-center py-4">
+                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                  </td>
+                  <td className="text-center py-4 rounded-r-2xl">
+                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  </td>
+                </tr>
+                {/* Linha 4 – Preço */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Preço</td>
+                  <td className="text-center py-4 text-slate-700">Até <strong>2%/ano</strong><br />sobre o patrimônio</td>
+                  <td className="text-center py-4 text-green-700 font-semibold rounded-r-2xl">R$ 39/mês</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -224,26 +224,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* PARA QUEM É */}
       <section className="px-6 py-20 bg-slate-50">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-8 mb-12">
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Para quem é a Sofina?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700">
-              <div className="flex flex-col items-center">
-                <Clock className="w-8 h-8 text-green-700 mb-2" />
-                <span className="font-medium">Para quem não tem tempo para estudar investimentos</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <Heart className="w-8 h-8 text-green-700 mb-2" />
-                <span className="font-medium">Para quem não confia em assessores tradicionais</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <Brain className="w-8 h-8 text-green-700 mb-2" />
-                <span className="font-medium">Para quem não quer ser um expert em finanças</span>
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold text-slate-900 mb-4">Para quem é a Sofina?</h3>
           </div>
+          
+          <ul className="space-y-6 max-w-xl mx-auto text-slate-700">
+            <li className="flex gap-3">
+              <Clock className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+              <span><strong>Falta de tempo:</strong> Não gaste horas em vídeos de finanças — a IA faz tudo por você.</span>
+            </li>
+            <li className="flex gap-3">
+              <Handshake className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+              <span><strong>Falta de confiança:</strong> Zero metas de venda, zero comissão escondida.</span>
+            </li>
+            <li className="flex gap-3">
+              <ShieldCheck className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+              <span><strong>Medo de errar:</strong> Planos auditados por CFA® — sem termos complicados.</span>
+            </li>
+          </ul>
         </div>
       </section>
 
