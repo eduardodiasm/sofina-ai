@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -95,16 +94,16 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* COMPARATIVO REFINED */}
+      {/* COMPARATIVO MOBILE-FIRST */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
             Sofina vs. Assessoria Tradicional
           </h3>
 
-          {/* Desktop Grid */}
-          <div className="hidden md:grid md:grid-cols-[1fr_160px_160px] gap-4">
-            {/* Cabeçalho desktop */}
+          {/* ====== DESKTOP (unchanged grid) ====== */}
+          <div className="hidden md:grid gap-4" style={{gridTemplateColumns: '1.2fr 0.9fr 0.9fr'}}>
+            {/* header row */}
             <div></div>
             <div className="text-center text-slate-500 font-medium">Assessoria<br />Tradicional</div>
             <div className="text-center text-slate-500 font-medium">Sofina</div>
@@ -123,27 +122,77 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Mobile Stack */}
+          {/* ====== MOBILE CARDS ====== */}
           <div className="md:hidden space-y-4">
-            {comparisonData.map((item, index) => (
-              <div key={`mobile-${index}`} className="bg-white rounded-2xl p-4 shadow">
-                <p className="text-base font-semibold mb-2 leading-snug">{item[0]}</p>
-                <p className="flex justify-between text-sm leading-snug mb-1">
-                  <span className="text-slate-500">Assessoria</span> 
-                  <span className={index === 6 ? 'text-slate-700' : 'text-red-500'}>
-                    {index === 6 ? '' : '✘ '}
-                    <span dangerouslySetInnerHTML={{ __html: item[1].replace('✘ ', '') }} />
-                  </span>
-                </p>
-                <p className="flex justify-between text-sm leading-snug">
-                  <span className="text-slate-500">Sofina</span> 
-                  <span className={index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}>
-                    {index === 6 ? '' : '✔︎ '}
-                    <span dangerouslySetInnerHTML={{ __html: item[2].replace('✔︎ ', '') }} />
-                  </span>
-                </p>
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Começo rápido
               </div>
-            ))}
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Reuniões e formulários</p>
+                <p className="text-green-600">✔ Plano em <strong>3&nbsp;min</strong> no WhatsApp</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Clareza de linguagem
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ "Economês" e jargões</p>
+                <p className="text-green-600">✔ Mensagens simples, sem termos complicados</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Objetividade da recomendação
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Produto que paga comissão</p>
+                <p className="text-green-600">✔ IA imparcial, <strong>zero comissão</strong></p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Valor mínimo para começar
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Só aceita &gt; R$ 500 mil</p>
+                <p className="text-green-600">✔ Comece com qualquer valor</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Acompanhamento
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Horário comercial</p>
+                <p className="text-green-600">✔ Lembretes e ajustes <strong>24 h</strong></p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Cancelamento
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Burocracia ou multa</p>
+                <p className="text-green-600">✔ Cancela em 1 clique, sem taxas</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow">
+              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
+                Preço
+              </div>
+              <div className="px-3 py-3 leading-snug text-sm">
+                <p className="text-red-500 mb-1">✘ Até 2% /ano sobre patrimônio</p>
+                <p className="text-green-700 font-semibold">✔ R$ 39/mês</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
