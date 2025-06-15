@@ -6,13 +6,13 @@ const SofinaCarousel = () => {
   const slides = [
     {
       image: "/lovable-uploads/b871262f-b92c-40eb-844d-5f77880a6a7c.png",
-      title: "Diagnóstico em 3 minutos",
-      description: "Clareza total sobre onde você está e onde quer chegar."
+      title: "Seu plano personalizado",
+      description: "Estratégia simples, construída para seu objetivo."
     },
     {
       image: "/lovable-uploads/8122a502-d622-4ffb-ad19-6aefca60c39b.png",
-      title: "Seu plano personalizado",
-      description: "Estratégia simples, construída para seu objetivo."
+      title: "Diagnóstico em 3 minutos",
+      description: "Clareza total sobre onde você está e onde quer chegar."
     },
     {
       image: "/lovable-uploads/31d5bc3d-4a0b-4afc-8c63-6ced993f1457.png",
