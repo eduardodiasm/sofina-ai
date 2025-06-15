@@ -38,12 +38,12 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Você ganha bem. <br />
-              Mas seu dinheiro <span className="text-green-700">não acompanha</span>.
+              Transforme salário em patrimônio <br />
+              sem sair do <span className="text-green-700">WhatsApp — na Sofina</span>.
             </h1>
             
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Receba um <strong className="text-green-700">plano financeiro personalizado</strong> em 3 minutos via WhatsApp — com valores exatos, ativos específicos e acompanhamento mensal para <strong className="text-green-700">resultados reais</strong>.
+              <strong className="text-green-700">Plano personalizado em 3 min</strong> e acompanhamento mensal para seu dinheiro <strong className="text-green-700">crescer de verdade</strong>.
             </p>
           </div>
 
