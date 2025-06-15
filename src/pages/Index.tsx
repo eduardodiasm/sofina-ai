@@ -42,12 +42,12 @@ const Index = () => {
             </h1>
             
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 mb-6 leading-relaxed">
-              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
+              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min e acompanha mês a mês.
             </h2>
             
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            /* <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               <strong className="text-green-700">Plano personalizado em 3 min</strong> e acompanhamento mensal para seu dinheiro <strong className="text-green-700">crescer de verdade</strong>.
-            </p>
+            </p> */ 
           </div>
 
           {/* Hero Form */}
