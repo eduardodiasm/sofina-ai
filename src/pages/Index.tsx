@@ -41,13 +41,11 @@ const Index = () => {
               Invista melhor no <span className="text-green-700">WhatsApp</span>.
             </h1>
             
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 mb-6 leading-relaxed">
-              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min e acompanha mês a mês — 30 d grátis.
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
+            <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min e acompanha mês a mês — 30 d grátis.
             </h2>
+
             
-            <h2 className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              <strong className="text-green-700">IA da Sofina</strong> cria seu plano em 3 min e acompanha mês a mês — 30 d grátis.
-            </h2>
           </div>
 
           {/* Hero Form */}
