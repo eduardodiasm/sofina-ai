@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle } from 'lucide-react';
@@ -45,6 +44,12 @@ const Index = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
               <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
             </h2>
+
+            {/* TRUST-BAR: Powered by OpenAI */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-4 mb-6 text-sm text-slate-600">
+              <Brain className="h-5 w-5 text-green-700" />
+              <span>Powered by <strong className="text-slate-700">OpenAI Enterprise</strong></span>
+            </div>
             
           </div>
 
