@@ -80,7 +80,6 @@ const Index = () => {
     </svg>
     LGPD Compliant
   </div>
-</div>
           {/* Hero Form - Formulário Principal */}
           <section id="form" className="mb-12">
             <HeroForm />
