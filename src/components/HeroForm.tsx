@@ -75,13 +75,13 @@ const HeroForm = () => {
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm max-w-md mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" aria-label="Cadastro Sofina">
         <div className="space-y-2">
           <Label htmlFor="hero-name" className="text-gray-700">Seu nome</Label>
           <Input
             id="hero-name"
             type="text"
-            placeholder="Como gostaria de ser chamado?"
+            placeholder="Maria Silva"
             value={formData.name}
             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
             className="border-gray-300"
@@ -94,7 +94,7 @@ const HeroForm = () => {
           <Input
             id="hero-phone"
             type="tel"
-            placeholder="(11) 99999-9999"
+            placeholder="(11) 91234-5678"
             value={formData.phone}
             onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
             className="border-gray-300"
@@ -116,11 +116,10 @@ const HeroForm = () => {
           ) : (
             <>
               <Phone className="w-5 h-5 mr-2" />
-              Quero meu plano no WhatsApp
+              Quero meu plano grátis
             </>
           )}
         </Button>
-        
       </form>
     </div>
   );

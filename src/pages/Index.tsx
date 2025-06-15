@@ -1,9 +1,10 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle } from 'lucide-react';
-import WaitlistForm from "@/components/WaitlistForm";
 import HeroForm from "@/components/HeroForm";
 import WhatsAppChat from "@/components/WhatsAppChat";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
@@ -42,16 +43,14 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-            <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min e acompanha mês a mês — 30 d grátis.
+              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
             </h2>
-
-            
           </div>
 
-          {/* Hero Form */}
-          <div className="mb-12">
+          {/* Hero Form - Formulário Principal */}
+          <section id="form" className="mb-12">
             <HeroForm />
-          </div>
+          </section>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
             <div className="flex items-center space-x-2">
@@ -291,6 +290,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCTA />
     </div>
   );
 };

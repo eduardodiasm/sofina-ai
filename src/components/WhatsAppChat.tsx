@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { User } from 'lucide-react';
 import {
   Carousel,
@@ -51,13 +50,6 @@ const WhatsAppChat = () => {
       ]
     }
   ];
-
-  const scrollToForm = () => {
-    const waitlistForm = document.querySelector('#waitlist-form');
-    if (waitlistForm) {
-      waitlistForm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const renderMessage = (message: any, index: number) => {
     const isTyping = message.isTyping;
@@ -178,12 +170,12 @@ const WhatsAppChat = () => {
           <p className="text-lg text-slate-600 mb-6">
             Receba sua primeira conversa com a Sofina em 3 min. É grátis e 100% via WhatsApp.
           </p>
-          <Button 
-            onClick={scrollToForm}
-            className="bg-[#25D366] hover:bg-[#1fb855] text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg"
+          <a 
+            href="#form"
+            className="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#1fb855] text-white px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-colors"
           >
-            Começar agora
-          </Button>
+            Quero meu plano grátis
+          </a>
         </div>
       </div>
     </section>
