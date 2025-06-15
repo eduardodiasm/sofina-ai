@@ -45,7 +45,9 @@ const Index = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
               <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
             </h2>
-            <!-- TRUST-BAR -->
+            
+          </div>
+<!-- TRUST-BAR -->
 <div class="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-600">
   <div class="flex items-center gap-2">
     <svg class="w-4 h-4 text-green-700" fill="currentColor"
@@ -79,8 +81,6 @@ const Index = () => {
     LGPD Compliant
   </div>
 </div>
-          </div>
-
           {/* Hero Form - Formulário Principal */}
           <section id="form" className="mb-12">
             <HeroForm />
