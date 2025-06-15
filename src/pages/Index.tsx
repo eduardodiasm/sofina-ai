@@ -43,7 +43,7 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">IA da Sofina</span> cria um plano gratuito em 3 min e acompanha você mensalmente
+              <span className="text-green-700">IA da Sofina</span> cria um plano gratuito em 3 min e acompanha você mensalmente como Private Banker
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
@@ -68,15 +68,15 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
             <div className="flex items-center space-x-2">
               <Zap className="w-4 h-4 text-green-700" />
-              <span>Diagnóstico em 3 min</span>
+              <span>Plano pronto em 3 min</span>
             </div>
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-green-700" />
-              <span>30 dias grátis, sem compromisso</span>
+              <span>30 d grátis, sem compromisso</span>
             </div>
             <div className="flex items-center space-x-2">
               <BarChart3 className="w-4 h-4 text-green-700" />
-              <span>Acesso via WhatsApp: tudo na palma da mão</span>
+              <span>Valores e ativos específicos</span>
             </div>
           </div>
 
