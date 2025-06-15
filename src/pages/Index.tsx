@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -111,11 +112,11 @@ const Index = () => {
             {/* Rows */}
             {comparisonData.map((item, index) => (
               <>
-                <div key={`criteria-${index}`} className="bg-white rounded-2xl p-5 font-medium shadow">{item[0]}</div>
-                <div key={`traditional-${index}`} className={`bg-white rounded-2xl p-5 text-center shadow ${index === 6 ? 'text-slate-700' : 'text-red-500'}`}>
+                <div key={`criteria-${index}`} className="bg-white rounded-2xl p-5 text-base md:text-lg font-medium shadow">{item[0]}</div>
+                <div key={`traditional-${index}`} className={`bg-white rounded-2xl p-5 text-center text-sm md:text-base shadow ${index === 6 ? 'text-slate-700' : 'text-red-500'}`}>
                   <span dangerouslySetInnerHTML={{ __html: item[1] }} />
                 </div>
-                <div key={`sofina-${index}`} className={`bg-white rounded-2xl p-5 text-center shadow ${index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}`}>
+                <div key={`sofina-${index}`} className={`bg-white rounded-2xl p-5 text-center text-sm md:text-base shadow ${index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}`}>
                   <span dangerouslySetInnerHTML={{ __html: item[2] }} />
                 </div>
               </>
@@ -125,16 +126,16 @@ const Index = () => {
           {/* Mobile Stack */}
           <div className="md:hidden space-y-4">
             {comparisonData.map((item, index) => (
-              <div key={`mobile-${index}`} className="bg-white rounded-2xl p-6 shadow">
-                <p className="font-semibold mb-3">{item[0]}</p>
-                <p className="flex justify-between text-sm mb-1">
+              <div key={`mobile-${index}`} className="bg-white rounded-2xl p-4 shadow">
+                <p className="text-base font-semibold mb-2 leading-snug">{item[0]}</p>
+                <p className="flex justify-between text-sm leading-snug mb-1">
                   <span className="text-slate-500">Assessoria</span> 
                   <span className={index === 6 ? 'text-slate-700' : 'text-red-500'}>
                     {index === 6 ? '' : '✘ '}
                     <span dangerouslySetInnerHTML={{ __html: item[1].replace('✘ ', '') }} />
                   </span>
                 </p>
-                <p className="flex justify-between text-sm">
+                <p className="flex justify-between text-sm leading-snug">
                   <span className="text-slate-500">Sofina</span> 
                   <span className={index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}>
                     {index === 6 ? '' : '✔︎ '}
