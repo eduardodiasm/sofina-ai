@@ -55,10 +55,16 @@ const Index = () => {
               <span className="text-green-700">IA da Sofina</span> cria um plano gratuito em 3 min e acompanha você mensalmente
             </h2>
 
-            {/* TRUST-BAR: Powered by OpenAI */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-4 mb-6 text-sm text-slate-600">
-              <Brain className="h-5 w-5 text-green-700" />
-              <span>Powered by <strong className="text-slate-700">OpenAI Enterprise</strong></span>
+            {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-4 mb-6 text-sm text-slate-600">
+              <div className="flex items-center gap-2">
+                <Brain className="h-5 w-5 text-green-700" />
+                <span>Powered by <strong className="text-slate-700">OpenAI Enterprise</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-green-700" />
+                <span>Auditoria <strong className="text-slate-700">CFA®</strong></span>
+              </div>
             </div>
             
           </div>
