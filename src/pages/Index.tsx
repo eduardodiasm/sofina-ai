@@ -38,8 +38,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Transforme salário em patrimônio <br />
-              sem sair do <span className="text-green-700">WhatsApp — na Sofina</span>.
+              Invista melhor onde você já conversa: <span className="text-green-700">WhatsApp</span>. Tudo guiado pela <span className="text-green-700">IA da Sofina</span> em apenas 3 min
             </h1>
             
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
