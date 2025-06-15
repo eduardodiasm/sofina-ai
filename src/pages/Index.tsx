@@ -38,8 +38,12 @@ const Index = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Invista melhor onde você já conversa: <span className="text-green-700">WhatsApp</span>. Tudo guiado pela <span className="text-green-700">IA da Sofina</span> em apenas 3 min
+              Invista melhor no <span className="text-green-700">WhatsApp</span>.
             </h1>
+            
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 mb-6 leading-relaxed">
+              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
+            </h2>
             
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               <strong className="text-green-700">Plano personalizado em 3 min</strong> e acompanhamento mensal para seu dinheiro <strong className="text-green-700">crescer de verdade</strong>.
