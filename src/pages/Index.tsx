@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -103,41 +104,77 @@ const Index = () => {
                 </tr>
               </thead>
               <tbody>
-                {/* Linha 1 */}
+                {/* Linha 1 – Começo rápido */}
                 <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Recomendação sem comissão</td>
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Começo rápido</td>
                   <td className="text-center py-4">
-                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                    <span className="text-red-500 text-lg">✘</span> Reuniões e formulários
                   </td>
-                  <td className="text-center py-4 rounded-r-2xl">
-                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ Plano em <strong>3&nbsp;min</strong> no WhatsApp
                   </td>
                 </tr>
-                {/* Linha 2 */}
+                
+                {/* Linha 2 – Clareza de linguagem */}
                 <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Atende quem investe &lt; R$ 500 mil</td>
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Clareza de linguagem</td>
                   <td className="text-center py-4">
-                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                    <span className="text-red-500 text-lg">✘</span> "Economês" e jargões
                   </td>
-                  <td className="text-center py-4 rounded-r-2xl">
-                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ Mensagens simples, sem termos complicados
                   </td>
                 </tr>
-                {/* Linha 3 */}
+                
+                {/* Linha 3 – Objetividade da recomendação */}
                 <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Suporte 24h via WhatsApp</td>
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Objetividade da recomendação</td>
                   <td className="text-center py-4">
-                    <X className="w-5 h-5 text-red-500 mx-auto" aria-hidden="true" />
+                    <span className="text-red-500 text-lg">✘</span> Produto que paga comissão
                   </td>
-                  <td className="text-center py-4 rounded-r-2xl">
-                    <Check className="w-5 h-5 text-green-600 mx-auto" aria-hidden="true" />
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ IA imparcial, <strong>zero comissão</strong>
                   </td>
                 </tr>
-                {/* Linha 4 – Preço */}
+                
+                {/* Linha 4 – Valor mínimo para começar */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Valor mínimo para começar</td>
+                  <td className="text-center py-4">
+                    <span className="text-red-500 text-lg">✘</span> Só aceita &gt; R$&nbsp;500&nbsp;mil
+                  </td>
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ Comece com qualquer valor
+                  </td>
+                </tr>
+                
+                {/* Linha 5 – Acompanhamento */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Acompanhamento</td>
+                  <td className="text-center py-4">
+                    <span className="text-red-500 text-lg">✘</span> Horário comercial
+                  </td>
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ Lembretes e ajustes <strong>24&nbsp;h</strong>
+                  </td>
+                </tr>
+                
+                {/* Linha 6 – Cancelamento */}
+                <tr className="bg-white rounded-2xl shadow">
+                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Cancelamento</td>
+                  <td className="text-center py-4">
+                    <span className="text-red-500 text-lg">✘</span> Burocracia ou multa
+                  </td>
+                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
+                    ✔︎ Cancela em 1 clique, sem taxas
+                  </td>
+                </tr>
+                
+                {/* Linha 7 – Preço */}
                 <tr className="bg-white rounded-2xl shadow">
                   <td className="py-4 pl-4 font-medium rounded-l-2xl">Preço</td>
-                  <td className="text-center py-4 text-slate-700">Até <strong>2%/ano</strong><br />sobre o patrimônio</td>
-                  <td className="text-center py-4 text-green-700 font-semibold rounded-r-2xl">R$ 39/mês</td>
+                  <td className="text-center py-4 text-slate-700">Até <strong>2&nbsp;%/ano</strong> sobre patrimônio</td>
+                  <td className="text-center py-4 text-green-700 font-semibold rounded-r-2xl">R$&nbsp;39/mês</td>
                 </tr>
               </tbody>
             </table>
