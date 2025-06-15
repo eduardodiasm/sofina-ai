@@ -47,39 +47,7 @@ const Index = () => {
             </h2>
             
           </div>
-<!-- TRUST-BAR -->
-<div class="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-600">
-  <div class="flex items-center gap-2">
-    <svg class="w-4 h-4 text-green-700" fill="currentColor"
-         viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 1l9 4v6c0 7-4.5 12-9 12S3 18 3 11V5l9-4z"/>
-      <path d="M10 14l-3-3 1.4-1.4L10 11.2l5.6-5.6L17 7l-7 7z"
-            fill="#fff"/>
-    </svg>
-    Infra AWS ISO-27001
-  </div>
 
-  <span class="hidden sm:block h-4 w-px bg-slate-300"></span>
-
-  <div class="flex items-center gap-2">
-    <svg class="w-4 h-4 text-green-700" fill="currentColor"
-         viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/>
-      <path d="M8 12l2 2 4-4" fill="#fff"/>
-    </svg>
-    Powered by OpenAI Enterprise
-  </div>
-
-  <span class="hidden sm:block h-4 w-px bg-slate-300"></span>
-
-  <div class="flex items-center gap-2">
-    <svg class="w-4 h-4 text-green-700" fill="currentColor"
-         viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3l9 4v4c0 6.6-4 12-9 12S3 17.6 3 11V7l9-4z"/>
-      <path d="M15 12h-2v4h-2v-4H9V10h2V6h2v4h2v2z" fill="#fff"/>
-    </svg>
-    LGPD Compliant
-  </div>
           {/* Hero Form - Formulário Principal */}
           <section id="form" className="mb-12">
             <HeroForm />
