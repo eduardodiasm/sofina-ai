@@ -6,6 +6,7 @@ import WhatsAppChat from "@/components/WhatsAppChat";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
+import SofinaCarousel from "@/components/SofinaCarousel";
 
 const Index = () => {
   const { trackPageVisit } = useSimpleAnalytics();
@@ -90,9 +91,6 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* SECTION: Sofina vs Assessoria (versão compacta) */}
-      {/* Removendo o bloco antigo de comparação! */}
-
       {/* SECTION: Sem a Sofina x Com a Sofina */}
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
@@ -158,6 +156,9 @@ const Index = () => {
           {/* CTA removido conforme solicitado */}
         </div>
       </section>
+
+      {/* SECTION: Como a Sofina ajuda você - NEW CAROUSEL */}
+      <SofinaCarousel />
 
       {/* Depoimentos simulados */}
       <section className="px-6 py-20">
