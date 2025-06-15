@@ -241,25 +241,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="px-6 py-20">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Comece seus 30 dias grátis agora
-          </h2>
-          <p className="text-lg text-slate-600 mb-12">
-            Preencha em 1 minuto e receba seu plano financeiro personalizado no WhatsApp.
-          </p>
-          
-          <WaitlistForm />
-          
-          <div className="mt-8 flex items-center justify-center text-slate-500 text-sm">
-            <Shield className="w-4 h-4 mr-2" />
-            <span>30 dias grátis • Cancele quando quiser • Sem compromisso</span>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="px-6 py-12 bg-slate-100 border-t border-slate-200">
         <div className="max-w-6xl mx-auto">
