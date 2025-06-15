@@ -97,7 +97,7 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
-            Como você se sente hoje<br className="md:hidden" />
+            Como você se sente hoje <br className="md:hidden" />
             vs. depois de 30&nbsp;dias com a Sofina
           </h3>
           {/* GRID */}
