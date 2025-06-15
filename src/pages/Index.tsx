@@ -1,8 +1,8 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
+import { CheckCircle, Target, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
 import HeroForm from "@/components/HeroForm";
-import WhatsAppChat from "@/components/WhatsAppChat";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
@@ -88,10 +88,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WhatsApp Chat Section */}
-      <WhatsAppChat />
+      {/* SECTION: Como a Sofina ajuda você - CAROUSEL FIRST */}
+      <SofinaCarousel />
 
-      {/* SECTION: Sem a Sofina x Com a Sofina */}
+      {/* SECTION: Sem a Sofina x Com a Sofina - MOVED AFTER CAROUSEL */}
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
@@ -153,14 +153,10 @@ const Index = () => {
               </p>
             </div>
           </div>
-          {/* CTA removido conforme solicitado */}
         </div>
       </section>
 
-      {/* SECTION: Como a Sofina ajuda você - NEW CAROUSEL */}
-      <SofinaCarousel />
-
-      {/* Depoimentos simulados */}
+      {/* Depoimentos simulados - REMOVED STARS */}
       <section className="px-6 py-20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -181,14 +177,9 @@ const Index = () => {
                     <div className="text-xs text-slate-600">Advogada, 29 anos</div>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 mb-3">
+                <p className="text-sm text-slate-600">
                   "Finalmente entendi onde investir meus R$ 8k/mês. O plano foi super claro e agora invisto com confiança."
                 </p>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
               </CardContent>
             </Card>
             
@@ -203,14 +194,9 @@ const Index = () => {
                     <div className="text-xs text-slate-600">Engenheiro, 35 anos</div>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 mb-3">
+                <p className="text-sm text-slate-600">
                   "Estava perdido com tantas opções. A Sofina me mostrou exatamente os 3 ativos certos para meu perfil."
                 </p>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
               </CardContent>
             </Card>
             
@@ -225,14 +211,9 @@ const Index = () => {
                     <div className="text-xs text-slate-600">Consultora, 31 anos</div>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 mb-3">
+                <p className="text-sm text-slate-600">
                   "Os lembretes no WhatsApp me ajudaram a criar o hábito. Já investi 3 meses seguidos pela primeira vez!"
                 </p>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
               </CardContent>
             </Card>
           </div>
