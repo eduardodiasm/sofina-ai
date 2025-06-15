@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -17,7 +16,7 @@ const Index = () => {
 
   const comparisonData = [
     ["Começo rápido", "✘ Reuniões e formulários", "✔︎ Plano em <strong>3&nbsp;min</strong> no WhatsApp"],
-    ["Clareza de linguagem", "✘ "Economês" e jargões", "✔︎ Mensagens simples, sem termos complicados"],
+    ["Clareza de linguagem", "✘ \"Economês\" e jargões", "✔︎ Mensagens simples, sem termos complicados"],
     ["Objetividade da recomendação", "✘ Produto que paga comissão", "✔︎ IA imparcial, <strong>zero comissão</strong>"],
     ["Valor mínimo para começar", "✘ Só aceita &gt; R$&nbsp;500&nbsp;mil", "✔︎ Comece com qualquer valor"],
     ["Acompanhamento", "✘ Horário comercial", "✔︎ Lembretes e ajustes <strong>24&nbsp;h</strong>"],
