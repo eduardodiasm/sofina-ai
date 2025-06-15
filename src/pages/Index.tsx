@@ -15,6 +15,16 @@ const Index = () => {
     trackPageVisit();
   }, []);
 
+  const comparisonData = [
+    ["Começo rápido", "✘ Reuniões e formulários", "✔︎ Plano em <strong>3&nbsp;min</strong> no WhatsApp"],
+    ["Clareza de linguagem", "✘ "Economês" e jargões", "✔︎ Mensagens simples, sem termos complicados"],
+    ["Objetividade da recomendação", "✘ Produto que paga comissão", "✔︎ IA imparcial, <strong>zero comissão</strong>"],
+    ["Valor mínimo para começar", "✘ Só aceita &gt; R$&nbsp;500&nbsp;mil", "✔︎ Comece com qualquer valor"],
+    ["Acompanhamento", "✘ Horário comercial", "✔︎ Lembretes e ajustes <strong>24&nbsp;h</strong>"],
+    ["Cancelamento", "✘ Burocracia ou multa", "✔︎ Cancela em 1 clique, sem taxas"],
+    ["Preço", "Até <strong>2&nbsp;%/ano</strong> sobre patrimônio", "R$&nbsp;39/mês"]
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -85,99 +95,55 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* COMPARATIVO */}
-      <section className="px-6 py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Sofina vs. Assessoria Tradicional
-            </h2>
+      {/* COMPARATIVO REFINED */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
+            Sofina vs. Assessoria Tradicional
+          </h3>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-[1fr_160px_160px] gap-4">
+            {/* Cabeçalho desktop */}
+            <div></div>
+            <div className="text-center text-slate-500 font-medium">Assessoria<br />Tradicional</div>
+            <div className="text-center text-slate-500 font-medium">Sofina</div>
+
+            {/* Rows */}
+            {comparisonData.map((item, index) => (
+              <>
+                <div key={`criteria-${index}`} className="bg-white rounded-2xl p-5 font-medium shadow">{item[0]}</div>
+                <div key={`traditional-${index}`} className={`bg-white rounded-2xl p-5 text-center shadow ${index === 6 ? 'text-slate-700' : 'text-red-500'}`}>
+                  <span dangerouslySetInnerHTML={{ __html: item[1] }} />
+                </div>
+                <div key={`sofina-${index}`} className={`bg-white rounded-2xl p-5 text-center shadow ${index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}`}>
+                  <span dangerouslySetInnerHTML={{ __html: item[2] }} />
+                </div>
+              </>
+            ))}
           </div>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm md:text-base border-separate border-spacing-y-4">
-              <thead className="text-slate-500">
-                <tr>
-                  <th className="text-left py-2"></th>
-                  <th className="text-center py-2">Assessoria<br />Tradicional</th>
-                  <th className="text-center py-2">Sofina</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* Linha 1 – Começo rápido */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Começo rápido</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> Reuniões e formulários
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ Plano em <strong>3&nbsp;min</strong> no WhatsApp
-                  </td>
-                </tr>
-                
-                {/* Linha 2 – Clareza de linguagem */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Clareza de linguagem</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> "Economês" e jargões
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ Mensagens simples, sem termos complicados
-                  </td>
-                </tr>
-                
-                {/* Linha 3 – Objetividade da recomendação */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Objetividade da recomendação</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> Produto que paga comissão
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ IA imparcial, <strong>zero comissão</strong>
-                  </td>
-                </tr>
-                
-                {/* Linha 4 – Valor mínimo para começar */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Valor mínimo para começar</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> Só aceita &gt; R$&nbsp;500&nbsp;mil
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ Comece com qualquer valor
-                  </td>
-                </tr>
-                
-                {/* Linha 5 – Acompanhamento */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Acompanhamento</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> Horário comercial
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ Lembretes e ajustes <strong>24&nbsp;h</strong>
-                  </td>
-                </tr>
-                
-                {/* Linha 6 – Cancelamento */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Cancelamento</td>
-                  <td className="text-center py-4">
-                    <span className="text-red-500 text-lg">✘</span> Burocracia ou multa
-                  </td>
-                  <td className="text-center py-4 text-green-600 text-lg rounded-r-2xl">
-                    ✔︎ Cancela em 1 clique, sem taxas
-                  </td>
-                </tr>
-                
-                {/* Linha 7 – Preço */}
-                <tr className="bg-white rounded-2xl shadow">
-                  <td className="py-4 pl-4 font-medium rounded-l-2xl">Preço</td>
-                  <td className="text-center py-4 text-slate-700">Até <strong>2&nbsp;%/ano</strong> sobre patrimônio</td>
-                  <td className="text-center py-4 text-green-700 font-semibold rounded-r-2xl">R$&nbsp;39/mês</td>
-                </tr>
-              </tbody>
-            </table>
+
+          {/* Mobile Stack */}
+          <div className="md:hidden space-y-4">
+            {comparisonData.map((item, index) => (
+              <div key={`mobile-${index}`} className="bg-white rounded-2xl p-6 shadow">
+                <p className="font-semibold mb-3">{item[0]}</p>
+                <p className="flex justify-between text-sm mb-1">
+                  <span className="text-slate-500">Assessoria</span> 
+                  <span className={index === 6 ? 'text-slate-700' : 'text-red-500'}>
+                    {index === 6 ? '' : '✘ '}
+                    <span dangerouslySetInnerHTML={{ __html: item[1].replace('✘ ', '') }} />
+                  </span>
+                </p>
+                <p className="flex justify-between text-sm">
+                  <span className="text-slate-500">Sofina</span> 
+                  <span className={index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}>
+                    {index === 6 ? '' : '✔︎ '}
+                    <span dangerouslySetInnerHTML={{ __html: item[2].replace('✔︎ ', '') }} />
+                  </span>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
