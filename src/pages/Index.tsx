@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -92,117 +91,75 @@ const Index = () => {
       <WhatsAppChat />
 
       {/* SECTION: Sofina vs Assessoria (versão compacta) */}
-      <section className="py-14 bg-slate-50">
+      {/* Removendo o bloco antigo de comparação! */}
+
+      {/* SECTION: Sem a Sofina x Com a Sofina */}
+      <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
-            Sofina vs. Assessoria Tradicional
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
+            Como você se sente hoje<br className="md:hidden" />
+            vs. depois de 30&nbsp;dias com a Sofina
           </h3>
-
-          {/* DESKTOP GRID */}
-          <div className="hidden md:grid gap-4"
-               style={{gridTemplateColumns: '1.2fr 0.9fr 0.9fr'}}>
-            {/* HEADER ROW */}
-            <div></div>
-            <div className="text-center text-slate-500 font-medium">Assessoria</div>
-            <div className="text-center text-slate-500 font-medium">Sofina</div>
-
-            {/* ============ 1) Começo rápido ============ */}
-            <div className="p-4 font-medium">Começo rápido</div>
-            <div className="p-4 text-center text-red-500">✘ Reuniões</div>
-            <div className="p-4 text-center text-green-600">✔ 3 min Whats</div>
-
-            {/* 2) Clareza */}
-            <div className="p-4 font-medium">Clareza</div>
-            <div className="p-4 text-center text-red-500">✘ "Economês"</div>
-            <div className="p-4 text-center text-green-600">✔ Simples</div>
-
-            {/* 3) Zero comissão */}
-            <div className="p-4 font-medium">Comissão</div>
-            <div className="p-4 text-center text-red-500">✘ Oculta</div>
-            <div className="p-4 text-center text-green-600">✔ 0 %</div>
-
-            {/* 4) Valor mínimo */}
-            <div className="p-4 font-medium">Valor mínimo</div>
-            <div className="p-4 text-center text-red-500">✘ ≥ R$ 500 k</div>
-            <div className="p-4 text-center text-green-600">✔ Qualquer</div>
-
-            {/* 5) Suporte */}
-            <div className="p-4 font-medium">Suporte</div>
-            <div className="p-4 text-center text-red-500">✘ 8-18 h</div>
-            <div className="p-4 text-center text-green-600">✔ 24 h</div>
-
-            {/* 6) Cancelamento */}
-            <div className="p-4 font-medium">Cancelamento</div>
-            <div className="p-4 text-center text-red-500">✘ Burocrático</div>
-            <div className="p-4 text-center text-green-600">✔ 1 clique</div>
-
-            {/* 7) Preço */}
-            <div className="p-4 font-medium">Preço</div>
-            <div className="p-4 text-center text-red-500">2 %/ano</div>
-            <div className="p-4 text-center text-green-700 font-semibold">R$ 39/mês</div>
+          {/* GRID */}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {/* EMOÇÃO 1 */}
+            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-slate-600">🙁 <span className="align-middle">Sem Sofina</span></p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Não sei se guardo ou gasto; planilhas me assustam.
+              </p>
+            </div>
+            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-green-700">🙂 <span className="align-middle">Com Sofina</span></p>
+              <p className="text-slate-700 text-sm leading-snug">
+                <strong>Plano de 3 min</strong>: quanto guardar, onde investir, revisões mensais.
+              </p>
+            </div>
+            {/* EMOÇÃO 2 */}
+            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-slate-600">🙁</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Horas perdido em vídeos de finanças.
+              </p>
+            </div>
+            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-green-700">🙂</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Só 5 min/semana respondendo WhatsApp.
+              </p>
+            </div>
+            {/* EMOÇÃO 3 */}
+            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-slate-600">🙁</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Medo de ser enganado por banco/corretora.
+              </p>
+            </div>
+            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-green-700">🙂</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                IA imparcial, <strong>zero comissão</strong>.
+              </p>
+            </div>
+            {/* EMOÇÃO 4 */}
+            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-slate-600">🙁</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Dinheiro parado rendendo &lt; 2&nbsp;% a.a.
+              </p>
+            </div>
+            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
+              <p className="text-sm font-semibold text-green-700">🙂</p>
+              <p className="text-slate-700 text-sm leading-snug">
+                Rumo à independência <strong>15&nbsp;anos mais cedo</strong>.
+              </p>
+            </div>
           </div>
-
-          {/* MOBILE CHIPS */}
-          <div className="md:hidden grid grid-cols-2 gap-3 text-sm">
-            {/* Chip component */}
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>Reuniões</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>3 min Whats</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>"Economês"</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>Simples</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>Comissão</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>0 %</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>≥ R$ 500 k</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>Qualquer</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>8-18 h</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>24 h</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-red-500 text-base">✘</span>
-              <span>Multa</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
-              <span className="text-green-600 text-base">✔</span>
-              <span>1 clique</span>
-            </div>
-
-            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3 col-span-2">
-              <span className="text-red-500 text-base">2 %/ano</span>
-              <span className="ml-auto text-green-700 font-semibold">R$ 39/mês</span>
-            </div>
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <a href="#form" className="bg-green-700 hover:bg-green-800 transition-colors text-white font-semibold px-6 py-3 rounded-lg shadow inline-block">
+              Quero sentir essa mudança
+            </a>
           </div>
         </div>
       </section>
