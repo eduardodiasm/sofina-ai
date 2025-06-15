@@ -42,7 +42,7 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">IA da Sofina</span> cria seu plano em 3 min + acompanhamento mensal.
+              <span className="text-green-700">IA da Sofina</span> cria um plano personalizado em 3 min e acompanha você todo mês — 30 dias grátis.
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI */}
