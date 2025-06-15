@@ -55,11 +55,11 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-600 text-sm mb-8">
             <div className="flex items-center space-x-2">
               <Zap className="w-4 h-4 text-green-700" />
-              <span>Plano pronto em 3 minutos</span>
+              <span>Plano pronto em 3 min</span>
             </div>
             <div className="flex items-center space-x-2">
               <Shield className="w-4 h-4 text-green-700" />
-              <span>30 dias grátis, sem compromisso</span>
+              <span>30 d grátis, sem compromisso</span>
             </div>
             <div className="flex items-center space-x-2">
               <BarChart3 className="w-4 h-4 text-green-700" />
