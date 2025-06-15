@@ -4,6 +4,7 @@ import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarCh
 import HeroForm from "@/components/HeroForm";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import SofinaCarousel from "@/components/SofinaCarousel";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 
@@ -90,9 +91,6 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* SECTION: Sofina vs Assessoria (versão compacta) */}
-      {/* Removendo o bloco antigo de comparação! */}
-
       {/* SECTION: Sem a Sofina x Com a Sofina */}
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
@@ -155,9 +153,11 @@ const Index = () => {
               </p>
             </div>
           </div>
-          {/* CTA removido conforme solicitado */}
         </div>
       </section>
+
+      {/* Nova seção: Como a Sofina ajuda você */}
+      <SofinaCarousel />
 
       {/* Depoimentos simulados */}
       <section className="px-6 py-20">
