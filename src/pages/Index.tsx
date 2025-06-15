@@ -43,7 +43,7 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">IA da Sofina</span> cria um plano gratuito em 3 min e acompanha você mensalmente como Private Banker
+              <span className="text-green-700">IA da Sofina</span> cria um plano e acompanha você como co-piloto financeiro
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
