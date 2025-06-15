@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Target, Star, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
@@ -13,16 +14,6 @@ const Index = () => {
   useEffect(() => {
     trackPageVisit();
   }, []);
-
-  const comparisonData = [
-    ["Começo rápido", "✘ Reuniões e formulários", "✔︎ Plano em <strong>3&nbsp;min</strong> no WhatsApp"],
-    ["Clareza de linguagem", "✘ \"Economês\" e jargões", "✔︎ Mensagens simples, sem termos complicados"],
-    ["Objetividade da recomendação", "✘ Produto que paga comissão", "✔︎ IA imparcial, <strong>zero comissão</strong>"],
-    ["Valor mínimo para começar", "✘ Só aceita &gt; R$&nbsp;500&nbsp;mil", "✔︎ Comece com qualquer valor"],
-    ["Acompanhamento", "✘ Horário comercial", "✔︎ Lembretes e ajustes <strong>24&nbsp;h</strong>"],
-    ["Cancelamento", "✘ Burocracia ou multa", "✔︎ Cancela em 1 clique, sem taxas"],
-    ["Preço", "Até <strong>2&nbsp;%/ano</strong> sobre patrimônio", "R$&nbsp;39/mês"]
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -100,104 +91,117 @@ const Index = () => {
       {/* WhatsApp Chat Section */}
       <WhatsAppChat />
 
-      {/* COMPARATIVO MOBILE-FIRST */}
-      <section className="py-16 bg-slate-50">
+      {/* SECTION: Sofina vs Assessoria (versão compacta) */}
+      <section className="py-14 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
             Sofina vs. Assessoria Tradicional
           </h3>
 
-          {/* ====== DESKTOP (unchanged grid) ====== */}
-          <div className="hidden md:grid gap-4" style={{gridTemplateColumns: '1.2fr 0.9fr 0.9fr'}}>
-            {/* header row */}
+          {/* DESKTOP GRID */}
+          <div className="hidden md:grid gap-4"
+               style={{gridTemplateColumns: '1.2fr 0.9fr 0.9fr'}}>
+            {/* HEADER ROW */}
             <div></div>
-            <div className="text-center text-slate-500 font-medium">Assessoria<br />Tradicional</div>
+            <div className="text-center text-slate-500 font-medium">Assessoria</div>
             <div className="text-center text-slate-500 font-medium">Sofina</div>
 
-            {/* Rows */}
-            {comparisonData.map((item, index) => (
-              <>
-                <div key={`criteria-${index}`} className="bg-white rounded-2xl p-5 text-base md:text-lg font-medium shadow">{item[0]}</div>
-                <div key={`traditional-${index}`} className={`bg-white rounded-2xl p-5 text-center text-sm md:text-base shadow ${index === 6 ? 'text-slate-700' : 'text-red-500'}`}>
-                  <span dangerouslySetInnerHTML={{ __html: item[1] }} />
-                </div>
-                <div key={`sofina-${index}`} className={`bg-white rounded-2xl p-5 text-center text-sm md:text-base shadow ${index === 6 ? 'text-green-700 font-semibold' : 'text-green-600'}`}>
-                  <span dangerouslySetInnerHTML={{ __html: item[2] }} />
-                </div>
-              </>
-            ))}
+            {/* ============ 1) Começo rápido ============ */}
+            <div className="p-4 font-medium">Começo rápido</div>
+            <div className="p-4 text-center text-red-500">✘ Reuniões</div>
+            <div className="p-4 text-center text-green-600">✔ 3 min Whats</div>
+
+            {/* 2) Clareza */}
+            <div className="p-4 font-medium">Clareza</div>
+            <div className="p-4 text-center text-red-500">✘ "Economês"</div>
+            <div className="p-4 text-center text-green-600">✔ Simples</div>
+
+            {/* 3) Zero comissão */}
+            <div className="p-4 font-medium">Comissão</div>
+            <div className="p-4 text-center text-red-500">✘ Oculta</div>
+            <div className="p-4 text-center text-green-600">✔ 0 %</div>
+
+            {/* 4) Valor mínimo */}
+            <div className="p-4 font-medium">Valor mínimo</div>
+            <div className="p-4 text-center text-red-500">✘ ≥ R$ 500 k</div>
+            <div className="p-4 text-center text-green-600">✔ Qualquer</div>
+
+            {/* 5) Suporte */}
+            <div className="p-4 font-medium">Suporte</div>
+            <div className="p-4 text-center text-red-500">✘ 8-18 h</div>
+            <div className="p-4 text-center text-green-600">✔ 24 h</div>
+
+            {/* 6) Cancelamento */}
+            <div className="p-4 font-medium">Cancelamento</div>
+            <div className="p-4 text-center text-red-500">✘ Burocrático</div>
+            <div className="p-4 text-center text-green-600">✔ 1 clique</div>
+
+            {/* 7) Preço */}
+            <div className="p-4 font-medium">Preço</div>
+            <div className="p-4 text-center text-red-500">2 %/ano</div>
+            <div className="p-4 text-center text-green-700 font-semibold">R$ 39/mês</div>
           </div>
 
-          {/* ====== MOBILE CARDS ====== */}
-          <div className="md:hidden space-y-4">
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Começo rápido
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Reuniões e formulários</p>
-                <p className="text-green-600">✔ Plano em <strong>3&nbsp;min</strong> no WhatsApp</p>
-              </div>
+          {/* MOBILE CHIPS */}
+          <div className="md:hidden grid grid-cols-2 gap-3 text-sm">
+            {/* Chip component */}
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>Reuniões</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>3 min Whats</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Clareza de linguagem
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ "Economês" e jargões</p>
-                <p className="text-green-600">✔ Mensagens simples, sem termos complicados</p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>"Economês"</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>Simples</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Objetividade da recomendação
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Produto que paga comissão</p>
-                <p className="text-green-600">✔ IA imparcial, <strong>zero comissão</strong></p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>Comissão</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>0 %</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Valor mínimo para começar
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Só aceita &gt; R$ 500 mil</p>
-                <p className="text-green-600">✔ Comece com qualquer valor</p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>≥ R$ 500 k</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>Qualquer</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Acompanhamento
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Horário comercial</p>
-                <p className="text-green-600">✔ Lembretes e ajustes <strong>24 h</strong></p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>8-18 h</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>24 h</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Cancelamento
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Burocracia ou multa</p>
-                <p className="text-green-600">✔ Cancela em 1 clique, sem taxas</p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-red-500 text-base">✘</span>
+              <span>Multa</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3">
+              <span className="text-green-600 text-base">✔</span>
+              <span>1 clique</span>
             </div>
 
-            <div className="bg-white rounded-2xl shadow">
-              <div className="bg-slate-100 text-xs font-semibold text-slate-600 px-3 py-2 rounded-t-2xl">
-                Preço
-              </div>
-              <div className="px-3 py-3 leading-snug text-sm">
-                <p className="text-red-500 mb-1">✘ Até 2% /ano sobre patrimônio</p>
-                <p className="text-green-700 font-semibold">✔ R$ 39/mês</p>
-              </div>
+            <div className="flex items-center gap-2 bg-white shadow rounded-xl py-2 px-3 col-span-2">
+              <span className="text-red-500 text-base">2 %/ano</span>
+              <span className="ml-auto text-green-700 font-semibold">R$ 39/mês</span>
             </div>
           </div>
         </div>
