@@ -155,12 +155,7 @@ const Index = () => {
               </p>
             </div>
           </div>
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <a href="#form" className="bg-green-700 hover:bg-green-800 transition-colors text-white font-semibold px-6 py-3 rounded-lg shadow inline-block">
-              Quero sentir essa mudança
-            </a>
-          </div>
+          {/* CTA removido conforme solicitado */}
         </div>
       </section>
 
