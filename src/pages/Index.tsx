@@ -43,7 +43,8 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              Receba o plano inicial em 3 min e conte com a <span className="text-green-700">Sofina</span> todos os meses para investir melhor.
+              <span className="text-green-700">Sofina</span>, seu private banker 24/7, sem comissão e sem economês.
+              
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
