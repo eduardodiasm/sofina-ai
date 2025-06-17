@@ -45,13 +45,13 @@ const SofinaCarousel = () => {
   }, [api]);
 
   return (
-    <section className="px-4 sm:px-6 py-12 sm:py-16 bg-gradient-to-br from-slate-50 via-white to-green-50 relative overflow-hidden">
+    <section className="px-4 sm:px-6 py-8 sm:py-12 lg:py-14 bg-gradient-to-br from-slate-50 via-white to-green-50 relative overflow-hidden">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(34,197,94,0.03),transparent_50%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.02),transparent_50%)] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative">
-        <div className="text-center mb-8 sm:mb-12">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
             Como a Sofina ajuda você
           </h2>
@@ -78,14 +78,14 @@ const SofinaCarousel = () => {
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
                   <Card className="border-0 bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/80 hover:-translate-y-1 rounded-2xl overflow-hidden h-full group">
-                    <CardContent className="p-4 sm:p-6 flex flex-col items-center text-center h-full">
+                    <CardContent className="p-4 sm:p-5 lg:p-6 flex flex-col items-center text-center h-full">
                       {/* Image container with optimized sizing */}
-                      <div className="mb-4 sm:mb-6 w-full flex justify-center">
+                      <div className="mb-3 sm:mb-4 lg:mb-5 w-full flex justify-center">
                         <div className="relative">
                           <img 
                             src={slide.image} 
                             alt={slide.title}
-                            className="w-48 sm:w-56 lg:w-64 h-auto rounded-xl shadow-md group-hover:shadow-lg transition-shadow duration-300 max-w-[200px] sm:max-w-[224px] lg:max-w-[256px]"
+                            className="w-48 sm:w-56 lg:w-48 h-auto rounded-xl shadow-md group-hover:shadow-lg transition-shadow duration-300 max-w-[200px] sm:max-w-[224px] lg:max-w-[192px]"
                           />
                           {/* Subtle overlay on hover */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
