@@ -38,13 +38,17 @@ const Index = () => {
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
+            <p className="text-lg md:text-xl text-green-700 font-medium mb-4">
+              Conheça a Sofina
+            </p>
+            
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Invista melhor no <span className="text-green-700">WhatsApp</span>.
+              O primeiro private banker <br className="hidden sm:block" />
+              por <span className="text-green-700">WhatsApp</span> do Brasil.
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">Sofina</span>: seu private banker 24/7, sem comissão e sem economês.
-              
+              Seu copiloto financeiro 24/7, sem comissão e sem economês.
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
