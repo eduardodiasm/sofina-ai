@@ -43,7 +43,7 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">Sofina</span>, seu private banker 24/7, sem comissão e sem economês.
+              <span className="text-green-700">Sofina</span>: seu private banker 24/7, sem comissão e sem economês.
               
             </h2>
 
