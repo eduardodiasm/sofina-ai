@@ -60,7 +60,7 @@ const SofinaCarousel = () => {
           </p>
         </div>
         
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-5xl mx-auto overflow-x-hidden">
           <Carousel 
             setApi={setApi}
             opts={{
@@ -107,9 +107,9 @@ const SofinaCarousel = () => {
               ))}
             </CarouselContent>
             
-            {/* Enhanced navigation buttons */}
-            <CarouselPrevious className="absolute -left-8 sm:-left-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
-            <CarouselNext className="absolute -right-8 sm:-right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
+            {/* Enhanced navigation buttons - positioned to avoid overflow */}
+            <CarouselPrevious className="absolute left-2 sm:left-4 lg:-left-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
+            <CarouselNext className="absolute right-2 sm:right-4 lg:-right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
           </Carousel>
           
           {/* Modern slide indicators */}

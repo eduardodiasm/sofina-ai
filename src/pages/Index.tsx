@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
       <header className="relative z-10 px-6 py-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -47,7 +47,7 @@ const Index = () => {
               por <span className="text-green-700">WhatsApp</span> do Brasil.
             </h1>
             
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
+            <h2 id="hero-subtitle" className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
               Seu copiloto financeiro 24/7, sem comissão e sem economês.
             </h2>
 
