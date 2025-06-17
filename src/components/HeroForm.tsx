@@ -116,7 +116,7 @@ const HeroForm = () => {
           ) : (
             <>
               <Phone className="w-5 h-5 mr-2" />
-              Quero meu plano grátis
+              Quero meu Copiloto Financeiro
             </>
           )}
         </Button>
