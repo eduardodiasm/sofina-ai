@@ -27,17 +27,12 @@ const SofinaCarousel = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-6 py-16 sm:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Efeitos de fundo */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/20 via-transparent to-transparent"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-transparent"></div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+    <section className="px-4 sm:px-6 py-12 sm:py-16 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Como a Sofina ajuda você
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
         </div>
         
         <div className="relative max-w-5xl mx-auto">
@@ -53,54 +48,35 @@ const SofinaCarousel = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-3 sm:-ml-4">
+            <CarouselContent className="-ml-2 sm:-ml-4">
               {slides.map((slide, index) => (
-                <CarouselItem key={index} className="pl-3 sm:pl-4 basis-[90%] sm:basis-1/2 lg:basis-1/3">
-                  <Card className="border-0 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 h-full group">
-                    <CardContent className="p-6 sm:p-8 flex flex-col items-center text-center h-full">
-                      {/* Imagem reduzida no mobile */}
-                      <div className="mb-6 relative">
-                        <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-2xl overflow-hidden shadow-xl ring-2 ring-white/20 group-hover:ring-green-400/50 transition-all duration-300">
-                          <img 
-                            src={slide.image} 
-                            alt={slide.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
-                        </div>
-                        {/* Efeito de brilho */}
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                  <Card className="border border-slate-200 rounded-lg shadow-sm bg-white h-full">
+                    <CardContent className="p-4 sm:p-6 flex flex-col items-center text-center h-full">
+                      <div className="mb-4 sm:mb-6 w-full max-w-xs mx-auto">
+                        <img 
+                          src={slide.image} 
+                          alt={slide.title}
+                          className="w-full h-auto rounded-lg shadow-sm"
+                        />
                       </div>
-                      
-                      <div className="flex-1 flex flex-col justify-center space-y-4">
-                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-green-400 leading-tight">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#00A86B] mb-2 sm:mb-3 leading-tight">
                           {slide.title}
                         </h3>
-                        <p className="text-gray-200 text-sm sm:text-base leading-relaxed opacity-90">
+                        <p className="text-[#333333] text-sm sm:text-base leading-relaxed">
                           {slide.description}
                         </p>
                       </div>
-                      
-                      {/* Indicador visual */}
-                      <div className="mt-6 w-full h-px bg-gradient-to-r from-transparent via-green-400/30 to-transparent"></div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
             
-            <CarouselPrevious className="absolute -left-8 sm:-left-12 top-1/2 -translate-y-1/2 border-green-400/30 bg-white/10 backdrop-blur-sm text-green-400 hover:bg-green-400 hover:text-white transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg" />
-            <CarouselNext className="absolute -right-8 sm:-right-12 top-1/2 -translate-y-1/2 border-green-400/30 bg-white/10 backdrop-blur-sm text-green-400 hover:bg-green-400 hover:text-white transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg" />
+            <CarouselPrevious className="absolute -left-8 sm:-left-12 top-1/2 -translate-y-1/2 border-[#00A86B] text-[#00A86B] hover:bg-[#00A86B] hover:text-white transition-colors duration-200 w-8 h-8 sm:w-10 sm:h-10" />
+            <CarouselNext className="absolute -right-8 sm:-right-12 top-1/2 -translate-y-1/2 border-[#00A86B] text-[#00A86B] hover:bg-[#00A86B] hover:text-white transition-colors duration-200 w-8 h-8 sm:w-10 sm:h-10" />
           </Carousel>
-          
-          {/* Indicadores de slides na parte inferior */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {slides.map((_, index) => (
-              <div 
-                key={index} 
-                className="w-2 h-2 rounded-full bg-white/30 hover:bg-green-400/70 transition-colors duration-200"
-              ></div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
