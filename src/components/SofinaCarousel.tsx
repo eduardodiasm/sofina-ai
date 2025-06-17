@@ -11,18 +11,18 @@ const SofinaCarousel = () => {
     },
     {
       image: "/lovable-uploads/b871262f-b92c-40eb-844d-5f77880a6a7c.png",
-      title: "Seu plano personalizado",
+      title: "Plano inicial personalizado",
       description: "Estratégia simples, construída para seu objetivo."
     },
     {
       image: "/lovable-uploads/31d5bc3d-4a0b-4afc-8c63-6ced993f1457.png",
       title: "Nunca perca o dia de investir",
-      description: "Lembretes pontuais + orientação prática."
+      description: "Lembretes mensais + orientação prática."
     },
     {
       image: "/lovable-uploads/debaecae-e2a1-43cb-9fa8-ac607c5fb4f9.png",
-      title: "Pílula Financeira",
-      description: "Insights semanais para turbinar sua disciplina."
+      title: "Insights semanais que mantêm você na rota",
+      description: "Mantenha-se atualizado e com conceitos em dia, sem precisar maratonar o Primo Rico."
     }
   ];
 
