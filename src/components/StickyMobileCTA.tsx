@@ -9,7 +9,7 @@ const StickyMobileCTA = () => {
           </p>
         </div>
         <a 
-          href="#copiloto-text"
+          href="#form"
           className="inline-flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white px-6 py-2 text-sm font-semibold rounded-lg shadow-sm transition-colors"
         >
           Quero agora
