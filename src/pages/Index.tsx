@@ -43,7 +43,7 @@ const Index = () => {
             </h1>
             
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-700 mb-6 leading-snug">
-              <span className="text-green-700">IA da Sofina</span>, seu private banker no WhatsApp: Do zero ao plano financeiro em 3 min, com acompanhamento mensal
+              Receba o plano inicial em 3 min e conte com a <span className="text-green-700">Sofina</span> todos os meses para investir melhor.
             </h2>
 
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
