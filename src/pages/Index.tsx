@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden font-inter">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
       <header className="relative z-10 px-6 py-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -26,7 +26,7 @@ const Index = () => {
               alt="Sofina Logo" 
               className="w-10 h-10"
             />
-            <span className="text-2xl font-bold text-slate-900 font-playfair">Sofina</span>
+            <span className="text-2xl font-bold text-slate-900">Sofina</span>
           </div>
           <Badge variant="outline" className="border-green-200 text-green-700 bg-green-50">
             30 dias grátis
@@ -42,7 +42,7 @@ const Index = () => {
               Conheça a Sofina
             </p>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight font-playfair">
+            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
               O primeiro private banker <br className="hidden sm:block" />
               por <span className="text-green-700">WhatsApp</span> do Brasil.
             </h1>
@@ -99,7 +99,7 @@ const Index = () => {
       {/* SECTION: Sem a Sofina x Com a Sofina - MOVED AFTER CAROUSEL */}
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10 font-playfair">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10">
             Como você se sente hoje <br className="md:hidden" />
             vs. depois de 30&nbsp;dias com a Sofina
           </h3>
@@ -165,7 +165,7 @@ const Index = () => {
       <section className="px-6 py-20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 font-playfair">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Resultados reais em 30 dias
             </h2>
           </div>
@@ -229,7 +229,7 @@ const Index = () => {
       <section className="px-6 py-20 bg-slate-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-slate-900 mb-4 font-playfair">Para quem é a Sofina?</h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-4">Para quem é a Sofina?</h3>
           </div>
           
           <ul className="space-y-6 max-w-xl mx-auto text-slate-700">
@@ -259,7 +259,7 @@ const Index = () => {
                 alt="Sofina Logo" 
                 className="w-8 h-8"
               />
-              <span className="text-xl font-bold text-slate-900 font-playfair">Sofina</span>
+              <span className="text-xl font-bold text-slate-900">Sofina</span>
             </div>
             <div className="text-center md:text-right">
               <p className="text-slate-600 text-sm mb-2">
