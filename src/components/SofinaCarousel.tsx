@@ -52,10 +52,10 @@ const SofinaCarousel = () => {
       
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight font-jakarta">
             Como a Sofina ajuda você
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto font-inter">
             Descubra como nossa IA transforma sua jornada financeira em apenas alguns passos
           </p>
         </div>
@@ -94,10 +94,10 @@ const SofinaCarousel = () => {
                       
                       {/* Content with improved typography */}
                       <div className="flex-1 flex flex-col justify-center space-y-3">
-                        <h3 className="text-lg sm:text-xl font-bold text-green-700 leading-tight group-hover:text-green-800 transition-colors duration-200">
+                        <h3 className="text-lg sm:text-xl font-bold text-green-700 leading-tight group-hover:text-green-800 transition-colors duration-200 font-poppins">
                           {slide.title}
                         </h3>
-                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+                        <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium font-inter">
                           {slide.description}
                         </p>
                       </div>
