@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { CheckCircle, Target, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
 import HeroForm from "@/components/HeroForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -14,6 +15,13 @@ const Index = () => {
   useEffect(() => {
     trackPageVisit();
   }, []);
+
+  const scrollToForm = () => {
+    const formElement = document.getElementById('form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden font-inter">
@@ -96,67 +104,102 @@ const Index = () => {
       {/* SECTION: Como a Sofina ajuda você - CAROUSEL FIRST */}
       <SofinaCarousel />
 
-      {/* SECTION: Sem a Sofina x Com a Sofina - MOVED AFTER CAROUSEL */}
-      <section className="py-16">
+      {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6 lg:px-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-10 font-jakarta">
-            Como você se sente hoje <br className="md:hidden" />
-            vs. depois de <span className="font-poppins">30&nbsp;dias</span> com a Sofina
-          </h3>
-          {/* GRID */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {/* EMOÇÃO 1 */}
-            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-slate-600 font-poppins">🙁 <span className="align-middle">Sem Sofina</span></p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Não sei se guardo ou gasto; planilhas me assustam.
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-jakarta">
+              Como você se sente hoje vs. depois de <span className="font-poppins">30 dias</span> com a Sofina
+            </h3>
+            <p className="text-lg text-slate-600 font-inter">
+              A diferença de ter um copiloto financeiro do seu lado.
+            </p>
+          </div>
+          
+          {/* GRID - Duas colunas bem definidas */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            {/* COLUNA ESQUERDA - ANTES */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-red-200">
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-bold text-slate-700 font-jakarta flex items-center justify-center gap-2">
+                  😩 <span>Antes da Sofina</span>
+                </h4>
+              </div>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-slate-600 font-inter">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>Não sei se guardo ou gasto</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600 font-inter">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>Dinheiro parado rendendo <span className="font-poppins font-semibold">&lt;2% ao ano</span></span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600 font-inter">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>Medo de ser enrolado por banco ou corretora</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600 font-inter">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>Horas perdidas em vídeos e planilhas</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-600 font-inter">
+                  <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>Insegurança total sobre como investir</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* COLUNA DIREITA - DEPOIS */}
+            <div className="bg-green-50 rounded-2xl shadow-lg p-8 border-l-4 border-green-400">
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-bold text-green-800 font-jakarta flex items-center justify-center gap-2">
+                  🚀 <span>Depois da Sofina</span>
+                </h4>
+              </div>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-slate-700 font-inter">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Plano claro de quanto guardar e onde investir</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-700 font-inter">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Sugestões semanais pelo WhatsApp</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-700 font-inter">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>IA imparcial, sem comissão ou conflito de interesse</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-700 font-inter">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Só <span className="font-poppins font-semibold">5 minutos</span> por semana para manter tudo em dia</span>
+                </li>
+                <li className="flex items-start gap-3 text-slate-700 font-inter">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span>Confiança e constância nos seus aportes</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA INTEGRADO */}
+          <div className="text-center bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+            <div className="mb-6">
+              <h4 className="text-2xl font-bold text-slate-900 font-jakarta mb-2">
+                🎯 Pronto para sair do modo "dinheiro parado"?
+              </h4>
+              <p className="text-lg text-slate-600 font-inter">
+                Veja seu plano financeiro em <span className="font-poppins font-semibold">3 minutos</span>, grátis por <span className="font-poppins font-semibold">30 dias</span>.
               </p>
             </div>
-            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-green-700 font-poppins">🙂 <span className="align-middle">Com Sofina</span></p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                <strong className="font-poppins">Plano de 3 min</strong>: quanto guardar, onde investir, revisões mensais.
-              </p>
-            </div>
-            {/* EMOÇÃO 2 */}
-            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-slate-600 font-poppins">🙁</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Horas perdido em vídeos de finanças.
-              </p>
-            </div>
-            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-green-700 font-poppins">🙂</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Só <span className="font-poppins font-semibold">5 min/semana</span> respondendo WhatsApp.
-              </p>
-            </div>
-            {/* EMOÇÃO 3 */}
-            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-slate-600 font-poppins">🙁</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Medo de ser enganado por banco/corretora.
-              </p>
-            </div>
-            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-green-700 font-poppins">🙂</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                IA imparcial, <strong className="font-poppins">zero comissão</strong>.
-              </p>
-            </div>
-            {/* EMOÇÃO 4 */}
-            <div className="bg-white rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-slate-600 font-poppins">🙁</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Dinheiro parado rendendo <span className="font-poppins">&lt; 2&nbsp;% a.a.</span>
-              </p>
-            </div>
-            <div className="bg-green-50 rounded-2xl shadow p-5 space-y-2">
-              <p className="text-sm font-semibold text-green-700 font-poppins">🙂</p>
-              <p className="text-slate-700 text-sm leading-snug font-inter">
-                Rumo à independência <strong className="font-poppins">15&nbsp;anos mais cedo</strong>.
-              </p>
-            </div>
+            
+            <Button 
+              onClick={scrollToForm}
+              className="bg-green-700 hover:bg-green-800 text-white px-8 py-4 text-lg font-semibold rounded-xl font-poppins shadow-lg hover:shadow-xl transition-all duration-200"
+            >
+              Quero meu plano agora
+            </Button>
           </div>
         </div>
       </section>
