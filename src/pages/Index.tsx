@@ -2,15 +2,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Users, Shield, TrendingUp, DollarSign, BarChart3, Zap, Brain, MessageCircle, Check, X, Clock, Handshake, ShieldCheck, Target, Bell, Heart } from 'lucide-react';
+import { CheckCircle, Target, Users, Shield, TrendingUp, DollarSign, BarChart3, AlertCircle, Zap, BookOpen, Clock, Heart, Brain, MessageCircle, Check, X, Handshake, ShieldCheck } from 'lucide-react';
 import HeroForm from "@/components/HeroForm";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
-import HowItWorksTimeline from "@/components/HowItWorksTimeline";
-import WhatsAppCarousel from "@/components/WhatsAppCarousel";
+import SofinaCarousel from "@/components/SofinaCarousel";
 import BenefitsSection from "@/components/BenefitsSection";
-import EmotionalCTA from "@/components/EmotionalCTA";
 
 const Index = () => {
   const { trackPageVisit } = useSimpleAnalytics();
@@ -45,7 +43,7 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section - Improved */}
+      {/* Hero Section */}
       <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
@@ -53,12 +51,12 @@ const Index = () => {
               Conheça a Sofina
             </p>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
               O primeiro private banker <br className="hidden sm:block" />
               por <span className="text-green-600">WhatsApp</span> do Brasil.
             </h1>
             
-            <h2 id="hero-subtitle" className="text-lg md:text-xl font-medium text-slate-700 mb-4 md:mb-6 leading-[1.5] max-w-[800px] mx-auto">
+            <h2 id="hero-subtitle" className="text-base md:text-lg font-medium text-slate-700 mb-4 md:mb-6 leading-[1.5] max-w-[800px] mx-auto">
               Seu copiloto financeiro 24/7, sem comissão e sem economês.
             </h2>
 
@@ -73,6 +71,7 @@ const Index = () => {
                 <span>Auditoria <strong className="text-slate-700 font-medium">CFA®</strong></span>
               </div>
             </div>
+            
           </div>
 
           {/* Hero Form - Formulário Principal */}
@@ -80,19 +79,18 @@ const Index = () => {
             <HeroForm />
           </section>
 
-          {/* Hero Benefits Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-            <div className="bg-white rounded-xl p-4 shadow-md border border-green-100 text-center">
-              <Zap className="w-6 h-6 text-green-600 mx-auto mb-2" />
-              <span className="text-sm font-medium text-slate-700">Plano pronto em <strong>3 min</strong></span>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 text-slate-600 text-sm mb-6 md:mb-8">
+            <div className="flex items-center space-x-2">
+              <Zap className="w-4 h-4 text-green-600" />
+              <span>Plano pronto em <span className="font-medium">3 min</span></span>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-md border border-green-100 text-center">
-              <Shield className="w-6 h-6 text-green-600 mx-auto mb-2" />
-              <span className="text-sm font-medium text-slate-700"><strong>30 d</strong> grátis, sem compromisso</span>
+            <div className="flex items-center space-x-2">
+              <Shield className="w-4 h-4 text-green-600" />
+              <span><span className="font-medium">30 d</span> grátis, sem compromisso</span>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-md border border-green-100 text-center">
-              <BarChart3 className="w-6 h-6 text-green-600 mx-auto mb-2" />
-              <span className="text-sm font-medium text-slate-700">Valores e ativos específicos</span>
+            <div className="flex items-center space-x-2">
+              <BarChart3 className="w-4 h-4 text-green-600" />
+              <span>Valores e ativos específicos</span>
             </div>
           </div>
 
@@ -104,13 +102,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION: Como funciona - NEW TIMELINE */}
-      <HowItWorksTimeline />
+      {/* SECTION: Como a Sofina ajuda você - CAROUSEL FIRST */}
+      <SofinaCarousel />
 
-      {/* SECTION: WhatsApp Carousel - NEW */}
-      <WhatsAppCarousel />
-
-      {/* SECTION: Benefícios da Sofina - IMPROVED */}
+      {/* SECTION: Benefícios da Sofina - NEW */}
       <BenefitsSection />
 
       {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
@@ -128,31 +123,31 @@ const Index = () => {
           {/* GRID - Duas colunas bem definidas */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-8 md:mb-12">
             {/* COLUNA ESQUERDA - ANTES */}
-            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl shadow-lg p-6 md:p-8 border-l-4 border-red-300 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-red-200">
               <div className="text-center mb-6">
-                <h4 className="text-xl font-semibold text-red-800 flex items-center justify-center gap-2">
+                <h4 className="text-lg font-semibold text-slate-700 flex items-center justify-center gap-2">
                   😩 <span>Antes da Sofina</span>
                 </h4>
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Não sei se guardo ou gasto</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Dinheiro parado rendendo <span className="font-medium">&lt;2% ao ano</span></span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Medo de ser enrolado por banco ou corretora</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Horas perdidas em vídeos e planilhas</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Insegurança total sobre como investir</span>
                 </li>
@@ -160,9 +155,9 @@ const Index = () => {
             </div>
 
             {/* COLUNA DIREITA - DEPOIS */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-lg p-6 md:p-8 border-l-4 border-green-400 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-green-50 rounded-xl shadow-md p-6 md:p-8 border-l-4 border-green-400">
               <div className="text-center mb-6">
-                <h4 className="text-xl font-semibold text-green-800 flex items-center justify-center gap-2">
+                <h4 className="text-lg font-semibold text-green-800 flex items-center justify-center gap-2">
                   🚀 <span>Depois da Sofina</span>
                 </h4>
               </div>
@@ -193,7 +188,7 @@ const Index = () => {
           </div>
 
           {/* CTA INTEGRADO */}
-          <div className="text-center bg-white rounded-2xl shadow-lg p-6 md:p-8 max-w-2xl mx-auto border border-gray-100">
+          <div className="text-center bg-white rounded-xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
             <div className="mb-6">
               <h4 className="text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
                 🎯 Pronto para sair do modo "dinheiro parado"?
@@ -205,7 +200,7 @@ const Index = () => {
             
             <Button 
               onClick={scrollToForm}
-              className="bg-green-600 hover:bg-green-700 text-white text-base py-3 px-6 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              className="bg-green-600 hover:bg-green-700 text-white text-base py-2.5 px-5 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
               Quero meu plano agora
             </Button>
@@ -213,49 +208,29 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PARA QUEM É - IMPROVED WITH CARDS */}
-      <section className="px-6 md:px-10 py-16 md:py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+      {/* PARA QUEM É */}
+      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 leading-[1.3]">Para quem é a Sofina?</h3>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-blue-600" />
-              </div>
-              <h4 className="text-lg font-semibold text-slate-900 mb-3">Falta de tempo</h4>
-              <p className="text-slate-600 text-sm leading-[1.5]">
-                Não gaste horas em vídeos de finanças — a IA faz tudo por você.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Handshake className="w-6 h-6 text-green-600" />
-              </div>
-              <h4 className="text-lg font-semibold text-slate-900 mb-3">Falta de confiança</h4>
-              <p className="text-slate-600 text-sm leading-[1.5]">
-                <strong>Zero</strong> metas de venda, <strong>zero</strong> comissão escondida.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <ShieldCheck className="w-6 h-6 text-purple-600" />
-              </div>
-              <h4 className="text-lg font-semibold text-slate-900 mb-3">Medo de errar</h4>
-              <p className="text-slate-600 text-sm leading-[1.5]">
-                Planos auditados por <strong>CFA®</strong> — sem termos complicados.
-              </p>
-            </div>
-          </div>
+          <ul className="space-y-6 max-w-[800px] mx-auto text-slate-700">
+            <li className="flex gap-3 leading-[1.5] text-base">
+              <Clock className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
+              <span><strong className="font-medium">Falta de tempo:</strong> Não gaste horas em vídeos de finanças — a IA faz tudo por você.</span>
+            </li>
+            <li className="flex gap-3 leading-[1.5] text-base">
+              <Handshake className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
+              <span><strong className="font-medium">Falta de confiança:</strong> <span className="font-medium">Zero</span> metas de venda, <span className="font-medium">zero</span> comissão escondida.</span>
+            </li>
+            <li className="flex gap-3 leading-[1.5] text-base">
+              <ShieldCheck className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
+              <span><strong className="font-medium">Medo de errar:</strong> Planos auditados por <span className="font-medium">CFA®</span> — sem termos complicados.</span>
+            </li>
+          </ul>
         </div>
       </section>
-
-      {/* EMOTIONAL CTA - NEW */}
-      <EmotionalCTA onScrollToForm={scrollToForm} />
 
       {/* Footer */}
       <footer className="px-6 md:px-10 py-12 bg-gray-50 border-t border-slate-200">
