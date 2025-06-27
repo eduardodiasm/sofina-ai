@@ -51,7 +51,7 @@ const Index = () => {
               Conheça a Sofina
             </p>
             
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
               O primeiro private banker <br className="hidden sm:block" />
               por <span className="text-green-600">WhatsApp</span> do Brasil.
             </h1>
@@ -112,10 +112,10 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 max-w-[800px] mx-auto leading-[1.3]">
+            <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 max-w-[800px] mx-auto leading-[1.3]">
               Como você se sente hoje vs. depois de <span className="font-semibold">30 dias</span> com a Sofina
             </h3>
-            <p className="text-base md:text-lg font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
+            <p className="text-base font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
               A diferença de ter um copiloto financeiro do seu lado.
             </p>
           </div>
@@ -125,29 +125,29 @@ const Index = () => {
             {/* COLUNA ESQUERDA - ANTES */}
             <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-red-200">
               <div className="text-center mb-6">
-                <h4 className="text-base md:text-lg font-semibold text-slate-700 flex items-center justify-center gap-2">
+                <h4 className="text-lg font-semibold text-slate-700 flex items-center justify-center gap-2">
                   😩 <span>Antes da Sofina</span>
                 </h4>
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Não sei se guardo ou gasto</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Dinheiro parado rendendo <span className="font-medium">&lt;2% ao ano</span></span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Medo de ser enrolado por banco ou corretora</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Horas perdidas em vídeos e planilhas</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-base">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Insegurança total sobre como investir</span>
                 </li>
@@ -157,29 +157,29 @@ const Index = () => {
             {/* COLUNA DIREITA - DEPOIS */}
             <div className="bg-green-50 rounded-xl shadow-md p-6 md:p-8 border-l-4 border-green-400">
               <div className="text-center mb-6">
-                <h4 className="text-base md:text-lg font-semibold text-green-800 flex items-center justify-center gap-2">
+                <h4 className="text-lg font-semibold text-green-800 flex items-center justify-center gap-2">
                   🚀 <span>Depois da Sofina</span>
                 </h4>
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Plano claro de quanto guardar e onde investir</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Sugestões semanais pelo WhatsApp</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>IA imparcial, sem comissão ou conflito de interesse</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Só <span className="font-medium">5 minutos</span> por semana para manter tudo em dia</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Confiança e constância nos seus aportes</span>
                 </li>
@@ -190,10 +190,10 @@ const Index = () => {
           {/* CTA INTEGRADO */}
           <div className="text-center bg-white rounded-xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
             <div className="mb-6">
-              <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
+              <h4 className="text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
                 🎯 Pronto para sair do modo "dinheiro parado"?
               </h4>
-              <p className="text-base md:text-lg font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
+              <p className="text-base font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
                 Veja seu plano financeiro em <span className="font-semibold">3 minutos</span>, grátis por <span className="font-semibold">30 dias</span>.
               </p>
             </div>
@@ -212,19 +212,19 @@ const Index = () => {
       <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 leading-[1.3]">Para quem é a Sofina?</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 leading-[1.3]">Para quem é a Sofina?</h3>
           </div>
           
           <ul className="space-y-6 max-w-[800px] mx-auto text-slate-700">
-            <li className="flex gap-3 leading-[1.5] text-[17px]">
+            <li className="flex gap-3 leading-[1.5] text-base">
               <Clock className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Falta de tempo:</strong> Não gaste horas em vídeos de finanças — a IA faz tudo por você.</span>
             </li>
-            <li className="flex gap-3 leading-[1.5] text-[17px]">
+            <li className="flex gap-3 leading-[1.5] text-base">
               <Handshake className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Falta de confiança:</strong> <span className="font-medium">Zero</span> metas de venda, <span className="font-medium">zero</span> comissão escondida.</span>
             </li>
-            <li className="flex gap-3 leading-[1.5] text-[17px]">
+            <li className="flex gap-3 leading-[1.5] text-base">
               <ShieldCheck className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Medo de errar:</strong> Planos auditados por <span className="font-medium">CFA®</span> — sem termos complicados.</span>
             </li>

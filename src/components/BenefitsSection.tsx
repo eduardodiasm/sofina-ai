@@ -34,10 +34,10 @@ const BenefitsSection = () => {
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6 md:px-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 md:mb-6 leading-[1.3] max-w-[800px] mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 md:mb-6 leading-[1.3] max-w-[800px] mx-auto">
             Menos dúvida, mais patrimônio.
           </h2>
-          <p className="text-base md:text-lg font-medium text-slate-700 max-w-[800px] mx-auto leading-[1.5]">
+          <p className="text-base font-medium text-slate-700 max-w-[800px] mx-auto leading-[1.5]">
             A Sofina cuida da sua estratégia de investimentos de ponta a ponta. 
             Tudo <span className="font-semibold">100% personalizado</span> — direto no WhatsApp.
           </p>
@@ -50,15 +50,15 @@ const BenefitsSection = () => {
               <div key={index} className="bg-white rounded-xl p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
                 <div className="flex items-start gap-4 md:gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 md:w-14 md:h-14 bg-gray-100 rounded-xl flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 md:w-7 md:h-7 text-gray-500" strokeWidth={1.5} />
+                    <div className="w-10 h-10 flex items-center justify-center">
+                      <IconComponent className="w-5 h-5 text-gray-500" strokeWidth={1.5} />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base md:text-lg font-semibold text-slate-900 mb-2 md:mb-3 leading-[1.3] text-pretty">
+                    <h3 className="text-lg font-semibold text-slate-900 mb-2 md:mb-3 leading-[1.3] text-pretty">
                       {benefit.title}
                     </h3>
-                    <p className="text-slate-600 leading-[1.5] text-[17px] text-pretty">
+                    <p className="text-slate-600 leading-[1.5] text-base text-pretty">
                       {benefit.description}
                     </p>
                   </div>
