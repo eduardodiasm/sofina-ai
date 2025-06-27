@@ -8,6 +8,7 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 import SofinaCarousel from "@/components/SofinaCarousel";
+import BenefitsSection from "@/components/BenefitsSection";
 
 const Index = () => {
   const { trackPageVisit } = useSimpleAnalytics();
@@ -103,6 +104,9 @@ const Index = () => {
 
       {/* SECTION: Como a Sofina ajuda você - CAROUSEL FIRST */}
       <SofinaCarousel />
+
+      {/* SECTION: Benefícios da Sofina - NEW */}
+      <BenefitsSection />
 
       {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
       <section className="py-20 bg-slate-50">
