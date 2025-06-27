@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden font-manrope">
       {/* Header */}
-      <header className="relative z-10 px-4 sm:px-6 py-8">
+      <header className="relative z-10 px-6 md:px-10 py-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <img 
@@ -44,19 +44,19 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 py-12 md:py-16">
+      <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <p className="text-lg md:text-xl text-green-600 font-medium mb-4">
+            <p className="text-base md:text-lg text-green-600 font-medium mb-4">
               Conheça a Sofina
             </p>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
               O primeiro private banker <br className="hidden sm:block" />
               por <span className="text-green-600">WhatsApp</span> do Brasil.
             </h1>
             
-            <h2 id="hero-subtitle" className="text-lg md:text-xl font-medium text-slate-700 mb-4 md:mb-6 leading-relaxed max-w-3xl mx-auto">
+            <h2 id="hero-subtitle" className="text-base md:text-lg font-medium text-slate-700 mb-4 md:mb-6 leading-[1.5] max-w-[800px] mx-auto">
               Seu copiloto financeiro 24/7, sem comissão e sem economês.
             </h2>
 
@@ -110,12 +110,12 @@ const Index = () => {
 
       {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 max-w-4xl mx-auto leading-tight">
+            <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 max-w-[800px] mx-auto leading-[1.3]">
               Como você se sente hoje vs. depois de <span className="font-semibold">30 dias</span> com a Sofina
             </h3>
-            <p className="text-lg md:text-xl font-medium text-slate-600 leading-relaxed">
+            <p className="text-base md:text-lg font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
               A diferença de ter um copiloto financeiro do seu lado.
             </p>
           </div>
@@ -125,29 +125,29 @@ const Index = () => {
             {/* COLUNA ESQUERDA - ANTES */}
             <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-red-200">
               <div className="text-center mb-6">
-                <h4 className="text-lg md:text-xl font-semibold text-slate-700 flex items-center justify-center gap-2">
+                <h4 className="text-base md:text-lg font-semibold text-slate-700 flex items-center justify-center gap-2">
                   😩 <span>Antes da Sofina</span>
                 </h4>
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Não sei se guardo ou gasto</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Dinheiro parado rendendo <span className="font-medium">&lt;2% ao ano</span></span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Medo de ser enrolado por banco ou corretora</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Horas perdidas em vídeos e planilhas</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-600 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-600 leading-[1.5] text-[17px]">
                   <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   <span>Insegurança total sobre como investir</span>
                 </li>
@@ -157,29 +157,29 @@ const Index = () => {
             {/* COLUNA DIREITA - DEPOIS */}
             <div className="bg-green-50 rounded-xl shadow-md p-6 md:p-8 border-l-4 border-green-400">
               <div className="text-center mb-6">
-                <h4 className="text-lg md:text-xl font-semibold text-green-800 flex items-center justify-center gap-2">
+                <h4 className="text-base md:text-lg font-semibold text-green-800 flex items-center justify-center gap-2">
                   🚀 <span>Depois da Sofina</span>
                 </h4>
               </div>
               
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-slate-700 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Plano claro de quanto guardar e onde investir</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Sugestões semanais pelo WhatsApp</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>IA imparcial, sem comissão ou conflito de interesse</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Só <span className="font-medium">5 minutos</span> por semana para manter tudo em dia</span>
                 </li>
-                <li className="flex items-start gap-3 text-slate-700 leading-relaxed">
+                <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-[17px]">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span>Confiança e constância nos seus aportes</span>
                 </li>
@@ -190,17 +190,17 @@ const Index = () => {
           {/* CTA INTEGRADO */}
           <div className="text-center bg-white rounded-xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
             <div className="mb-6">
-              <h4 className="text-xl md:text-2xl font-semibold text-slate-900 mb-2 leading-tight">
+              <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
                 🎯 Pronto para sair do modo "dinheiro parado"?
               </h4>
-              <p className="text-lg font-medium text-slate-600 leading-relaxed">
+              <p className="text-base md:text-lg font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
                 Veja seu plano financeiro em <span className="font-semibold">3 minutos</span>, grátis por <span className="font-semibold">30 dias</span>.
               </p>
             </div>
             
             <Button 
               onClick={scrollToForm}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-lg font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-green-600 hover:bg-green-700 text-white text-base py-2.5 px-5 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
               Quero meu plano agora
             </Button>
@@ -209,23 +209,23 @@ const Index = () => {
       </section>
 
       {/* PARA QUEM É */}
-      <section className="px-4 sm:px-6 py-16 md:py-24 bg-white">
+      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 leading-tight">Para quem é a Sofina?</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 leading-[1.3]">Para quem é a Sofina?</h3>
           </div>
           
-          <ul className="space-y-6 max-w-xl mx-auto text-slate-700">
-            <li className="flex gap-3 leading-relaxed">
-              <Clock className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+          <ul className="space-y-6 max-w-[800px] mx-auto text-slate-700">
+            <li className="flex gap-3 leading-[1.5] text-[17px]">
+              <Clock className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Falta de tempo:</strong> Não gaste horas em vídeos de finanças — a IA faz tudo por você.</span>
             </li>
-            <li className="flex gap-3 leading-relaxed">
-              <Handshake className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+            <li className="flex gap-3 leading-[1.5] text-[17px]">
+              <Handshake className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Falta de confiança:</strong> <span className="font-medium">Zero</span> metas de venda, <span className="font-medium">zero</span> comissão escondida.</span>
             </li>
-            <li className="flex gap-3 leading-relaxed">
-              <ShieldCheck className="w-6 h-6 text-green-600 flex-shrink-0" aria-hidden="true" />
+            <li className="flex gap-3 leading-[1.5] text-[17px]">
+              <ShieldCheck className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
               <span><strong className="font-medium">Medo de errar:</strong> Planos auditados por <span className="font-medium">CFA®</span> — sem termos complicados.</span>
             </li>
           </ul>
@@ -233,7 +233,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="px-4 sm:px-6 py-12 bg-gray-50 border-t border-slate-200">
+      <footer className="px-6 md:px-10 py-12 bg-gray-50 border-t border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
@@ -255,7 +255,7 @@ const Index = () => {
           </div>
           
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-            <p className="text-slate-500 text-sm leading-relaxed">
+            <p className="text-slate-500 text-sm leading-[1.5] max-w-[800px] mx-auto">
               <strong className="text-slate-600 font-medium">Importante:</strong> Sofina oferece orientação educacional e não substitui aconselhamento financeiro profissional personalizado. 
               Investimentos envolvem riscos e rentabilidade passada não garante resultados futuros.
             </p>

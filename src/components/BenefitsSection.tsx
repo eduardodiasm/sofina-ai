@@ -32,12 +32,12 @@ const BenefitsSection = () => {
 
   return (
     <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 md:px-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 md:mb-6 leading-tight">
+          <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 md:mb-6 leading-[1.3] max-w-[800px] mx-auto">
             Menos dúvida, mais patrimônio.
           </h2>
-          <p className="text-lg md:text-xl font-medium text-slate-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg font-medium text-slate-700 max-w-[800px] mx-auto leading-[1.5]">
             A Sofina cuida da sua estratégia de investimentos de ponta a ponta. 
             Tudo <span className="font-semibold">100% personalizado</span> — direto no WhatsApp.
           </p>
@@ -55,10 +55,10 @@ const BenefitsSection = () => {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3 leading-tight">
+                    <h3 className="text-base md:text-lg font-semibold text-slate-900 mb-2 md:mb-3 leading-[1.3] text-pretty">
                       {benefit.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed text-base">
+                    <p className="text-slate-600 leading-[1.5] text-[17px] text-pretty">
                       {benefit.description}
                     </p>
                   </div>
