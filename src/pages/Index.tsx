@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import { useSimpleAnalytics } from "@/hooks/useSimpleAnalytics";
 import { useEffect } from "react";
 import SofinaCarousel from "@/components/SofinaCarousel";
 import BenefitsSection from "@/components/BenefitsSection";
+import MissionSection from "@/components/MissionSection";
 
 const Index = () => {
   const { trackPageVisit } = useSimpleAnalytics();
@@ -107,6 +107,9 @@ const Index = () => {
 
       {/* SECTION: Benefícios da Sofina - NEW */}
       <BenefitsSection />
+
+      {/* SECTION: Nossa missão - NEW */}
+      <MissionSection />
 
       {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
       <section className="py-16 md:py-24 bg-white">
