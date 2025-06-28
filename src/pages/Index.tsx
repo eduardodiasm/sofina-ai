@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,6 +20,13 @@ const Index = () => {
     const formElement = document.getElementById('form');
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToKnowSofina = () => {
+    const conhecaSofinaElement = document.getElementById('conheca-sofina');
+    if (conhecaSofinaElement) {
+      conhecaSofinaElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -47,7 +53,7 @@ const Index = () => {
       <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <p className="text-base md:text-lg text-sofina-600 font-medium mb-4">
+            <p id="conheca-sofina" className="text-base md:text-lg text-sofina-600 font-medium mb-4">
               Conheça a Sofina
             </p>
             
@@ -199,7 +205,7 @@ const Index = () => {
             </div>
             
             <Button 
-              onClick={scrollToForm}
+              onClick={scrollToKnowSofina}
               className="bg-sofina-600 hover:bg-sofina-700 text-white text-base py-2.5 px-5 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
               Quero meu plano agora
