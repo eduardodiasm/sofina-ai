@@ -102,13 +102,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION: Como a Sofina ajuda você - CAROUSEL FIRST */}
-      <SofinaCarousel />
-
-      {/* SECTION: Benefícios da Sofina - NEW */}
+      {/* SECTION: Benefícios da Sofina - MOVED TO SECOND POSITION */}
       <BenefitsSection />
 
-      {/* SECTION: Antes vs Depois - IMPROVED VERSION */}
+      {/* SECTION: Como a Sofina ajuda você - MOVED TO THIRD POSITION */}
+      <SofinaCarousel />
+
+      {/* SECTION: Antes vs Depois - MOVED TO FOURTH/LAST POSITION + UPDATED WITHOUT EMOJIS */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
@@ -125,8 +125,8 @@ const Index = () => {
             {/* COLUNA ESQUERDA - ANTES */}
             <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-red-200">
               <div className="text-center mb-6">
-                <h4 className="text-lg font-semibold text-slate-700 flex items-center justify-center gap-2">
-                  😩 <span>Antes da Sofina</span>
+                <h4 className="text-lg font-semibold text-slate-700">
+                  Antes da Sofina
                 </h4>
               </div>
               
@@ -157,8 +157,8 @@ const Index = () => {
             {/* COLUNA DIREITA - DEPOIS */}
             <div className="bg-green-50 rounded-xl shadow-md p-6 md:p-8 border-l-4 border-green-400">
               <div className="text-center mb-6">
-                <h4 className="text-lg font-semibold text-green-800 flex items-center justify-center gap-2">
-                  🚀 <span>Depois da Sofina</span>
+                <h4 className="text-lg font-semibold text-green-800">
+                  Depois da Sofina
                 </h4>
               </div>
               
@@ -191,7 +191,7 @@ const Index = () => {
           <div className="text-center bg-white rounded-xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
             <div className="mb-6">
               <h4 className="text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
-                🎯 Pronto para sair do modo "dinheiro parado"?
+                Pronto para sair do modo "dinheiro parado"?
               </h4>
               <p className="text-base font-medium text-slate-600 leading-[1.5] max-w-[800px] mx-auto">
                 Veja seu plano financeiro em <span className="font-semibold">3 minutos</span>, grátis por <span className="font-semibold">30 dias</span>.
@@ -205,30 +205,6 @@ const Index = () => {
               Quero meu plano agora
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* PARA QUEM É */}
-      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 leading-[1.3]">Para quem é a Sofina?</h3>
-          </div>
-          
-          <ul className="space-y-6 max-w-[800px] mx-auto text-slate-700">
-            <li className="flex gap-3 leading-[1.5] text-base">
-              <Clock className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="font-medium">Falta de tempo:</strong> Não gaste horas em vídeos de finanças — a IA faz tudo por você.</span>
-            </li>
-            <li className="flex gap-3 leading-[1.5] text-base">
-              <Handshake className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="font-medium">Falta de confiança:</strong> <span className="font-medium">Zero</span> metas de venda, <span className="font-medium">zero</span> comissão escondida.</span>
-            </li>
-            <li className="flex gap-3 leading-[1.5] text-base">
-              <ShieldCheck className="w-6 h-6 text-slate-500 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="font-medium">Medo de errar:</strong> Planos auditados por <span className="font-medium">CFA®</span> — sem termos complicados.</span>
-            </li>
-          </ul>
         </div>
       </section>
 
