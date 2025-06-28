@@ -45,10 +45,10 @@ const SofinaCarousel = () => {
   }, [api]);
 
   return (
-    <section className="px-4 sm:px-6 py-8 sm:py-12 lg:py-14 bg-gradient-to-br from-slate-50 via-white to-green-50 relative overflow-hidden">
+    <section className="px-4 sm:px-6 py-8 sm:py-12 lg:py-14 bg-gradient-to-br from-white via-sofina-50/20 to-slate-50 relative overflow-hidden">
       {/* Subtle background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(34,197,94,0.03),transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.02),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(22,163,74,0.03),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(100,116,139,0.02),transparent_50%)] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
@@ -77,7 +77,7 @@ const SofinaCarousel = () => {
             <CarouselContent className="-ml-2 sm:-ml-4">
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
-                  <Card className="border-0 bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/80 hover:-translate-y-1 rounded-2xl overflow-hidden h-full group">
+                  <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 hover:bg-white hover:-translate-y-1 rounded-2xl overflow-hidden h-full group">
                     <CardContent className="p-4 sm:p-5 lg:p-6 flex flex-col items-center text-center h-full">
                       {/* Image container with optimized sizing */}
                       <div className="mb-3 sm:mb-4 lg:mb-5 w-full flex justify-center">
@@ -85,7 +85,7 @@ const SofinaCarousel = () => {
                           <img 
                             src={slide.image} 
                             alt={slide.title}
-                            className="w-48 sm:w-56 lg:w-48 h-auto rounded-xl shadow-md group-hover:shadow-lg transition-shadow duration-300 max-w-[200px] sm:max-w-[224px] lg:max-w-[192px]"
+                            className="w-48 sm:w-56 lg:w-48 h-auto rounded-xl shadow-sm group-hover:shadow-md transition-shadow duration-300 max-w-[200px] sm:max-w-[224px] lg:max-w-[192px]"
                           />
                           {/* Subtle overlay on hover */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
@@ -94,7 +94,7 @@ const SofinaCarousel = () => {
                       
                       {/* Content with improved typography */}
                       <div className="flex-1 flex flex-col justify-center space-y-3">
-                        <h3 className="text-lg md:text-xl font-semibold text-green-700 leading-[1.3] group-hover:text-green-800 transition-colors duration-200">
+                        <h3 className="text-lg md:text-xl font-semibold text-sofina-700 leading-[1.3] group-hover:text-sofina-800 transition-colors duration-200">
                           {slide.title}
                         </h3>
                         <p className="text-slate-700 text-sm sm:text-base leading-[1.5] font-medium">
@@ -108,8 +108,8 @@ const SofinaCarousel = () => {
             </CarouselContent>
             
             {/* Enhanced navigation buttons - positioned to avoid overflow */}
-            <CarouselPrevious className="absolute left-2 sm:left-4 lg:-left-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
-            <CarouselNext className="absolute right-2 sm:right-4 lg:-right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-green-200 text-green-700 hover:bg-green-50 hover:text-green-800 hover:border-green-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl" />
+            <CarouselPrevious className="absolute left-2 sm:left-4 lg:-left-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-sofina-200 text-sofina-700 hover:bg-sofina-50 hover:text-sofina-800 hover:border-sofina-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-sm hover:shadow-md" />
+            <CarouselNext className="absolute right-2 sm:right-4 lg:-right-12 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-sofina-200 text-sofina-700 hover:bg-sofina-50 hover:text-sofina-800 hover:border-sofina-300 transition-all duration-200 w-10 h-10 sm:w-12 sm:h-12 shadow-sm hover:shadow-md" />
           </Carousel>
           
           {/* Modern slide indicators */}
@@ -119,7 +119,7 @@ const SofinaCarousel = () => {
                 key={index}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === current - 1
-                    ? 'w-8 bg-green-600 shadow-md'
+                    ? 'w-8 bg-sofina-600 shadow-sm'
                     : 'w-2 bg-slate-300 hover:bg-slate-400'
                 }`}
                 onClick={() => api?.scrollTo(index)}

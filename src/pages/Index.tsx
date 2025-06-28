@@ -25,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden font-manrope">
+    <div className="min-h-screen bg-white overflow-x-hidden font-manrope">
       {/* Header */}
       <header className="relative z-10 px-6 md:px-10 py-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -37,7 +37,7 @@ const Index = () => {
             />
             <span className="text-xl md:text-2xl font-bold text-slate-900">Sofina</span>
           </div>
-          <Badge variant="outline" className="border-green-200 text-green-700 bg-green-50 font-medium">
+          <Badge variant="outline" className="border-sofina-200 text-sofina-700 bg-sofina-50 font-medium">
             30 dias grátis
           </Badge>
         </div>
@@ -47,13 +47,13 @@ const Index = () => {
       <section className="px-6 md:px-10 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <p className="text-base md:text-lg text-green-600 font-medium mb-4">
+            <p className="text-base md:text-lg text-sofina-600 font-medium mb-4">
               Conheça a Sofina
             </p>
             
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 md:mb-6 leading-[1.2]">
               O primeiro private banker <br className="hidden sm:block" />
-              por <span className="text-green-600">WhatsApp</span> do Brasil.
+              por <span className="text-sofina-600">WhatsApp</span> do Brasil.
             </h1>
             
             <h2 id="hero-subtitle" className="text-base md:text-lg font-medium text-slate-700 mb-4 md:mb-6 leading-[1.5] max-w-[800px] mx-auto">
@@ -63,11 +63,11 @@ const Index = () => {
             {/* TRUST-BAR: Powered by OpenAI + CFA Audit */}
             <div className="flex flex-wrap items-center justify-center gap-6 mt-4 mb-6 text-sm text-slate-600">
               <div className="flex items-center gap-2">
-                <Brain className="h-5 w-5 text-green-600" />
+                <Brain className="h-5 w-5 text-sofina-600" />
                 <span>Powered by <strong className="text-slate-700 font-medium">OpenAI Enterprise</strong></span>
               </div>
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-green-600" />
+                <Shield className="h-5 w-5 text-sofina-600" />
                 <span>Auditoria <strong className="text-slate-700 font-medium">CFA®</strong></span>
               </div>
             </div>
@@ -81,15 +81,15 @@ const Index = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 text-slate-600 text-sm mb-6 md:mb-8">
             <div className="flex items-center space-x-2">
-              <Zap className="w-4 h-4 text-green-600" />
+              <Zap className="w-4 h-4 text-sofina-600" />
               <span>Plano pronto em <span className="font-medium">3 min</span></span>
             </div>
             <div className="flex items-center space-x-2">
-              <Shield className="w-4 h-4 text-green-600" />
+              <Shield className="w-4 h-4 text-sofina-600" />
               <span><span className="font-medium">30 d</span> grátis, sem compromisso</span>
             </div>
             <div className="flex items-center space-x-2">
-              <BarChart3 className="w-4 h-4 text-green-600" />
+              <BarChart3 className="w-4 h-4 text-sofina-600" />
               <span>Valores e ativos específicos</span>
             </div>
           </div>
@@ -102,14 +102,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SECTION: Benefícios da Sofina - MOVED TO SECOND POSITION */}
+      {/* SECTION: Benefícios da Sofina - SECOND POSITION */}
       <BenefitsSection />
 
-      {/* SECTION: Como a Sofina ajuda você - MOVED TO THIRD POSITION */}
+      {/* SECTION: Como a Sofina ajuda você - THIRD POSITION */}
       <SofinaCarousel />
 
-      {/* SECTION: Antes vs Depois - MOVED TO FOURTH/LAST POSITION + UPDATED WITHOUT EMOJIS */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* SECTION: Antes vs Depois - FOURTH/LAST POSITION + UPDATED COLORS */}
+      <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-12">
             <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4 max-w-[800px] mx-auto leading-[1.3]">
@@ -123,7 +123,7 @@ const Index = () => {
           {/* GRID - Duas colunas bem definidas */}
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-8 md:mb-12">
             {/* COLUNA ESQUERDA - ANTES */}
-            <div className="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-red-200">
+            <div className="bg-white rounded-xl shadow-sm p-6 md:p-8 border border-red-100">
               <div className="text-center mb-6">
                 <h4 className="text-lg font-semibold text-slate-700">
                   Antes da Sofina
@@ -155,40 +155,40 @@ const Index = () => {
             </div>
 
             {/* COLUNA DIREITA - DEPOIS */}
-            <div className="bg-green-50 rounded-xl shadow-md p-6 md:p-8 border-l-4 border-green-400">
+            <div className="bg-sofina-50/50 rounded-xl shadow-sm p-6 md:p-8 border border-sofina-200">
               <div className="text-center mb-6">
-                <h4 className="text-lg font-semibold text-green-800">
+                <h4 className="text-lg font-semibold text-sofina-800">
                   Depois da Sofina
                 </h4>
               </div>
               
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-sofina-600 flex-shrink-0 mt-0.5" />
                   <span>Plano claro de quanto guardar e onde investir</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-sofina-600 flex-shrink-0 mt-0.5" />
                   <span>Sugestões semanais pelo WhatsApp</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-sofina-600 flex-shrink-0 mt-0.5" />
                   <span>IA imparcial, sem comissão ou conflito de interesse</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-sofina-600 flex-shrink-0 mt-0.5" />
                   <span>Só <span className="font-medium">5 minutos</span> por semana para manter tudo em dia</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700 leading-[1.5] text-base">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-sofina-600 flex-shrink-0 mt-0.5" />
                   <span>Confiança e constância nos seus aportes</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* CTA INTEGRADO */}
-          <div className="text-center bg-white rounded-xl shadow-md p-6 md:p-8 max-w-2xl mx-auto">
+          {/* CTA INTEGRADO - SUAVIZADO */}
+          <div className="text-center bg-sofina-50/30 rounded-xl border border-sofina-200 p-6 md:p-8 max-w-2xl mx-auto">
             <div className="mb-6">
               <h4 className="text-xl font-semibold text-slate-900 mb-2 leading-[1.3]">
                 Pronto para sair do modo "dinheiro parado"?
@@ -200,7 +200,7 @@ const Index = () => {
             
             <Button 
               onClick={scrollToForm}
-              className="bg-green-600 hover:bg-green-700 text-white text-base py-2.5 px-5 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-sofina-600 hover:bg-sofina-700 text-white text-base py-2.5 px-5 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
               Quero meu plano agora
             </Button>
@@ -209,7 +209,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 md:px-10 py-12 bg-gray-50 border-t border-slate-200">
+      <footer className="px-6 md:px-10 py-12 bg-slate-100 border-t border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
